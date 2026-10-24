@@ -1,0 +1,9 @@
+Kisi-Kisi UTS Keterampilan Komputer:
+
+1. Prosesor dan K3: Menganalisis spesifikasi prosesor untuk multitasking serta prosedur K3 dan pencegahan Electrostatic Discharge dalam perakitan komputer.
+2. Perakitan PC dan BIOS/UEFI: Menganalisis penyebab kegagalan POST serta memahami fungsi BIOS/UEFI dan Boot Priority.
+3. Pengkabelan Jaringan: Memahami perbedaan kabel UTP straight-through dan crossover serta menganalisis kerusakan kabel menggunakan Cable Tester.
+4. Simulasi Jaringan LAN: Membuat topologi LAN di Cisco Packet Tracer, mengonfigurasi IP statis, dan menguji konektivitas menggunakan Simple PDU. (praktik)
+5. Konfigurasi Jaringan WLAN: Mengonfigurasi wireless router dengan SSID dan keamanan WPA2 serta menghubungkan laptop ke jaringan nirkabel. (praktik)
+
+dari 5 soal, 3 analisis dan 2 praktik, hasil dan jawaban dituliskan dalam bentuk file pdf dan dikumpulkan saat ujian (diunggah ke EdLink).
