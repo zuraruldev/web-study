@@ -114,8 +114,9 @@ const ReadinessRadarChart: React.FC<RadarChartProps> = ({
               y1={cy}
               x2={x}
               y2={y}
-              stroke={isHovered ? 'rgba(16, 185, 129, 0.45)' : 'rgba(255, 255, 255, 0.08)'}
-              strokeWidth={isHovered ? '1.5' : '1'}
+              stroke={isHovered ? '#10b981' : 'rgba(255, 255, 255, 0.08)'}
+              strokeWidth={isHovered ? '2' : '1'}
+              className="transition-colors duration-200"
             />
           );
         })}
@@ -177,16 +178,19 @@ const ReadinessRadarChart: React.FC<RadarChartProps> = ({
               onMouseEnter={() => onHoverSlug(item.slug)}
               onMouseLeave={() => onHoverSlug(null)}
             >
+              {/* Outer pulse strictly centered on the node */}
               {isHovered && (
                 <circle
                   cx={nx}
                   cy={ny}
-                  r="9"
+                  r="5"
                   fill="none"
                   stroke="#10b981"
                   strokeWidth="1.5"
-                  className="animate-ping opacity-75"
-                />
+                >
+                  <animate attributeName="r" values="5;14" dur="1.2s" repeatCount="indefinite" />
+                  <animate attributeName="opacity" values="0.85;0" dur="1.2s" repeatCount="indefinite" />
+                </circle>
               )}
 
               <circle
