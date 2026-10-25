@@ -70,7 +70,7 @@ router.get('/explanations/:subject', (req, res) => {
 
 router.get('/quiz/:subject', (req, res) => {
   const { subject } = req.params;
-  const limit = parseInt(req.query.limit, 10) || 15;
+  const limit = parseInt(req.query.limit, 10) || 40;
   const mode = req.query.mode || 'exam';
 
   let questions = db.prepare('SELECT * FROM questions WHERE subject_slug = ?').all(subject);

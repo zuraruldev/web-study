@@ -14,16 +14,28 @@ import {
   X,
   LogOut
 } from 'lucide-react';
-import type { Subject } from '../types';
+import type { Subject, User } from '../types';
 import { getAuthToken } from '../lib/api';
 
 interface AdminPageProps {
   subjects: Subject[];
+  user?: User | null;
+  onOpenAuth?: () => void;
 }
 
-export const AdminPage: React.FC<AdminPageProps> = ({ subjects }) => {
-  const [adminKey, setAdminKey] = useState(localStorage.getItem('studyhub_admin_key') || '');
+export const AdminPage: React.FC<AdminPageProps> = ({ subjects, user, onOpenAuth }) => {
+  // Purge legacy hardcoded default key if present in browser localStorage
+  if (typeof window !== 'undefined' && localStorage.getItem('studyhub_admin_key') === 'studyhub-admin-secret-2026') {
+    localStorage.removeItem('studyhub_admin_key');
+  }
+
+  const [adminKey, setAdminKey] = useState(
+    (typeof window !== 'undefined' && localStorage.getItem('studyhub_admin_key') && localStorage.getItem('studyhub_admin_key') !== 'studyhub-admin-secret-2026')
+      ? localStorage.getItem('studyhub_admin_key')!
+      : ''
+  );
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [authError, setAuthError] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState<'questions' | 'users'>('questions');
 
   // Questions State
@@ -64,20 +76,24 @@ export const AdminPage: React.FC<AdminPageProps> = ({ subjects }) => {
   };
 
   useEffect(() => {
-    const token = getAuthToken();
-    if (adminKey || token) {
+    // Only auto-verify if the user is explicitly an admin OR if they previously saved an admin key
+    if (user?.role === 'admin' || (adminKey && adminKey.trim().length > 0)) {
       verifyKey();
+    } else {
+      setIsAuthenticated(false);
     }
-  }, [selectedSubject, activeTab]);
+  }, [user, selectedSubject, activeTab]);
 
   const handleAdminLogout = () => {
     localStorage.removeItem('studyhub_admin_key');
     setAdminKey('');
     setIsAuthenticated(false);
+    setAuthError(null);
   };
 
   const verifyKey = async () => {
     setLoading(true);
+    setAuthError(null);
     try {
       const qRes = await fetch(`/api/admin/questions?subject=${selectedSubject}`, {
         headers: getAdminHeaders()
@@ -87,7 +103,9 @@ export const AdminPage: React.FC<AdminPageProps> = ({ subjects }) => {
         const qData = await qRes.json();
         setQuestions(qData.questions || []);
         setIsAuthenticated(true);
-        localStorage.setItem('studyhub_admin_key', adminKey);
+        if (adminKey && adminKey.trim().length > 0) {
+          localStorage.setItem('studyhub_admin_key', adminKey.trim());
+        }
 
         if (activeTab === 'users') {
           const uRes = await fetch('/api/admin/users', {
@@ -99,10 +117,13 @@ export const AdminPage: React.FC<AdminPageProps> = ({ subjects }) => {
           }
         }
       } else {
+        const err = await qRes.json().catch(() => ({}));
         setIsAuthenticated(false);
+        setAuthError(err.error || 'Akses ditolak: Kunci admin atau akun tidak valid.');
       }
     } catch {
       setIsAuthenticated(false);
+      setAuthError('Gagal menghubungkan ke server.');
     } finally {
       setLoading(false);
     }
@@ -288,25 +309,60 @@ export const AdminPage: React.FC<AdminPageProps> = ({ subjects }) => {
             <ShieldAlert size={24} />
             <h2 className="font-bold text-slate-100 text-lg">Autentikasi Administrator</h2>
           </div>
-          <p className="text-xs text-slate-400">
-            Masukkan Admin Secret Key untuk mengelola bank soal, akun pengguna, dan sinkronisasi materi.
-          </p>
 
-          <input
-            type="password"
-            value={adminKey}
-            onChange={e => setAdminKey(e.target.value)}
-            placeholder="Masukkan Admin Secret Key..."
-            className="w-full bg-[#161f33] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-emerald-500/50"
-          />
+          {user && user.role !== 'admin' ? (
+            <div className="p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/20 text-xs text-amber-300 space-y-1">
+              <p className="font-semibold">Akses Terbatas Mahasiswa</p>
+              <p className="text-slate-300">
+                Anda sedang masuk sebagai <strong>{user.name}</strong> ({user.nim_or_email}). Panel ini dikhususkan untuk Administrator (<code className="text-amber-200">usmanarul90@gmail.com</code>).
+              </p>
+            </div>
+          ) : (
+            <p className="text-xs text-slate-400 leading-relaxed">
+              Masuk dengan akun Administrator atau masukkan Admin Secret Key untuk mengelola portal StudyHub.
+            </p>
+          )}
 
-          <button
-            onClick={verifyKey}
-            disabled={loading}
-            className="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-medium text-xs transition-all shadow-lg shadow-emerald-900/30"
-          >
-            {loading ? 'Memverifikasi...' : 'Buka Panel Admin'}
-          </button>
+          {authError && (
+            <div className="p-3 rounded-xl bg-rose-500/10 border border-rose-500/20 text-xs text-rose-300 flex items-center gap-2">
+              <AlertCircle size={15} />
+              <span>{authError}</span>
+            </div>
+          )}
+
+          {!user && onOpenAuth && (
+            <button
+              type="button"
+              onClick={onOpenAuth}
+              className="w-full py-2.5 rounded-xl bg-white/[0.06] hover:bg-white/[0.1] text-slate-200 border border-white/10 text-xs font-medium transition-colors"
+            >
+              Masuk dengan Akun Admin
+            </button>
+          )}
+
+          <div className="relative flex py-1 items-center">
+            <div className="flex-grow border-t border-white/10"></div>
+            <span className="flex-shrink mx-3 text-[11px] text-slate-500 uppercase font-mono">atau gunakan Secret Key</span>
+            <div className="flex-grow border-t border-white/10"></div>
+          </div>
+
+          <form onSubmit={e => { e.preventDefault(); verifyKey(); }} className="space-y-3">
+            <input
+              type="password"
+              value={adminKey}
+              onChange={e => setAdminKey(e.target.value)}
+              placeholder="Masukkan Admin Secret Key..."
+              className="w-full bg-[#161f33] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-emerald-500/50"
+            />
+
+            <button
+              type="submit"
+              disabled={loading || !adminKey.trim()}
+              className="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 disabled:opacity-50 disabled:cursor-not-allowed text-white font-medium text-xs transition-all shadow-lg shadow-emerald-900/30"
+            >
+              {loading ? 'Memverifikasi...' : 'Buka Panel Admin'}
+            </button>
+          </form>
         </div>
       </div>
     );

@@ -46,7 +46,7 @@ export const SubjectPage: React.FC<SubjectPageProps> = ({ subjects }) => {
       const [mats, exps, qs] = await Promise.all([
         fetchMaterials(subjectSlug),
         fetchExplanations(subjectSlug),
-        fetchQuiz(subjectSlug, 'exam', 20)
+        fetchQuiz(subjectSlug, 'exam', 40)
       ]);
       setMaterials(mats);
       setChapters(exps);
@@ -265,14 +265,14 @@ export const SubjectPage: React.FC<SubjectPageProps> = ({ subjects }) => {
         />
       )}
 
-      {currentTab === 'quiz' && (
+      <div className={currentTab === 'quiz' ? 'block' : 'hidden'}>
         <CBTQuiz
           subjectSlug={subject.slug}
           subjectName={subject.name}
           questions={questions}
           onFinish={() => handleTabChange('materials')}
         />
-      )}
+      </div>
 
       {currentTab === 'sandbox' && isAlpro && (
         <PHPSandbox />

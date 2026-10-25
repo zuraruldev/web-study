@@ -12,7 +12,11 @@ import {
   Award,
   AlertTriangle,
   Flame,
-  ArrowRight
+  ArrowRight,
+  Play,
+  Clock,
+  Sparkles,
+  BookOpen
 } from 'lucide-react';
 import type { Question, AnswerItem, QuizEvaluationResult } from '../types';
 import { evaluateQuiz } from '../lib/api';
@@ -30,18 +34,70 @@ export const CBTQuiz: React.FC<CBTQuizProps> = ({
   questions,
   onFinish
 }) => {
+  const STORAGE_KEY = `studyhub_cbt_${subjectSlug}`;
+  const TOTAL_TIME = 60 * 60; // 1 hour (3600 seconds)
+
   const [mode, setMode] = useState<'exam' | 'practice'>('exam');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState<Record<string, number>>({});
   const [flaggedQuestions, setFlaggedQuestions] = useState<Record<string, boolean>>({});
-  const [timeLeft, setTimeLeft] = useState(15 * 60); // 15 minutes
+  const [timeLeft, setTimeLeft] = useState(TOTAL_TIME);
+  const [isStarted, setIsStarted] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<QuizEvaluationResult | null>(null);
   const [showPracticeRationale, setShowPracticeRationale] = useState<Record<string, boolean>>({});
 
+  // Restore active quiz session from sessionStorage
   useEffect(() => {
-    if (mode !== 'exam' || isSubmitted) return;
+    try {
+      const savedRaw = sessionStorage.getItem(STORAGE_KEY);
+      if (!savedRaw) return;
+      const saved = JSON.parse(savedRaw);
+      if (saved && saved.isStarted) {
+        setMode(saved.mode || 'exam');
+        setCurrentIndex(saved.currentIndex || 0);
+        setSelectedAnswers(saved.selectedAnswers || {});
+        setFlaggedQuestions(saved.flaggedQuestions || {});
+        setIsSubmitted(!!saved.isSubmitted);
+        setResult(saved.result || null);
+        setIsStarted(true);
+
+        if (saved.mode === 'exam' && !saved.isSubmitted) {
+          const elapsed = Math.floor((Date.now() - (saved.timestamp || Date.now())) / 1000);
+          const remaining = Math.max(0, (saved.timeLeft || TOTAL_TIME) - elapsed);
+          setTimeLeft(remaining);
+        } else {
+          setTimeLeft(saved.timeLeft || TOTAL_TIME);
+        }
+      }
+    } catch (e) {
+      // ignore parse error
+    }
+  }, [subjectSlug]);
+
+  // Keep sessionStorage in sync while quiz is started
+  useEffect(() => {
+    if (!isStarted) return;
+    try {
+      sessionStorage.setItem(STORAGE_KEY, JSON.stringify({
+        isStarted,
+        mode,
+        currentIndex,
+        selectedAnswers,
+        flaggedQuestions,
+        timeLeft,
+        isSubmitted,
+        result,
+        timestamp: Date.now()
+      }));
+    } catch (e) {
+      // ignore storage quota
+    }
+  }, [isStarted, mode, currentIndex, selectedAnswers, flaggedQuestions, timeLeft, isSubmitted, result, subjectSlug]);
+
+  useEffect(() => {
+    if (!isStarted || mode !== 'exam' || isSubmitted) return;
 
     const timer = setInterval(() => {
       setTimeLeft(prev => {
@@ -55,11 +111,15 @@ export const CBTQuiz: React.FC<CBTQuizProps> = ({
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [mode, isSubmitted]);
+  }, [isStarted, mode, isSubmitted]);
 
   const formatTimer = (seconds: number) => {
-    const mins = Math.floor(seconds / 60);
+    const hours = Math.floor(seconds / 3600);
+    const mins = Math.floor((seconds % 3600) / 60);
     const secs = seconds % 60;
+    if (hours > 0) {
+      return `${hours.toString().padStart(2, '0')}:${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+    }
     return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
   };
 
@@ -85,7 +145,7 @@ export const CBTQuiz: React.FC<CBTQuizProps> = ({
       selectedOptionIndex: selectedAnswers[q.id] !== undefined ? selectedAnswers[q.id] : -1
     }));
 
-    const timeSpent = (15 * 60) - timeLeft;
+    const timeSpent = TOTAL_TIME - timeLeft;
 
     try {
       const evaluation = await evaluateQuiz(
@@ -112,13 +172,17 @@ export const CBTQuiz: React.FC<CBTQuizProps> = ({
   };
 
   const handleReset = () => {
+    try {
+      sessionStorage.removeItem(STORAGE_KEY);
+    } catch (e) {}
     setIsSubmitted(false);
     setResult(null);
     setSelectedAnswers({});
     setFlaggedQuestions({});
     setShowPracticeRationale({});
     setCurrentIndex(0);
-    setTimeLeft(15 * 60);
+    setTimeLeft(TOTAL_TIME);
+    setIsStarted(false);
   };
 
   if (!questions || questions.length === 0) {
@@ -316,29 +380,150 @@ export const CBTQuiz: React.FC<CBTQuizProps> = ({
     );
   }
 
+  if (!isStarted && !isSubmitted) {
+    return (
+      <div className="max-w-3xl mx-auto py-6 space-y-6">
+        <div className="p-8 rounded-3xl bg-[#0e1422] border border-white/10 shadow-2xl relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-80 h-80 bg-emerald-500/5 rounded-full blur-3xl -z-10" />
+
+          <div className="flex items-center gap-2.5 text-emerald-400 text-xs font-mono mb-3">
+            <Sparkles size={15} />
+            <span>Simulasi Ujian Computer Based Test (CBT) UTS</span>
+          </div>
+
+          <h2 className="text-2xl sm:text-3xl font-bold text-slate-100 tracking-tight">
+            {subjectName}
+          </h2>
+
+          <p className="text-xs sm:text-sm text-slate-400 mt-2 leading-relaxed max-w-xl">
+            Uji pemahaman dan kesiapan Anda menghadapi Ujian Tengah Semester (UTS) dengan bank soal terstandar kurikulum.
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 my-6">
+            <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+                <HelpCircle size={20} />
+              </div>
+              <div>
+                <div className="text-[11px] font-mono text-slate-400 uppercase">Jumlah Soal</div>
+                <div className="text-base font-bold text-slate-100">{questions.length} Butir</div>
+              </div>
+            </div>
+
+            <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
+                <Clock size={20} />
+              </div>
+              <div>
+                <div className="text-[11px] font-mono text-slate-400 uppercase">Batas Waktu</div>
+                <div className="text-base font-bold text-slate-100">60 Menit (1 Jam)</div>
+              </div>
+            </div>
+
+            <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400">
+                <Award size={20} />
+              </div>
+              <div>
+                <div className="text-[11px] font-mono text-slate-400 uppercase">Standar KKM</div>
+                <div className="text-base font-bold text-slate-100">Nilai ≥ 70</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="space-y-3 mb-6">
+            <div className="text-xs font-semibold text-slate-300">Pilih Mode Pengerjaan:</div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <button
+                type="button"
+                onClick={() => setMode('exam')}
+                className={`p-4 rounded-2xl border text-left transition-all ${
+                  mode === 'exam'
+                    ? 'bg-emerald-500/10 border-emerald-500/40 text-emerald-300 ring-1 ring-emerald-500/40'
+                    : 'bg-white/[0.02] border-white/10 text-slate-400 hover:border-white/20'
+                }`}
+              >
+                <div className="flex items-center justify-between mb-1">
+                  <span className="font-semibold text-xs text-slate-200">Mode Simulasi Ujian</span>
+                  {mode === 'exam' && <CheckCircle2 size={16} className="text-emerald-400" />}
+                </div>
+                <p className="text-[11px] text-slate-400 leading-relaxed">
+                  Timer 60 menit berjalan mundur. Pembahasan dan skor dianalisis setelah seluruh soal selesai dikirim.
+                </p>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setMode('practice')}
+                className={`p-4 rounded-2xl border text-left transition-all ${
+                  mode === 'practice'
+                    ? 'bg-emerald-500/10 border-emerald-500/40 text-emerald-300 ring-1 ring-emerald-500/40'
+                    : 'bg-white/[0.02] border-white/10 text-slate-400 hover:border-white/20'
+                }`}
+              >
+                <div className="flex items-center justify-between mb-1">
+                  <span className="font-semibold text-xs text-slate-200">Mode Latihan Mandiri</span>
+                  {mode === 'practice' && <CheckCircle2 size={16} className="text-emerald-400" />}
+                </div>
+                <p className="text-[11px] text-slate-400 leading-relaxed">
+                  Bebas waktu. Penjelasan konsep dan kebenaran jawaban langsung muncul seketika saat opsi dipilih.
+                </p>
+              </button>
+            </div>
+          </div>
+
+          <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/10 flex items-start gap-2.5 text-xs text-slate-400 mb-6">
+            <BookOpen size={16} className="text-emerald-400 shrink-0 mt-0.5" />
+            <span>
+              <strong>Fitur Bebas Tab:</strong> Anda dapat membuka tab <em>Ringkasan Materi</em> atau <em>Modul & Slide</em> kapan saja saat mengerjakan ujian untuk mencari referensi jawaban tanpa khawatir waktu atau progres kuis tereset.
+            </span>
+          </div>
+
+          <button
+            type="button"
+            onClick={() => setIsStarted(true)}
+            className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs sm:text-sm transition-all shadow-xl shadow-emerald-900/40 flex items-center justify-center gap-2.5"
+          >
+            <Play size={16} fill="currentColor" />
+            <span>Mulai Kuis Sekarang</span>
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  const switchMode = (newMode: 'exam' | 'practice') => {
+    if (newMode === mode) return;
+    if (Object.keys(selectedAnswers).length > 0) {
+      if (!confirm('Mengganti mode akan mengulang kuis dari awal. Lanjutkan?')) return;
+    }
+    setMode(newMode);
+    handleReset();
+  };
+
   return (
     <div className="max-w-4xl mx-auto space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-4 rounded-2xl bg-[#0e1422] border border-white/10 shadow-xl">
         <div className="flex items-center gap-2">
           <button
-            onClick={() => { setMode('exam'); handleReset(); }}
+            onClick={() => switchMode('exam')}
             className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
               mode === 'exam' 
                 ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' 
                 : 'text-slate-400 hover:text-slate-200'
             }`}
           >
-            Simulasi Ujian (Timer)
+            Simulasi Ujian (Timer 1 Jam)
           </button>
           <button
-            onClick={() => { setMode('practice'); handleReset(); }}
+            onClick={() => switchMode('practice')}
             className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
               mode === 'practice' 
                 ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' 
                 : 'text-slate-400 hover:text-slate-200'
             }`}
           >
-            Latihan Mandiri (Instant Rationale)
+            Latihan Mandiri
           </button>
         </div>
 

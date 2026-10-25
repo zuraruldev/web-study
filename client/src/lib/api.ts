@@ -50,7 +50,7 @@ export async function fetchExplanations(subject: string): Promise<Chapter[]> {
   return data.chapters || [];
 }
 
-export async function fetchQuiz(subject: string, mode: 'exam' | 'practice', limit = 15): Promise<Question[]> {
+export async function fetchQuiz(subject: string, mode: 'exam' | 'practice', limit = 40): Promise<Question[]> {
   const res = await fetch(`${API_BASE}/quiz/${subject}?mode=${mode}&limit=${limit}`);
   const data = await res.json();
   return data.questions || [];

@@ -9,7 +9,7 @@ const JWT_SECRET = process.env.JWT_SECRET || 'studyhub-super-secret-key-2026';
 const ADMIN_SECRET = process.env.ADMIN_SECRET_KEY || 'studyhub-admin-secret-2026';
 
 function adminAuth(req, res, next) {
-  // 1. Check Bearer JWT token for admin role
+  // 1. Check Bearer JWT token
   const authHeader = req.headers.authorization;
   if (authHeader && authHeader.startsWith('Bearer ')) {
     const token = authHeader.split(' ')[1];
@@ -19,23 +19,25 @@ function adminAuth(req, res, next) {
         req.user = decoded;
         return next();
       }
+      // If the authenticated user is a student, immediately reject
+      return res.status(403).json({ error: 'Akses ditolak: Akun Anda bukan administrator.' });
     } catch (e) {
-      // Fall through to key check
+      // Invalid/expired token
     }
   }
 
-  // 2. Check X-Admin-Key header
+  // 2. Check X-Admin-Key header for system/automation access
   const headerKey = req.headers['x-admin-key'];
-  if (headerKey && headerKey === ADMIN_SECRET) {
+  if (headerKey && ADMIN_SECRET && headerKey === ADMIN_SECRET) {
     return next();
   }
 
-  // 3. Allow query parameter only for GET /backup downloads
-  if (req.method === 'GET' && req.path === '/backup' && req.query.admin_key === ADMIN_SECRET) {
+  // 3. Allow query parameter only for GET /backup downloads with admin key
+  if (req.method === 'GET' && req.path === '/backup' && req.query.admin_key && req.query.admin_key === ADMIN_SECRET) {
     return next();
   }
 
-  return res.status(403).json({ error: 'Akses ditolak: Memerlukan akun administrator atau kunci admin yang valid.' });
+  return res.status(403).json({ error: 'Akses ditolak: Memerlukan login akun administrator.' });
 }
 
 router.use(adminAuth);

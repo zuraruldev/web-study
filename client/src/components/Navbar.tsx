@@ -125,13 +125,15 @@ export const Navbar: React.FC<NavbarProps> = ({
             </kbd>
           </button>
 
-          <Link
-            to="/admin"
-            className="p-1.5 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-white/[0.04] transition-colors"
-            title="Admin Manager"
-          >
-            <ShieldAlert size={16} />
-          </Link>
+          {user?.role === 'admin' && (
+            <Link
+              to="/admin"
+              className="p-1.5 rounded-lg text-emerald-400 hover:text-emerald-300 hover:bg-emerald-500/10 transition-colors"
+              title="Admin Manager"
+            >
+              <ShieldAlert size={16} />
+            </Link>
+          )}
 
           <button
             onClick={toggleTheme}

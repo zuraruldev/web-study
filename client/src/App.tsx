@@ -46,7 +46,7 @@ export function App() {
             <Route path="/" element={<HomePage subjects={subjects} />} />
             <Route path="/subject/:slug" element={<SubjectPage subjects={subjects} />} />
             <Route path="/dashboard" element={<DashboardPage user={user} onOpenAuth={() => setIsAuthOpen(true)} />} />
-            <Route path="/admin" element={<AdminPage subjects={subjects} />} />
+            <Route path="/admin" element={<AdminPage subjects={subjects} user={user} onOpenAuth={() => setIsAuthOpen(true)} />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </main>
