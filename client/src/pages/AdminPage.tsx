@@ -11,7 +11,8 @@ import {
   Users,
   HelpCircle,
   Search,
-  X
+  X,
+  LogOut
 } from 'lucide-react';
 import type { Subject } from '../types';
 import { getAuthToken } from '../lib/api';
@@ -21,7 +22,7 @@ interface AdminPageProps {
 }
 
 export const AdminPage: React.FC<AdminPageProps> = ({ subjects }) => {
-  const [adminKey, setAdminKey] = useState(localStorage.getItem('studyhub_admin_key') || 'studyhub-admin-secret-2026');
+  const [adminKey, setAdminKey] = useState(localStorage.getItem('studyhub_admin_key') || '');
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [activeTab, setActiveTab] = useState<'questions' | 'users'>('questions');
 
@@ -63,10 +64,17 @@ export const AdminPage: React.FC<AdminPageProps> = ({ subjects }) => {
   };
 
   useEffect(() => {
-    if (adminKey) {
+    const token = getAuthToken();
+    if (adminKey || token) {
       verifyKey();
     }
   }, [selectedSubject, activeTab]);
+
+  const handleAdminLogout = () => {
+    localStorage.removeItem('studyhub_admin_key');
+    setAdminKey('');
+    setIsAuthenticated(false);
+  };
 
   const verifyKey = async () => {
     setLoading(true);
@@ -288,7 +296,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({ subjects }) => {
             type="password"
             value={adminKey}
             onChange={e => setAdminKey(e.target.value)}
-            placeholder="studyhub-admin-secret-2026"
+            placeholder="Masukkan Admin Secret Key..."
             className="w-full bg-[#161f33] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-emerald-500/50"
           />
 
@@ -338,6 +346,14 @@ export const AdminPage: React.FC<AdminPageProps> = ({ subjects }) => {
             <Download size={13} />
             <span>Ekspor Backup JSON</span>
           </a>
+
+          <button
+            onClick={handleAdminLogout}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-rose-500/10 hover:bg-rose-500/20 text-rose-300 border border-rose-500/20 text-xs font-medium transition-colors"
+          >
+            <LogOut size={13} />
+            <span>Keluar Admin</span>
+          </button>
         </div>
       </div>
 

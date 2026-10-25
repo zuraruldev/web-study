@@ -60,8 +60,17 @@ export function App() {
             </div>
             <div className="flex items-center gap-4 font-mono text-[11px]">
               <span>TI Semester 1</span>
-              <span>•</span>
-              <span className="text-emerald-400">Arul (260102025)</span>
+              {user ? (
+                <>
+                  <span>•</span>
+                  <span className="text-emerald-400">{user.name} ({user.nim_or_email})</span>
+                </>
+              ) : (
+                <>
+                  <span>•</span>
+                  <span>Belum Masuk</span>
+                </>
+              )}
             </div>
           </div>
         </footer>
