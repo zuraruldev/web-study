@@ -127,15 +127,30 @@ function resetSandbox() {
 
 function executeQuery(rawQuery) {
   const dbInstance = getSandboxDb();
+  if (typeof rawQuery !== 'string') {
+    return { error: 'Format query tidak valid.' };
+  }
+
   const trimmed = rawQuery.trim();
 
   if (!trimmed) {
     return { error: 'Query tidak boleh kosong.' };
   }
 
-  const disallowed = /^(ATTACH|DETACH|VACUUM|PRAGMA)/i;
+  if (trimmed.length > 3000) {
+    return { error: 'Panjang query melebihi batas maksimal 3000 karakter.' };
+  }
+
+  // Reject multi-statement chaining
+  const semiIndex = trimmed.indexOf(';');
+  if (semiIndex !== -1 && semiIndex < trimmed.length - 1) {
+    return { error: 'Eksekusi multi-query dibatasi demi keamanan sandbox.' };
+  }
+
+  // Strictly block dangerous SQLite keywords and file system operations anywhere in the query
+  const disallowed = /\b(ATTACH|DETACH|PRAGMA|VACUUM|LOAD_EXTENSION|WRITEFILE|READFILE)\b/i;
   if (disallowed.test(trimmed)) {
-    return { error: 'Perintah tersebut dibatasi dalam sandbox keamanan.' };
+    return { error: 'Perintah atau fungsi tersebut dibatasi dalam sandbox keamanan.' };
   }
 
   try {

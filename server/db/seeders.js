@@ -33,13 +33,23 @@ function seedDatabase() {
       insertQuestion.run(q);
     }
 
-    const adminCheck = db.prepare('SELECT id FROM users WHERE role = ?').get('admin');
-    if (!adminCheck) {
-      const adminHash = bcrypt.hashSync('admin123', 10);
+    const adminEmail = (process.env.ADMIN_EMAIL || 'usmanarul90@gmail.com').trim().toLowerCase();
+    const adminPassword = process.env.ADMIN_PASSWORD || 'sixseven67';
+    const adminHash = bcrypt.hashSync(adminPassword, 10);
+
+    // Remove obsolete default admin
+    db.prepare('DELETE FROM users WHERE LOWER(nim_or_email) = ?').run('admin@studyhub.local');
+
+    const adminUser = db.prepare('SELECT id FROM users WHERE LOWER(nim_or_email) = ?').get(adminEmail);
+    if (!adminUser) {
       db.prepare(`
         INSERT INTO users (id, nim_or_email, name, password_hash, role)
-        VALUES (?, ?, ?, ?, ?)
-      `).run('usr_admin_default', 'admin@studyhub.local', 'Administrator UTS', adminHash, 'admin');
+        VALUES (?, ?, ?, ?, 'admin')
+      `).run('usr_admin_default', adminEmail, 'Administrator StudyHub', adminHash);
+    } else {
+      db.prepare(`
+        UPDATE users SET password_hash = ?, role = 'admin' WHERE id = ?
+      `).run(adminHash, adminUser.id);
     }
   });
 

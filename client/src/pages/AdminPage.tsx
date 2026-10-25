@@ -14,6 +14,7 @@ import {
   X
 } from 'lucide-react';
 import type { Subject } from '../types';
+import { getAuthToken } from '../lib/api';
 
 interface AdminPageProps {
   subjects: Subject[];
@@ -49,6 +50,18 @@ export const AdminPage: React.FC<AdminPageProps> = ({ subjects }) => {
   const [userRole, setUserRole] = useState<'student' | 'admin'>('student');
   const [userPassword, setUserPassword] = useState('');
 
+  const getAdminHeaders = (extra: Record<string, string> = {}) => {
+    const headers: Record<string, string> = { ...extra };
+    const token = getAuthToken();
+    if (token) {
+      headers['Authorization'] = `Bearer ${token}`;
+    }
+    if (adminKey) {
+      headers['x-admin-key'] = adminKey;
+    }
+    return headers;
+  };
+
   useEffect(() => {
     if (adminKey) {
       verifyKey();
@@ -59,7 +72,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({ subjects }) => {
     setLoading(true);
     try {
       const qRes = await fetch(`/api/admin/questions?subject=${selectedSubject}`, {
-        headers: { 'x-admin-key': adminKey }
+        headers: getAdminHeaders()
       });
 
       if (qRes.ok) {
@@ -70,7 +83,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({ subjects }) => {
 
         if (activeTab === 'users') {
           const uRes = await fetch('/api/admin/users', {
-            headers: { 'x-admin-key': adminKey }
+            headers: getAdminHeaders()
           });
           if (uRes.ok) {
             const uData = await uRes.json();
@@ -109,10 +122,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({ subjects }) => {
 
       const res = await fetch(endpoint, {
         method,
-        headers: {
-          'Content-Type': 'application/json',
-          'x-admin-key': adminKey
-        },
+        headers: getAdminHeaders({ 'Content-Type': 'application/json' }),
         body: JSON.stringify(payload)
       });
 
@@ -133,7 +143,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({ subjects }) => {
     try {
       const res = await fetch(`/api/admin/questions/${id}`, {
         method: 'DELETE',
-        headers: { 'x-admin-key': adminKey }
+        headers: getAdminHeaders()
       });
       if (res.ok) {
         setMessage({ text: 'Soal berhasil dihapus.', type: 'success' });
@@ -205,10 +215,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({ subjects }) => {
 
       const res = await fetch(endpoint, {
         method,
-        headers: {
-          'Content-Type': 'application/json',
-          'x-admin-key': adminKey
-        },
+        headers: getAdminHeaders({ 'Content-Type': 'application/json' }),
         body: JSON.stringify(payload)
       });
       const data = await res.json();
@@ -230,7 +237,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({ subjects }) => {
     try {
       const res = await fetch(`/api/admin/users/${id}`, {
         method: 'DELETE',
-        headers: { 'x-admin-key': adminKey }
+        headers: getAdminHeaders()
       });
       const data = await res.json();
       if (res.ok) {
@@ -250,7 +257,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({ subjects }) => {
     try {
       const res = await fetch('/api/admin/sync-materials', {
         method: 'POST',
-        headers: { 'x-admin-key': adminKey }
+        headers: getAdminHeaders()
       });
       const data = await res.json();
       if (res.ok) {

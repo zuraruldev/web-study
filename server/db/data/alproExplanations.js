@@ -35,7 +35,7 @@ Agar suatu prosedur dapat dikategorikan sebagai algoritma yang baik, prosedur te
 
 ## 3. Sintaks Dasar & Aturan Penulisan PHP
 
-Setiap skrip PHP harus diawali dengan tag pembuka \`<?php\` dan diakhiri dengan tag penutup \`?>\`.
+Setiap skrip PHP harus diawali dengan tag pembuka \`<?php\` dan diakhiri dengan tag penutup \`?>\`
 
 \`\`\`php
 <?php
@@ -52,11 +52,11 @@ print "<p>Teknik Informatika Politeknik Negeri Cilacap</p>";
 \`\`\`
 
 ### Aturan Penamaan Variabel & Identifier
-- Variabel selalu diawali dengan simbol dollar (\`$\`), contoh: \`$nim\`, \`$nama_mahasiswa\`.
-- Karakter pertama setelah tanda \`$\` harus berupa huruf (\`a-z\`, \`A-Z\`) atau garis bawah / underscore (\`_\`).
-- **Nama variabel TIDAK BOLEH diawali dengan angka** (contoh: \`$2semester\` adalah tidak valid dan memicu *Parse Error*).
-- Nama variabel bersifat **Case-Sensitive**: variabel \`$nilai\`, \`$Nilai\`, dan \`$NILAI\` dianggap sebagai tiga variabel yang sepenuhnya berbeda.
-- Setiap baris pernyataan instruksi (*statement*) wajib diakhiri dengan tanda titik koma (\`;\`).
+- Variabel selalu diawali dengan simbol dollar \`$\` contoh \`$nim\` atau \`$nama_mahasiswa\`
+- Karakter pertama setelah tanda \`$\` harus berupa huruf \`a-z\` \`A-Z\` atau garis bawah underscore \`_\`
+- **Nama variabel TIDAK BOLEH diawali dengan angka** contoh \`$2semester\` tidak valid dan memicu Parse Error
+- Nama variabel bersifat **Case-Sensitive**: variabel \`$nilai\`, \`$Nilai\`, dan \`$NILAI\` dianggap sebagai variabel berbeda
+- Setiap baris pernyataan instruksi wajib diakhiri tanda titik koma \`;\`
 
 ---
 
@@ -163,7 +163,7 @@ echo "</p>";
 \`\`\`
 
 ### Bedah Kode Baris demi Baris \`tipedata-bentukan.php\`
-- **Baris 3**: Deklarasi array homogen \`$larik\`. Indeks secara implisit dimulai dari nol (\`[0] => "satu"\`, \`[1] => "dua"\`, \`[2] => "tiga"\`, \`[3] => "empat"\`).
+- **Baris 3**: Deklarasi array homogen \`$larik\`. Indeks secara implisit dimulai dari nol: \`[0] => "satu"\` \`[1] => "dua"\` \`[2] => "tiga"\` \`[3] => "empat"\`
 - **Baris 6–8**: Deklarasi array heterogen \`$data\`. Elemen indeks 0 adalah integer \`5\`, indeks 1 adalah string \`"enam"\`, indeks 2 adalah float \`7.5\`, dan indeks 3 adalah string \`"delapan"\`.
 - **Baris 11–14 & 24–27**: Mengakses dan mencetak elemen individu array menggunakan notasi kurung siku \`$array[indeks]\`.
 - **Baris 16–19 & 29–32**: Tag HTML \`<pre>...</pre>\` (*preformatted text*) berfungsi mempertahankan spasi dan indentasi asli keluaran fungsi \`print_r()\`, sehingga visualisasi struktur pohon array di browser menjadi sangat rapi dan mudah dianalisis.
@@ -557,7 +557,7 @@ Perulangan (*looping / iterasi*) adalah struktur kendali program yang mengontrol
 Setiap struktur loop wajib memiliki tiga elemen:
 1. **Inisialisasi (*variable_inisiasi*)**: Nilai awal variabel pencacah (*counter*).
 2. **Kondisi Uji (*kondisi_perulangan*)**: Ekspresi boolean penentu apakah loop berlanjut atau berhenti.
-3. **Pembaruan Nilai (*peubah*)**: Operasi *increment* (\`$i++\`) atau *decrement* (\`$i--\`).
+3. **Pembaruan Nilai (*peubah*)**: Operasi *increment* \`$i++\` atau *decrement* \`$i--\`
 
 ---
 

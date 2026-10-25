@@ -116,7 +116,7 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({ user, onOpenAuth }
 
             <div className="p-5 rounded-2xl bg-[#0e1422] border border-white/10 shadow-xl space-y-2">
               <span className="text-xs font-mono text-slate-400">Rata-Rata Skor Akumulasi</span>
-              <div className={`text-3xl font-extrabold ${overallAvg >= 70 ? 'text-emerald-400' : 'text-amber-400'}`}>
+              <div className={`text-3xl font-extrabold ${overallAvg >= 75 ? 'text-emerald-400' : 'text-amber-400'}`}>
                 {overallAvg}%
               </div>
               <span className="text-[11px] text-slate-500">Standar KKM Kelulusan UTS adalah 70%</span>
@@ -127,7 +127,7 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({ user, onOpenAuth }
               <div className="text-3xl font-extrabold text-cyan-400">
                 {readySubjectsCount} / {subjectProgress.length}
               </div>
-              <span className="text-[11px] text-slate-500">Mata kuliah dengan rerata nilai ≥ 70%</span>
+              <span className="text-[11px] text-slate-500">Mata kuliah dengan rerata nilai ≥ 75%</span>
             </div>
           </div>
 

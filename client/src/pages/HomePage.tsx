@@ -26,16 +26,16 @@ export const HomePage: React.FC<HomePageProps> = ({ subjects }) => {
         <div className="max-w-3xl space-y-6">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
             <Sparkles size={13} />
-            <span>Portal Belajar UTS Terpadu — Jurusan Teknik Informatika</span>
+            <span>Portal Belajar UTS — Jurusan Teknik Informatika</span>
           </div>
 
           <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-100 leading-[1.15]">
-            Persiapan Ujian Tengah Semester & Latihan CBT Interaktif.
+            Persiapan Ujian Tengah Semester & Latihan Soal.
           </h1>
 
           <p className="text-sm sm:text-base text-slate-300 leading-relaxed max-w-2xl">
-            Akses modul perkuliahan terstandarisasi, ringkasan teori mendalam, simulasi kuis CBT berwaktu,
-            serta sandbox praktikum mandiri tanpa ketergantungan cloud eksternal.
+            Akses modul perkuliahan terstandarisasi, ringkasan teori mendalam, simulasi kuis berwaktu,
+            serta sandbox praktikum mandiri.
           </p>
 
           <div className="flex flex-wrap items-center gap-4 pt-2">
@@ -82,7 +82,7 @@ export const HomePage: React.FC<HomePageProps> = ({ subjects }) => {
             </p>
           </div>
           <span className="text-xs font-mono text-slate-500">
-            Fokus Utama Saat Ini: <span className="text-emerald-400">Algoritma & Pemrograman</span>
+            Hi! <span className="text-emerald-400">Selamat Mengerjakan:3</span>
           </span>
         </div>
 
@@ -152,12 +152,11 @@ export const HomePage: React.FC<HomePageProps> = ({ subjects }) => {
         <div className="space-y-3 max-w-xl">
           <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
             <Terminal size={12} />
-            <span>Materi Unggulan Siap Uji</span>
+            <span>Note:</span>
           </div>
-          <h3 className="text-2xl font-bold text-slate-100">Algoritma dan Pemrograman (Alpro)</h3>
+          <h3 className="text-2xl font-bold text-slate-100">These learning materials are based on pdf</h3>
           <p className="text-xs text-slate-300 leading-relaxed">
-            Dilengkapi 7 modul praktikum resmi Politeknik Negeri Cilacap, pembahasan komprehensif konsep
-            fungsi vs prosedur, ruang lingkup variabel, alur sekuensial & seleksi, serta 15 butir simulasi soal CBT UTS.
+            Jikalau ada kekurangan materi/kurang tepat atau ada saran bisa hubungi 081770225738
           </p>
         </div>
 
@@ -174,7 +173,7 @@ export const HomePage: React.FC<HomePageProps> = ({ subjects }) => {
             className="flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-medium text-xs transition-all shadow-lg shadow-emerald-900/30"
           >
             <Terminal size={14} />
-            <span>Mulai Tes CBT</span>
+            <span>Mulai Tes Quiz</span>
           </Link>
         </div>
       </section>

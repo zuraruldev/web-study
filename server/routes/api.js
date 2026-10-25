@@ -2,8 +2,25 @@ const express = require('express');
 const router = express.Router();
 const path = require('path');
 const fs = require('fs');
+const rateLimit = require('express-rate-limit');
 const db = require('../db/database');
 const { executeQuery, resetSandbox, getSchemaMetadata } = require('../db/restoranSandbox');
+
+const phpLimiter = rateLimit({
+  windowMs: 60 * 1000,
+  max: 20,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { success: false, error: 'Terlalu banyak permintaan eksekusi kode. Silakan tunggu 1 menit.' }
+});
+
+const sqlLimiter = rateLimit({
+  windowMs: 60 * 1000,
+  max: 60,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { error: 'Terlalu banyak query SQL. Silakan tunggu sebentar.' }
+});
 
 router.get('/subjects', (req, res) => {
   const subjects = db.prepare('SELECT * FROM subjects ORDER BY order_index ASC').all();
@@ -176,7 +193,7 @@ router.get('/sql/schema', (req, res) => {
   res.json({ schema: metadata });
 });
 
-router.post('/sql/execute', (req, res) => {
+router.post('/sql/execute', sqlLimiter, (req, res) => {
   const { query } = req.body;
   if (!query) {
     return res.status(400).json({ error: 'Query tidak boleh kosong.' });
@@ -186,39 +203,72 @@ router.post('/sql/execute', (req, res) => {
   res.json(result);
 });
 
-router.post('/sql/reset', (req, res) => {
+router.post('/sql/reset', sqlLimiter, (req, res) => {
   resetSandbox();
   res.json({ success: true, message: 'Database Restoran sandbox berhasil direset ke status awal.' });
 });
 
-router.post('/php/execute', (req, res) => {
+router.post('/php/execute', phpLimiter, (req, res) => {
   const { code } = req.body;
   if (!code || typeof code !== 'string') {
-    return res.status(400).json({ error: 'Kode PHP tidak boleh kosong.' });
+    return res.status(400).json({ success: false, error: 'Kode PHP tidak boleh kosong.' });
   }
 
-  // Security check: block dangerous system execution functions
-  const blacklisted = /\b(shell_exec|exec|system|passthru|proc_open|popen|pcntl_exec)\b/i;
-  if (blacklisted.test(code)) {
+  if (code.length > 12000) {
+    return res.status(400).json({ success: false, error: 'Kode PHP melebihi batas maksimal 12.000 karakter.' });
+  }
+
+  // Reject shell execution backticks
+  if (code.includes('`')) {
     return res.status(403).json({
       success: false,
-      error: 'Peringatan Keamanan: Fungsi eksekusi sistem operasi dibatasi dalam lingkungan sandbox ini.'
+      error: 'Peringatan Keamanan: Karakter backtick (eksekusi shell) dibatasi dalam sandbox.'
     });
   }
 
+  // Security check: block dangerous system execution and file/network access functions
+  const dangerousPatterns = /\b(shell_exec|exec|system|passthru|proc_open|popen|pcntl_exec|dl|eval|assert|include|require|include_once|require_once|file_put_contents|fwrite|fputs|unlink|rmdir|mkdir|rename|copy|chmod|chown|touch|symlink|link|curl_exec|curl_multi_exec|socket_create|socket_connect|fsockopen|pfsockopen|stream_socket_client|stream_socket_server|putenv|getenv|ini_set|mail|mb_send_mail|phpinfo|readfile|file_get_contents|fopen)\b/i;
+  if (dangerousPatterns.test(code)) {
+    return res.status(403).json({
+      success: false,
+      error: 'Peringatan Keamanan: Fungsi akses sistem, file, atau jaringan dibatasi dalam lingkungan sandbox ini.'
+    });
+  }
+
+  const sandboxDir = path.join('/tmp', 'studyhub-php-sandbox');
+  try {
+    if (!fs.existsSync(sandboxDir)) {
+      fs.mkdirSync(sandboxDir, { recursive: true, mode: 0o700 });
+    }
+  } catch (err) {
+    return res.status(500).json({ success: false, error: 'Gagal menyiapkan direktori sandbox.' });
+  }
+
   const tmpId = `php_${Date.now()}_${Math.random().toString(36).substring(2, 7)}`;
-  const tmpFilePath = path.join('/tmp', `${tmpId}.php`);
+  const tmpFilePath = path.join(sandboxDir, `${tmpId}.php`);
 
   try {
-    fs.writeFileSync(tmpFilePath, code, 'utf-8');
+    fs.writeFileSync(tmpFilePath, code, { encoding: 'utf-8', mode: 0o600 });
   } catch (err) {
-    return res.status(500).json({ error: 'Gagal membuat berkas sementara.' });
+    return res.status(500).json({ success: false, error: 'Gagal membuat berkas sementara.' });
   }
 
   const startTime = Date.now();
   const { exec } = require('child_process');
 
-  exec(`php -d display_errors=1 -d max_execution_time=4 "${tmpFilePath}"`, { timeout: 4500 }, (error, stdout, stderr) => {
+  const disableFunctions = [
+    'exec', 'passthru', 'shell_exec', 'system', 'proc_open', 'popen', 'pcntl_exec',
+    'curl_exec', 'curl_multi_exec', 'parse_ini_file', 'show_source', 'file_get_contents',
+    'file_put_contents', 'fopen', 'fwrite', 'fread', 'unlink', 'copy', 'rename',
+    'mkdir', 'rmdir', 'file', 'readfile', 'scandir', 'glob', 'chown', 'chmod',
+    'touch', 'link', 'symlink', 'putenv', 'getenv', 'phpinfo', 'dl', 'mail',
+    'mb_send_mail', 'socket_create', 'socket_connect', 'fsockopen', 'pfsockopen',
+    'stream_socket_client', 'stream_socket_server', 'assert'
+  ].join(',');
+
+  const phpCmd = `php -d display_errors=1 -d max_execution_time=2 -d memory_limit=16M -d allow_url_fopen=0 -d allow_url_include=0 -d open_basedir="${sandboxDir}" -d disable_functions="${disableFunctions}" "${tmpFilePath}"`;
+
+  exec(phpCmd, { timeout: 3000 }, (error, stdout, stderr) => {
     const executionTimeMs = Date.now() - startTime;
 
     // Clean up temporary script
@@ -231,7 +281,15 @@ router.post('/php/execute', (req, res) => {
     if (error && error.killed) {
       return res.json({
         success: false,
-        error: 'Eksekusi dibatalkan: Waktu eksekusi melebihi batas maksimal 4 detik (kemungkinan Infinite Loop).',
+        error: 'Eksekusi dibatalkan: Waktu eksekusi melebihi batas maksimal 2 detik (kemungkinan Infinite Loop).',
+        executionTimeMs
+      });
+    }
+
+    if (error && error.code === 127) {
+      return res.json({
+        success: false,
+        error: 'Runtime PHP tidak terpasang di server.',
         executionTimeMs
       });
     }

@@ -163,7 +163,7 @@ export const SubjectPage: React.FC<SubjectPageProps> = ({ subjects }) => {
             }`}
           >
             <Code2 size={15} />
-            <span>4. Lab PHP & HTML (W3Schools Style)</span>
+            <span>4. PHP Training</span>
           </button>
         )}
 

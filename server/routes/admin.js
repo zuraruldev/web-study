@@ -1,17 +1,41 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 const db = require('../db/database');
 const syncMaterials = require('../../scripts/sync-materials');
 
+const JWT_SECRET = process.env.JWT_SECRET || 'studyhub-super-secret-key-2026';
 const ADMIN_SECRET = process.env.ADMIN_SECRET_KEY || 'studyhub-admin-secret-2026';
 
 function adminAuth(req, res, next) {
-  const secret = req.headers['x-admin-key'] || req.query.admin_key;
-  if (secret === ADMIN_SECRET) {
+  // 1. Check Bearer JWT token for admin role
+  const authHeader = req.headers.authorization;
+  if (authHeader && authHeader.startsWith('Bearer ')) {
+    const token = authHeader.split(' ')[1];
+    try {
+      const decoded = jwt.verify(token, JWT_SECRET);
+      if (decoded && decoded.role === 'admin') {
+        req.user = decoded;
+        return next();
+      }
+    } catch (e) {
+      // Fall through to key check
+    }
+  }
+
+  // 2. Check X-Admin-Key header
+  const headerKey = req.headers['x-admin-key'];
+  if (headerKey && headerKey === ADMIN_SECRET) {
     return next();
   }
-  return res.status(403).json({ error: 'Akses ditolak: Admin secret key tidak valid.' });
+
+  // 3. Allow query parameter only for GET /backup downloads
+  if (req.method === 'GET' && req.path === '/backup' && req.query.admin_key === ADMIN_SECRET) {
+    return next();
+  }
+
+  return res.status(403).json({ error: 'Akses ditolak: Memerlukan akun administrator atau kunci admin yang valid.' });
 }
 
 router.use(adminAuth);

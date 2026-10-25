@@ -134,6 +134,23 @@ export const ReaderView: React.FC<ReaderViewProps> = ({
                   {children}
                 </blockquote>
               ),
+              img: ({ src, alt }: any) => (
+                <figure className="my-6">
+                  <div className="overflow-hidden rounded-xl border border-white/10 bg-[#070a10] shadow-xl p-2 flex items-center justify-center">
+                    <img
+                      src={src}
+                      alt={alt || 'Ilustrasi Materi'}
+                      className="max-h-[500px] w-auto max-w-full rounded-lg object-contain"
+                      loading="lazy"
+                    />
+                  </div>
+                  {alt && (
+                    <figcaption className="mt-2 text-center text-xs font-mono text-slate-400">
+                      ▲ {alt}
+                    </figcaption>
+                  )}
+                </figure>
+              ),
               table: ({ children }) => (
                 <div className="my-6 overflow-x-auto rounded-xl border border-white/10 shadow-lg">
                   <table className="w-full text-left text-xs border-collapse">
@@ -166,14 +183,16 @@ export const ReaderView: React.FC<ReaderViewProps> = ({
                   {children}
                 </td>
               ),
-              code: ({ inline, className, children, ...props }: any) => {
+              pre: ({ children }: any) => <>{children}</>,
+              code: ({ className, children, ...props }: any) => {
                 const codeString = String(children).replace(/\n$/, '');
                 const langMatch = /language-(\w+)/.exec(className || '');
                 const lang = langMatch ? langMatch[1] : '';
+                const isInline = !langMatch && !String(children).includes('\n');
 
-                if (inline) {
+                if (isInline) {
                   return (
-                    <code className="px-1.5 py-0.5 rounded bg-white/[0.08] text-emerald-300 font-mono text-[11px] border border-white/10" {...props}>
+                    <code className="px-1.5 py-0.5 mx-0.5 rounded bg-emerald-500/10 text-emerald-300 font-mono text-[11px] border border-emerald-500/20" {...props}>
                       {children}
                     </code>
                   );
