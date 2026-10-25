@@ -505,6 +505,86 @@ const matdasQuestions = [
     correct_index: 0,
     explanation: 'Faktorkan selisih kuadrat: (x - 4)(x + 4) ≤ 0. Pembuat nol adalah x = -4 dan x = 4. Uji titik x = 0 (antara -4 dan 4): 0² - 16 = -16 (negatif). Karena diminta ≤ 0, interval yang memenuhi adalah daerah tertutup antara kedua akar: -4 ≤ x ≤ 4.',
     points: 10
+  },
+  {
+    id: 'q_matdas_31',
+    subject_slug: 'matdas',
+    subtopic: 'Penyederhanaan Bentuk Akar',
+    question_text: 'Bentuk paling sederhana dari √72 adalah...',
+    code_snippet: null,
+    options_json: JSON.stringify([
+      '6√2',
+      '2√6',
+      '3√8',
+      '8√3'
+    ]),
+    correct_index: 0,
+    explanation: 'Pecah 72 menjadi faktor kuadrat sempurna terbesar: 72 = 36 × 2. Maka √72 = √36 × √2 = 6√2. Pilihan 3√8 masih dapat disederhanakan karena √8 = 2√2, sehingga 3√8 = 6√2; bentuk paling sederhana adalah 6√2.',
+    points: 10
+  },
+  {
+    id: 'q_matdas_32',
+    subject_slug: 'matdas',
+    subtopic: 'Nilai Mutlak pada Akar Kuadrat',
+    question_text: 'Nilai dari √((-7)²) adalah...',
+    code_snippet: null,
+    options_json: JSON.stringify([
+      '7',
+      '-7',
+      '±7',
+      '49'
+    ]),
+    correct_index: 0,
+    explanation: '(-7)² = 49, sehingga √((-7)²) = √49 = 7. Secara umum √(x²) = |x|, bukan selalu x. Karena itu hasilnya 7, bukan -7.',
+    points: 10
+  },
+  {
+    id: 'q_matdas_33',
+    subject_slug: 'matdas',
+    subtopic: 'Penjumlahan dan Pengurangan Akar',
+    question_text: 'Hasil dari 3√50 - 2√8 + √18 adalah...',
+    code_snippet: null,
+    options_json: JSON.stringify([
+      '14√2',
+      '10√2',
+      '12√2',
+      '6√2'
+    ]),
+    correct_index: 0,
+    explanation: 'Sederhanakan setiap akar: √50 = 5√2, √8 = 2√2, dan √18 = 3√2. Maka 3(5√2) - 2(2√2) + 3√2 = 15√2 - 4√2 + 3√2 = (15 - 4 + 3)√2 = 14√2.',
+    points: 10
+  },
+  {
+    id: 'q_matdas_34',
+    subject_slug: 'matdas',
+    subtopic: 'Perkalian Bentuk Akar',
+    question_text: 'Hasil dari 2√3 × 4√6 adalah...',
+    code_snippet: null,
+    options_json: JSON.stringify([
+      '24√2',
+      '8√18',
+      '8√3',
+      '12√2'
+    ]),
+    correct_index: 0,
+    explanation: 'Kalikan koefisien dan radikan secara terpisah: 2√3 × 4√6 = (2 × 4)(√3 × √6) = 8√18. Karena √18 = 3√2, hasilnya 8 × 3√2 = 24√2. Pilihan 8√18 belum disederhanakan.',
+    points: 10
+  },
+  {
+    id: 'q_matdas_35',
+    subject_slug: 'matdas',
+    subtopic: 'Merasionalkan Penyebut Bentuk Sekawan',
+    question_text: 'Bentuk rasional dari 2/(2 + √3) adalah...',
+    code_snippet: null,
+    options_json: JSON.stringify([
+      '4 - 2√3',
+      '4 + 2√3',
+      '2 - √3',
+      '2 + √3'
+    ]),
+    correct_index: 0,
+    explanation: 'Kalikan pembilang dan penyebut dengan sekawan (2 - √3): 2/(2 + √3) × (2 - √3)/(2 - √3) = 2(2 - √3)/(4 - 3) = 2(2 - √3) = 4 - 2√3.',
+    points: 10
   }
 ];
 

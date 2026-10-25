@@ -198,11 +198,343 @@ Kalikan dengan **bentuk sekawan (konjugat)** memanfaatkan identitas selisih kuad
    \`\`\``
   },
   {
-    id: 'exp_matdas_bab3',
+    id: 'exp_matdas_bentuk_akar',
     subject_slug: 'matdas',
     chapter_order: 3,
-    topic_title: 'Bab 3: Ekspresi Aljabar: Komponen, Operasi Suku Sejenis, Sifat Distributif, & Pemfaktoran Aljabar',
-    content_markdown: `# Bab 3: Ekspresi Aljabar & Operasi Polinomial
+    topic_title: 'Bab 3: Bentuk Akar — Definisi, Akar Pangkat n, Sifat, Operasi, dan Merasionalkan Penyebut',
+    content_markdown: `# Bab 3: Bentuk Akar — Definisi, Akar Pangkat n, Sifat, Operasi, dan Merasionalkan Penyebut
+
+> **Sumber materi:** PDF Bentuk Akar 2026 TI — Program Studi Teknik Informatika.
+>
+> **Posisi materi:** pendalaman Bab 2. Bab 2 membahas eksponen dan dasar bentuk akar; bab ini memperluas definisi akar pangkat n, nilai mutlak, operasi, dan merasionalkan penyebut.
+
+## 1. Definisi Akar Kuadrat
+
+Akar kuadrat dari bilangan nonnegatif **a** adalah bilangan nonnegatif **b** yang memenuhi:
+
+\`\`\`text
+√a = b  ⇔  b² = a  dan  b ≥ 0
+\`\`\`
+
+Syarat **a ≥ 0** diperlukan agar akar kuadrat terdefinisi pada bilangan real.
+
+Contoh:
+
+- \`√25 = 5\` karena \`5² = 25\` dan \`5 ≥ 0\`.
+- \`√0 = 0\` karena \`0² = 0\`.
+- \`√49 = 7\` karena \`7² = 49\`.
+- \`√(-9)\` tidak bernilai real karena tidak ada bilangan real yang kuadratnya \`-9\`.
+
+**Penting:** notasi \`√a\` menyatakan **akar utama nonnegatif**. Jadi \`√25 = 5\`, bukan \`±5\`. Persamaan \`x² = 25\` memang memiliki dua solusi, yaitu \`x = 5\` atau \`x = -5\`, tetapi notasi \`√25\` hanya mengambil nilai nonnegatif.
+
+---
+
+## 2. Akar Pangkat n
+
+Akar pangkat n dari **a** adalah bilangan **b** yang memenuhi:
+
+\`\`\`text
+ⁿ√a = b  ⇔  bⁿ = a,   n bilangan bulat dan n ≥ 2
+\`\`\`
+
+Aturan tanda dan domain:
+
+| Jenis akar | Syarat | Contoh |
+| :--- | :--- | :--- |
+| n genap | \`a ≥ 0\` dan akar utama \`b ≥ 0\` | \`⁴√16 = 2\` karena \`2⁴ = 16\` |
+| n ganjil | \`a\` dan \`b\` boleh negatif | \`∛(-8) = -2\` karena \`(-2)³ = -8\` |
+
+Mengapa berbeda?
+
+- Pada akar genap, hasil negatif akan menjadi positif setelah dipangkatkan genap, sehingga akar utama dipilih nonnegatif.
+- Pada akar ganjil, tanda negatif dipertahankan karena pangkat ganjil dari bilangan negatif tetap negatif.
+
+Contoh yang sering keliru:
+
+- \`⁴√16 = 2\`, bukan \`-2\`, karena akar utama nonnegatif.
+- \`∛(-27) = -3\`, karena \`(-3)³ = -27\`.
+- \`⁴√(-16)\` tidak bernilai real, karena akar genap dari bilangan negatif.
+
+---
+
+## 3. Pangkat Rasional dan Hubungannya dengan Akar
+
+Pangkat pecahan didefinisikan sebagai:
+
+\`\`\`text
+a^(m/n) = (ⁿ√a)ᵐ = ⁿ√(aᵐ)
+\`\`\`
+
+Dengan:
+
+- **n** = penyebut pecahan = indeks akar;
+- **m** = pembilang pecahan = pangkat;
+- \`n ≥ 2\`;
+- pecahan \`m/n\` sebaiknya sudah disederhanakan;
+- jika **n genap**, maka \`a ≥ 0\`;
+- jika **m negatif**, maka \`a ≠ 0\`.
+
+Contoh:
+
+\`\`\`text
+27^(2/3) = (∛27)² = 3² = 9
+16^(3/4) = (⁴√16)³ = 2³ = 8
+x^(1/2) = √x
+\`\`\`
+
+**Urutan pengerjaan:** kerjakan akar terlebih dahulu, lalu pangkatkan. Pada \`27^(2/3)\`, hitung \`∛27 = 3\`, kemudian \`3² = 9\`.
+
+---
+
+## 4. Sifat-Sifat Penting Bentuk Akar
+
+### 4.1 Sifat Perkalian
+
+Untuk \`a ≥ 0\` dan \`b ≥ 0\`:
+
+\`\`\`text
+√(a × b) = √a × √b
+\`\`\`
+
+Contoh:
+
+\`\`\`text
+√(9 × 4) = √9 × √4 = 3 × 2 = 6
+\`\`\`
+
+Sifat ini dipakai untuk menyederhanakan akar dengan memecah radikan menjadi faktor kuadrat sempurna.
+
+### 4.2 Sifat Pembagian
+
+Untuk \`a ≥ 0\` dan \`b > 0\`:
+
+\`\`\`text
+√(a/b) = √a / √b
+\`\`\`
+
+Contoh:
+
+\`\`\`text
+√(36/4) = √36 / √4 = 6/2 = 3
+\`\`\`
+
+### 4.3 Akar Kuadrat dari Kuadrat: Nilai Mutlak
+
+Untuk setiap bilangan real \`x\`:
+
+\`\`\`text
+√(x²) = |x|
+\`\`\`
+
+Bukan selalu \`x\`, karena akar kuadrat utama selalu nonnegatif.
+
+Contoh:
+
+\`\`\`text
+√((-7)²) = √49 = |-7| = 7
+\`\`\`
+
+Jika \`x = -7\`, maka \`x\` bernilai negatif, tetapi \`√(x²)\` tetap \`7\`. Karena itu, hasilnya adalah \`|x|\`.
+
+### 4.4 Sifat yang TIDAK Berlaku
+
+Kesalahan yang sering terjadi:
+
+\`\`\`text
+√(a + b) ≠ √a + √b
+√(a - b) ≠ √a - √b
+\`\`\`
+
+Contoh penyangkal:
+
+\`\`\`text
+√(9 + 16) = √25 = 5
+√9 + √16 = 3 + 4 = 7
+\`\`\`
+
+Jadi, \`5 ≠ 7\`. Sifat distributif tidak berlaku untuk penjumlahan di dalam akar.
+
+---
+
+## 5. Menyederhanakan Bentuk Akar
+
+Langkah umum:
+
+1. Cari faktor terbesar dari radikan yang merupakan kuadrat sempurna.
+2. Pecah akar menggunakan sifat perkalian.
+3. Hitung akar dari faktor kuadrat sempurna.
+4. Tulis hasil dalam bentuk paling sederhana.
+
+Contoh: sederhanakan \`√72\`.
+
+\`\`\`text
+√72 = √(36 × 2)
+    = √36 × √2
+    = 6√2
+\`\`\`
+
+Faktor kuadrat sempurna yang dipilih adalah \`36\`, karena \`36 = 6²\` dan \`36 × 2 = 72\`.
+
+Contoh lain:
+
+\`\`\`text
+√50 = √(25 × 2) = 5√2
+√18 = √(9 × 2) = 3√2
+√48 = √(16 × 3) = 4√3
+√27 = √(9 × 3) = 3√3
+√75 = √(25 × 3) = 5√3
+\`\`\`
+
+**Tips:** pilih faktor kuadrat sempurna terbesar agar penyederhanaan selesai dalam satu langkah.
+
+---
+
+## 6. Penjumlahan dan Pengurangan Bentuk Akar
+
+Hanya **akar sejenis** yang boleh dijumlahkan atau dikurangkan. Akar sejenis memiliki indeks dan radikan yang sama.
+
+\`\`\`text
+p√a + q√a = (p + q)√a
+p√a - q√a = (p - q)√a
+\`\`\`
+
+Contoh 1:
+
+\`\`\`text
+3√50 - 2√8 + √18
+= 3(5√2) - 2(2√2) + 3√2
+= 15√2 - 4√2 + 3√2
+= (15 - 4 + 3)√2
+= 14√2
+\`\`\`
+
+Contoh 2:
+
+\`\`\`text
+3√48 - 2√27 + √75
+= 3(4√3) - 2(3√3) + 5√3
+= 12√3 - 6√3 + 5√3
+= (12 - 6 + 5)√3
+= 11√3
+\`\`\`
+
+**Langkah wajib:** sederhanakan setiap akar terlebih dahulu, baru gabungkan koefisien akar sejenis. Tidak boleh menjumlahkan \`√2\` dengan \`√3\` karena radikannya berbeda.
+
+---
+
+## 7. Perkalian dan Pembagian Bentuk Akar
+
+### 7.1 Perkalian
+
+Gunakan sifat \`√a × √b = √(ab)\`, lalu sederhanakan.
+
+Contoh:
+
+\`\`\`text
+2√3 × 4√6
+= (2 × 4) × (√3 × √6)
+= 8√18
+= 8 × 3√2
+= 24√2
+\`\`\`
+
+Koefisien dikalikan dengan koefisien, radikan dikalikan dengan radikan.
+
+### 7.2 Pembagian
+
+Gunakan sifat \`√a / √b = √(a/b)\`, dengan \`b > 0\`.
+
+Contoh:
+
+\`\`\`text
+6√8 / (2√2)
+= (6/2) × √(8/2)
+= 3 × √4
+= 3 × 2
+= 6
+\`\`\`
+
+---
+
+## 8. Merasionalkan Penyebut
+
+Penyebut pecahan tidak boleh dibiarkan dalam bentuk akar. Proses menghilangkan akar pada penyebut disebut **merasionalkan penyebut**.
+
+### 8.1 Penyebut Tunggal
+
+Untuk bentuk \`a / √b\`, kalikan pembilang dan penyebut dengan \`√b / √b\`.
+
+Contoh:
+
+\`\`\`text
+3/√5
+= (3/√5) × (√5/√5)
+= 3√5 / 5
+\`\`\`
+
+Nilai pecahan tidak berubah karena \`√5/√5 = 1\`.
+
+### 8.2 Penyebut Dua Suku: Bentuk Sekawan
+
+Untuk penyebut \`(a + √b)\`, gunakan sekawan \`(a - √b)\`. Untuk penyebut \`(a - √b)\`, gunakan sekawan \`(a + √b)\`.
+
+Hasil perkalian sekawan memanfaatkan selisih kuadrat:
+
+\`\`\`text
+(a + √b)(a - √b) = a² - b
+\`\`\`
+
+Contoh: rasionalkan \`2 / (2 + √3)\`.
+
+\`\`\`text
+2/(2 + √3)
+= 2/(2 + √3) × (2 - √3)/(2 - √3)
+= 2(2 - √3) / (2² - (√3)²)
+= 2(2 - √3) / (4 - 3)
+= 2(2 - √3) / 1
+= 4 - 2√3
+\`\`\`
+
+**Syarat:** penyebut awal tidak boleh nol.
+
+---
+
+## 9. Kesalahan Umum yang Harus Dihindari
+
+1. Menulis \`√(a + b) = √a + √b\`. Sifat ini tidak berlaku.
+2. Menulis \`√(x²) = x\` untuk semua \`x\`. Yang benar adalah \`|x|\`.
+3. Menganggap \`√25 = ±5\`. Notasi akar utama hanya memberi nilai nonnegatif.
+4. Menghitung \`⁴√16 = -2\`. Akar genap utama harus nonnegatif.
+5. Menjumlahkan \`√2 + √3\` menjadi \`√5\`. Akar berbeda radikan tidak dapat digabung.
+6. Lupa mengalikan pembilang saat merasionalkan penyebut.
+7. Tidak menyederhanakan radikan terlebih dahulu sebelum menjumlahkan.
+8. Mengabaikan syarat domain pada akar genap dan pangkat rasional.
+
+---
+
+## 10. Ringkasan Cepat
+
+| Konsep | Rumus / Aturan |
+| :--- | :--- |
+| Definisi akar kuadrat | \`√a = b ⇔ b² = a\` dan \`b ≥ 0\` |
+| Akar pangkat n | \`ⁿ√a = b ⇔ bⁿ = a\` |
+| Akar genap | \`a ≥ 0\`, akar utama nonnegatif |
+| Akar ganjil | boleh negatif |
+| Pangkat rasional | \`a^(m/n) = (ⁿ√a)ᵐ\` |
+| Perkalian akar | \`√a × √b = √(ab)\` |
+| Pembagian akar | \`√a / √b = √(a/b)\` |
+| Akar kuadrat dari kuadrat | \`√(x²) = |x|\` |
+| Akar sejenis | \`p√a ± q√a = (p ± q)√a\` |
+| Sekawan | \`(a + √b)(a - √b) = a² - b\` |
+
+> **Kunci ujian:** sederhanakan akar terlebih dahulu, gabungkan hanya akar sejenis, dan gunakan sekawan saat penyebut berbentuk dua suku. Periksa kembali tanda dan syarat domain sebelum menuliskan hasil akhir.`
+  },
+  {
+    id: 'exp_matdas_bab3',
+    subject_slug: 'matdas',
+    chapter_order: 4,
+    topic_title: 'Bab 4: Ekspresi Aljabar: Komponen, Operasi Suku Sejenis, Sifat Distributif, & Pemfaktoran Aljabar',
+    content_markdown: `# Bab 4: Ekspresi Aljabar & Operasi Polinomial
 
 ## 1. Anatomi & Komponen Ekspresi Aljabar
 
@@ -286,9 +618,9 @@ a² - b² = (a - b)(a + b)
   {
     id: 'exp_matdas_bab4',
     subject_slug: 'matdas',
-    chapter_order: 4,
-    topic_title: 'Bab 4: Persamaan Linear Satu Variabel (PLSV) & Dua Variabel (SPLDV - Substitusi, Eliminasi, Campuran)',
-    content_markdown: `# Bab 4: Persamaan Linear: PLSV & SPLDV
+    chapter_order: 5,
+    topic_title: 'Bab 5: Persamaan Linear Satu Variabel (PLSV) & Dua Variabel (SPLDV - Substitusi, Eliminasi, Campuran)',
+    content_markdown: `# Bab 5: Persamaan Linear: PLSV & SPLDV
 
 ## 1. Persamaan Linear Satu Variabel (PLSV)
 
@@ -384,9 +716,9 @@ Tentukan nilai \`(x, y)\` yang memenuhi:
   {
     id: 'exp_matdas_bab5',
     subject_slug: 'matdas',
-    chapter_order: 5,
-    topic_title: 'Bab 5: Sistem Persamaan Linear Tiga Variabel (SPLTV) - Eliminasi Gauss & Pemodelan Soal Cerita',
-    content_markdown: `# Bab 5: Sistem Persamaan Linear Tiga Variabel (SPLTV)
+    chapter_order: 6,
+    topic_title: 'Bab 6: Sistem Persamaan Linear Tiga Variabel (SPLTV) - Eliminasi Gauss & Pemodelan Soal Cerita',
+    content_markdown: `# Bab 6: Sistem Persamaan Linear Tiga Variabel (SPLTV)
 
 ## 1. Konsep & Bentuk Umum SPLTV
 
@@ -494,9 +826,9 @@ Himpunan Penyelesaian: **(x, y, z) = (18, 12, 6)**.
   {
     id: 'exp_matdas_bab6',
     subject_slug: 'matdas',
-    chapter_order: 6,
-    topic_title: 'Bab 6: Faktorisasi & Persamaan Kuadrat (Kasus a = 1, a ≠ 1, Selisih Dua Kuadrat, & Rumus ABC)',
-    content_markdown: `# Bab 6: Faktorisasi & Penyelesaian Persamaan Kuadrat
+    chapter_order: 7,
+    topic_title: 'Bab 7: Faktorisasi & Persamaan Kuadrat (Kasus a = 1, a ≠ 1, Selisih Dua Kuadrat, & Rumus ABC)',
+    content_markdown: `# Bab 7: Faktorisasi & Penyelesaian Persamaan Kuadrat
 
 ## 1. Bentuk Umum Persamaan Kuadrat
 
@@ -581,9 +913,9 @@ D = b² - 4ac
   {
     id: 'exp_matdas_bab7',
     subject_slug: 'matdas',
-    chapter_order: 7,
-    topic_title: 'Bab 7: Pertidaksamaan Kuadrat, Garis Bilangan, Uji Tanda Interval, & Himpunan Penyelesaian',
-    content_markdown: `# Bab 7: Pertidaksamaan Kuadrat & Analisis Interval
+    chapter_order: 8,
+    topic_title: 'Bab 8: Pertidaksamaan Kuadrat, Garis Bilangan, Uji Tanda Interval, & Himpunan Penyelesaian',
+    content_markdown: `# Bab 8: Pertidaksamaan Kuadrat & Analisis Interval
 
 ## 1. Definisi & Bentuk Umum Pertidaksamaan Kuadrat
 

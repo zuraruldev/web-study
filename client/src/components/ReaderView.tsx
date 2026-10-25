@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import type { Chapter } from '../types';
-import { BookOpen, Copy, Check, Sparkles, Play } from 'lucide-react';
+import { BookOpen, Copy, Check, Sparkles, Play, ChevronDown, ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface ReaderViewProps {
   chapters: Chapter[];
@@ -16,6 +16,7 @@ export const ReaderView: React.FC<ReaderViewProps> = ({
 }) => {
   const [activeChapterIndex, setActiveChapterIndex] = useState(0);
   const [copiedCodeId, setCopiedCodeId] = useState<string | null>(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   if (!chapters || chapters.length === 0) {
     return (
@@ -31,6 +32,15 @@ export const ReaderView: React.FC<ReaderViewProps> = ({
 
   const currentChapter = chapters[activeChapterIndex] || chapters[0];
 
+  const handleSelectChapter = (idx: number) => {
+    setActiveChapterIndex(idx);
+    setIsMobileMenuOpen(false);
+    const container = document.getElementById('reader-content-top');
+    if (container) {
+      container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   const handleCopy = (text: string, id: string) => {
     navigator.clipboard.writeText(text);
     setCopiedCodeId(id);
@@ -38,19 +48,32 @@ export const ReaderView: React.FC<ReaderViewProps> = ({
   };
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-      {/* Table of Contents Sticky Sidebar */}
-      <div className="lg:col-span-4 sticky top-24 bg-[#0e1422] border border-white/10 rounded-2xl p-4 shadow-xl space-y-2">
-        <div className="flex items-center gap-2 px-2 py-1 text-xs font-mono text-slate-400 uppercase tracking-wider">
-          <BookOpen size={14} className="text-emerald-400" />
-          <span>Daftar Bab Pembelajaran</span>
+    <div id="reader-content-top" className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      {/* Table of Contents Sidebar: static/relative on mobile so it stays in place and does not cover text, sticky on desktop */}
+      <div className="lg:col-span-4 relative lg:sticky lg:top-24 bg-[#0e1422] border border-white/10 rounded-2xl p-4 shadow-xl space-y-2 self-start">
+        <div className="flex items-center justify-between px-2 py-1">
+          <div className="flex items-center gap-2 text-xs font-mono text-slate-400 uppercase tracking-wider">
+            <BookOpen size={14} className="text-emerald-400" />
+            <span>Daftar Bab Pembelajaran</span>
+          </div>
+
+          {/* Toggle for mobile screens */}
+          <button
+            type="button"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="lg:hidden flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-medium"
+          >
+            <span>{isMobileMenuOpen ? 'Tutup' : `Bab ${activeChapterIndex + 1}/${chapters.length}`}</span>
+            <ChevronDown size={13} className={`transition-transform duration-200 ${isMobileMenuOpen ? 'rotate-180' : ''}`} />
+          </button>
         </div>
 
-        <div className="space-y-1">
+        {/* Chapter list: collapsible on mobile, always visible on desktop */}
+        <div className={`space-y-1 ${isMobileMenuOpen ? 'block' : 'hidden lg:block'}`}>
           {chapters.map((chap, idx) => (
             <button
               key={chap.id}
-              onClick={() => setActiveChapterIndex(idx)}
+              onClick={() => handleSelectChapter(idx)}
               className={`w-full text-left px-3 py-2.5 rounded-xl text-xs transition-all flex items-start gap-2.5 group ${
                 activeChapterIndex === idx
                   ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 font-medium'
@@ -65,6 +88,15 @@ export const ReaderView: React.FC<ReaderViewProps> = ({
               <span className="line-clamp-2">{chap.topic_title}</span>
             </button>
           ))}
+        </div>
+
+        {/* Mobile quick indicator when collapsed */}
+        <div className={`lg:hidden ${isMobileMenuOpen ? 'hidden' : 'block'} pt-1`}>
+          <div className="px-3 py-2 rounded-xl bg-white/[0.02] border border-white/5 flex items-center justify-between text-xs text-slate-400">
+            <span className="truncate text-[11px]">
+              <strong className="text-slate-200 font-medium">Bab {activeChapterIndex + 1}:</strong> {currentChapter.topic_title}
+            </span>
+          </div>
         </div>
       </div>
 
@@ -233,8 +265,43 @@ export const ReaderView: React.FC<ReaderViewProps> = ({
           </ReactMarkdown>
         </div>
 
+        {/* Navigation between chapters */}
+        <div className="mt-10 pt-6 border-t border-white/10 flex items-center justify-between gap-4">
+          <button
+            onClick={() => handleSelectChapter(activeChapterIndex - 1)}
+            disabled={activeChapterIndex === 0}
+            className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-medium transition-all ${
+              activeChapterIndex === 0
+                ? 'opacity-30 cursor-not-allowed text-slate-500'
+                : 'bg-white/[0.04] hover:bg-white/[0.08] text-slate-300 border border-white/10'
+            }`}
+          >
+            <ChevronLeft size={14} />
+            <span className="hidden sm:inline">Bab Sebelumnya</span>
+            <span className="sm:hidden">Sebelumnya</span>
+          </button>
+
+          <span className="text-xs font-mono text-slate-400">
+            Bab {activeChapterIndex + 1} dari {chapters.length}
+          </span>
+
+          <button
+            onClick={() => handleSelectChapter(activeChapterIndex + 1)}
+            disabled={activeChapterIndex === chapters.length - 1}
+            className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-medium transition-all ${
+              activeChapterIndex === chapters.length - 1
+                ? 'opacity-30 cursor-not-allowed text-slate-500'
+                : 'bg-white/[0.04] hover:bg-white/[0.08] text-slate-300 border border-white/10'
+            }`}
+          >
+            <span className="hidden sm:inline">Bab Selanjutnya</span>
+            <span className="sm:hidden">Selanjutnya</span>
+            <ChevronRight size={14} />
+          </button>
+        </div>
+
         {/* Bottom CTA to Jump into Quiz */}
-        <div className="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 bg-white/[0.02] p-4 rounded-xl">
+        <div className="mt-6 pt-4 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 bg-white/[0.02] p-4 rounded-xl">
           <div>
             <div className="text-xs font-semibold text-slate-200">Sudah Paham Materi Bab Ini?</div>
             <div className="text-[11px] text-slate-400">Uji daya ingat dan pemahaman Anda lewat latihan soal CBT.</div>

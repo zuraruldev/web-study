@@ -68,7 +68,7 @@ const subjects = [
     name: 'Matematika Dasar',
     icon: 'Binary',
     accent: 'indigo',
-    description: 'Logika matematika, tabel kebenaran, proposisi & implikasi, teori himpunan, serta relasi dan fungsi.',
+    description: 'Sistem bilangan real, eksponen & bentuk akar, ekspresi aljabar, persamaan linear, SPLTV, serta persamaan dan pertidaksamaan kuadrat.',
     order_index: 8
   }
 ];
