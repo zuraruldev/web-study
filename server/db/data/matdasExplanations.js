@@ -1010,6 +1010,677 @@ Dalam notasi interval: (-∞, -2] ∪ [4, ∞)
 HP = {x | 2 < x < 3, x ∈ ℝ}
 Dalam notasi interval: (2, 3)
 \`\`\``
+  },
+  {
+    id: 'exp_matdas_latihan_uts',
+    subject_slug: 'matdas',
+    chapter_order: 9,
+    topic_title: 'Bab 9: Latihan Soal UTS Matematika Dasar TI 2026 (Pembahasan Lengkap)',
+    content_markdown: `# Bab 9: Latihan Soal UTS Matematika Dasar TI 2026 (Pembahasan Lengkap)
+
+![Latihan Soal UTS Matematika Dasar TI 2026 - Pembahasan Lengkap & Solusi Sistematis](../images/matdas/latihan-soal-uts.png)
+
+> **Tujuan Pembelajaran:** Mahasiswa mampu menerapkan konsep operasi aljabar, fungsi linear, pertidaksamaan kuadrat, SPLDV, SPLTV, serta eksponen dan bentuk akar dalam menyelesaikan permasalahan terapan bidang Teknik Informatika secara sistematis dan tepat.
+
+## Soal 1. Operasi Bentuk Aljabar
+
+Sebuah perusahaan multimedia menggunakan model matematika untuk menentukan skor evaluasi kualitas hasil pengolahan video dengan variabel $x$ = jumlah efek visual dan $y$ = jumlah efek suara ($x,y$ bilangan bulat tidak negatif).
+
+$$
+S = 2\left[3x - 2(2y - x + 1)\right] - 3\left[x - (y - 4)\right] + 5(y - x)
+$$
+
+dengan $S$ dapat bernilai positif, nol, atau negatif.
+
+### a) Sederhanakan $S$ menggunakan sifat distributif dan pengelompokan suku sejenis
+
+**Langkah 1: Sederhanakan bagian dalam kurung pertama**  
+$$
+3x - 2(2y - x + 1) = 3x - 4y + 2x - 2 = 5x - 4y - 2
+$$
+
+Kemudian kalikan dengan $2$:
+$$
+2\left[5x - 4y - 2\right] = 10x - 8y - 4
+$$
+
+**Langkah 2: Sederhanakan bagian dalam kurung kedua**  
+$$
+x - (y - 4) = x - y + 4
+$$
+
+Kemudian kalikan dengan $-3$:
+$$
+-3\left[x - y + 4\right] = -3x + 3y - 12
+$$
+
+**Langkah 3: Sederhanakan suku ketiga**  
+$$
+5(y - x) = 5y - 5x
+$$
+
+**Langkah 4: Jumlahkan seluruh hasil**
+
+$$
+\begin{aligned}
+S &= (10x - 8y - 4) + (-3x + 3y - 12) + (5y - 5x)\\[4pt]
+S &= (10x - 3x - 5x) + (-8y + 3y + 5y) + (-4 - 12)\\[4pt]
+S &= 2x + 0y - 16\\[4pt]
+S &= 2x - 16
+\end{aligned}
+$$
+
+**Hasil penyederhanaan:** $\boxed{S = 2x - 16}$
+
+### b) Hitung nilai $S$ untuk $x = 4$ dan $y = 3$
+
+Substitusikan $x = 4$ ke dalam bentuk sederhana $S = 2x - 16$:
+
+$$
+S = 2(4) - 16 = 8 - 16 = -8
+$$
+
+**Jadi, nilai $S = \boxed{-8}$**
+
+### c) Evaluasi pernyataan koefisien $y$ adalah nol
+
+Berdasarkan bentuk sederhana $S = 2x - 16 + 0y$, terlihat jelas bahwa **koefisien $y$ adalah $0$**. 
+
+Artinya, besar kecilnya jumlah efek suara ($y$) **tidak memengaruhi** skor evaluasi $S$. Perubahan nilai $y$ sama sekali tidak akan mengubah hasil $S$ selama $x$ tetap.
+
+**Kesimpulan:** Pernyataan tersebut **benar**, karena suku yang memuat $y$ telah hilang (koefisien $0$) setelah disederhanakan.
+
+---
+
+## Soal 2. Fungsi Linear (Biaya Pengiriman Ekspedisi)
+
+Perusahaan A dan B menawarkan jasa pengiriman dengan sistem biaya linear.
+
+| Perusahaan | Biaya Administrasi Tetap | Biaya per kg |
+| :--- | :--- | :--- |
+| **A** | Rp47.500 | Rp6.500 |
+| **B** | Rp17.500 | Rp10.500 |
+
+Misalkan $x$ = berat barang (kg), $x \ge 0$.
+
+### a) Susun fungsi biaya pengiriman kedua perusahaan
+
+$$
+\begin{aligned}
+f_A(x) &= 47.500 + 6.500x\\[4pt]
+f_B(x) &= 17.500 + 10.500x
+\end{aligned}
+$$
+
+### b) Tentukan berat barang saat biaya sama dan hitung biayanya
+
+Kita cari $x$ dengan $f_A(x)=f_B(x)$:
+
+$$
+\begin{aligned}
+47.500 + 6.500x &= 17.500 + 10.500x\\[4pt]
+47.500 - 17.500 &= 10.500x - 6.500x\\[4pt]
+30.000 &= 4.000x\\[4pt]
+x &= \frac{30.000}{4.000} = 7,5
+\end{aligned}
+$$
+
+Hitung biaya pada $x=7,5$ kg (gunakan salah satu fungsi):
+
+$$
+f_A(7,5) = 47.500 + 6.500(7,5) = 47.500 + 48.750 = 96.250
+$$
+
+**Jadi, pada berat $\boxed{7,5\,\text{kg}}$ biaya kedua perusahaan sama yaitu $\boxed{\text{Rp}96.250}$**
+
+### c) Hitung biaya untuk 5 kg dan 16 kg serta tentukan yang lebih hemat
+
+**Untuk $x = 5$ kg:**
+
+$$
+\begin{aligned}
+f_A(5) &= 47.500 + 6.500(5) = 47.500 + 32.500 = 80.000\\[4pt]
+f_B(5) &= 17.500 + 10.500(5) = 17.500 + 52.500 = 70.000
+\end{aligned}
+$$
+
+Pada berat **5 kg**, biaya **Perusahaan B** lebih hemat ($\text{Rp}70.000 < \text{Rp}80.000$).
+
+**Untuk $x = 16$ kg:**
+
+$$
+\begin{aligned}
+f_A(16) &= 47.500 + 6.500(16) = 47.500 + 104.000 = 151.500\\[4pt]
+f_B(16) &= 17.500 + 10.500(16) = 17.500 + 168.000 = 185.500
+\end{aligned}
+$$
+
+Pada berat **16 kg**, biaya **Perusahaan A** lebih hemat ($\text{Rp}151.500 < \text{Rp}185.500$).
+
+**Kaitan dengan bagian (b):** Titik impas terjadi pada $x = 7,5$ kg. Karena **Perusahaan B** memiliki biaya tetap lebih rendah namun tarif per kg lebih tinggi, B lebih hemat untuk pengiriman **ringan** ($x < 7,5$). Sebaliknya, **Perusahaan A** memiliki tarif per kg lebih rendah, sehingga lebih hemat untuk pengiriman **berat** ($x > 7,5$).
+
+---
+
+## Soal 3. Fungsi Linear (Biaya Percetakan Modul)
+
+Dua jasa percetakan dengan biaya persiapan dibayar sekali.
+
+| Percetakan | Biaya Persiapan Cetak | Biaya per Modul |
+| :--- | :--- | :--- |
+| **A** | Rp60.000 | Rp4.000 |
+| **B** | Rp24.000 | Rp7.000 |
+
+Misalkan $x$ = banyak modul ($x \in \mathbb{Z}, x \ge 0$).
+
+### a) Susun fungsi biaya total masing-masing
+
+$$
+\begin{aligned}
+B_A(x) &= 60.000 + 4.000x\\[4pt]
+B_B(x) &= 24.000 + 7.000x
+\end{aligned}
+$$
+
+### b) Tentukan banyak modul saat biaya sama dan hitung biayanya
+
+$$
+\begin{aligned}
+60.000 + 4.000x &= 24.000 + 7.000x\\[4pt]
+60.000 - 24.000 &= 7.000x - 4.000x\\[4pt]
+36.000 &= 3.000x\\[4pt]
+x &= \frac{36.000}{3.000} = 12
+\end{aligned}
+$$
+
+Biaya pada $x=12$:
+
+$$
+B_A(12) = 60.000 + 4.000(12) = 60.000 + 48.000 = 108.000
+$$
+
+**Jadi, biaya sama ketika dicetak $\boxed{12\,\text{modul}}$ dengan total biaya $\boxed{\text{Rp}108.000}$**
+
+### c) Hitung biaya untuk 8 modul dan 20 modul
+
+**Untuk $x = 8$ modul:**
+
+$$
+\begin{aligned}
+B_A(8) &= 60.000 + 4.000(8) = 60.000 + 32.000 = 92.000\\[4pt]
+B_B(8) &= 24.000 + 7.000(8) = 24.000 + 56.000 = 80.000
+\end{aligned}
+$$
+
+Untuk **8 modul**, **Percetakan B** lebih hemat ($\text{Rp}80.000 < \text{Rp}92.000$).
+
+**Untuk $x = 20$ modul:**
+
+$$
+\begin{aligned}
+B_A(20) &= 60.000 + 4.000(20) = 60.000 + 80.000 = 140.000\\[4pt]
+B_B(20) &= 24.000 + 7.000(20) = 24.000 + 140.000 = 164.000
+\end{aligned}
+$$
+
+Untuk **20 modul**, **Percetakan A** lebih hemat ($\text{Rp}140.000 < \text{Rp}164.000$).
+
+**Kaitan dengan bagian (b):** Titik impas pada **12 modul**. Karena **Percetakan B** berbiaya persiapan lebih rendah namun biaya per modul lebih tinggi, lebih menguntungkan untuk jumlah modul **kecil** ($x < 12$). **Percetakan A** berbiaya persiapan lebih tinggi tetapi biaya per modul lebih rendah, sehingga lebih hemat untuk jumlah modul **besar** ($x > 12$).
+
+---
+
+## Soal 4. Pertidaksamaan Kuadrat
+
+Diberikan pertidaksamaan:
+
+$$
+6x^2 - 17x - 14 \ge 0,\quad x \in \mathbb{R}
+$$
+
+Ada dua kesimpulan: **Mahasiswa A:** $x \le -\frac{2}{3}$ atau $x \ge \frac{7}{2}$; **Mahasiswa B:** $-\frac{2}{3} \le x \le \frac{7}{2}$
+
+### a) Faktorkan dan tentukan interval penyelesaian dengan metode uji tanda
+
+**Langkah 1: Faktorisasi**
+
+Cari dua bilangan dengan hasil kali $a\cdot c = 6\cdot(-14) = -84$ dan jumlah $-17$. Bilangan yang memenuhi: $-21$ dan $+4$.
+
+$$
+\begin{aligned}
+6x^2 - 17x - 14 &= 6x^2 - 21x + 4x - 14\\[4pt]
+&= 3x(2x - 7) + 2(2x - 7)\\[4pt]
+&= (3x + 2)(2x - 7)
+\end{aligned}
+$$
+
+**Langkah 2: Cari titik batas**
+
+$$
+(3x + 2)(2x - 7) = 0 \implies x = -\frac{2}{3} \lor x = \frac{7}{2} = 3,5
+$$
+
+**Langkah 3: Uji tanda pada interval**
+
+| Interval | Nilai uji $x$ | Perhitungan $(3x+2)(2x-7)$ | Tanda |
+| :--- | :--- | :--- | :--- |
+| $x < -\frac{2}{3}$ (mis. $x = -1$) | $x = -1$ | $(3(-1)+2)(2(-1)-7)=(-1)(-9)=9$ | $+$ |
+| $-\frac{2}{3} < x < \frac{7}{2}$ (mis. $x = 0$) | $x = 0$ | $(2)(-7) = -14$ | $-$ |
+| $x > \frac{7}{2}$ (mis. $x = 4$) | $x = 4$ | $(14)(1)=14$ | $+$ |
+
+Pertidaksamaan bertanda $\ge 0$, sehingga diambil daerah **positif (+)** termasuk titik batas.
+
+### b) Tentukan mahasiswa yang benar dan jelaskan kesalahannya
+
+**Jawaban:** **Mahasiswa A** yang benar dengan kesimpulan $x \le -\frac{2}{3}$ atau $x \ge \frac{7}{2}$.
+
+**Penjelasan kesalahan Mahasiswa B:** Mahasiswa B justru mengambil daerah **negatif** ($-\frac{2}{3} \le x \le \frac{7}{2}$), padahal pertidaksamaan meminta nilai $\ge 0$ (daerah **positif**) karena grafik parabola $y=6x^2-17x-14$ terbuka ke atas ($a=6>0$).
+
+### c) Penyajian pada garis bilangan
+
+$$
+\text{HP} = \left\{x\mid x \le -\frac{2}{3}\ \text{atau}\ x \ge \frac{7}{2},\ x \in \mathbb{R}\right\}
+$$
+
+Dalam notasi interval:
+
+$$
+\text{HP} = \left(-\infty,\ -\frac{2}{3}\right] \cup \left[\frac{7}{2}, +\infty\right)
+$$
+
+**Gambaran garis bilangan:** Lingkaran **penuh** pada $x = -\frac{2}{3}$ dan $x = \frac{7}{2}$ (karena tanda $\ge$), kemudian arsir ke **kiri** dari $-\frac{2}{3}$ dan ke **kanan** dari $\frac{7}{2}$.
+
+---
+
+## Soal 5. Sistem Persamaan Linear Dua Variabel (SPLDV)
+
+Pembelian perangkat: **monitor** dan **printer** dengan harga tetap.
+
+| Transaksi | Jumlah Monitor | Jumlah Printer | Total Biaya |
+| :--- | :--- | :--- | :--- |
+| **1** | 4 | 3 | Rp8.600.000 |
+| **2** | 3 | 5 | Rp9.200.000 |
+
+Anggaran untuk membeli **5 monitor** dan **4 printer** sebesar **Rp12.000.000**.
+
+### a) Susun persamaan linear
+
+Misalkan $x$ = harga 1 monitor (rupiah), $y$ = harga 1 printer (rupiah).
+
+$$
+\begin{aligned}
+4x + 3y &= 8.600.000 \quad (1)\\[4pt]
+3x + 5y &= 9.200.000 \quad (2)
+\end{aligned}
+$$
+
+### b) Tentukan nilai $x$ dan $y$ dengan metode eliminasi dan substitusi
+
+**Metode Eliminasi (mengeliminasi $x$)**
+
+Samakan koefisien $x$:
+
+$$
+\begin{aligned}
+(1)\times 3:\quad 12x + 9y &= 25.800.000\\[4pt]
+(2)\times 4:\quad 12x + 20y &= 36.800.000
+\end{aligned}
+$$
+
+Kurangkan $(1)\times 3$ dari $(2)\times 4$:
+
+$$
+\begin{aligned}
+(12x - 12x) + (20y - 9y) &= 36.800.000 - 25.800.000\\[4pt]
+11y &= 11.000.000\\[4pt]
+y &= \frac{11.000.000}{11} = 1.000.000
+\end{aligned}
+$$
+
+**Metode Substitusi (mencari $x$)**
+
+Substitusikan $y = 1.000.000$ ke persamaan $(1)$:
+
+$$
+\begin{aligned}
+4x + 3(1.000.000) &= 8.600.000\\[4pt]
+4x + 3.000.000 &= 8.600.000\\[4pt]
+4x &= 8.600.000 - 3.000.000\\[4pt]
+4x &= 5.600.000\\[4pt]
+x &= \frac{5.600.000}{4} = 1.400.000
+\end{aligned}
+$$
+
+**Hasil:** $\boxed{x = \text{Rp}1.400.000,\quad y = \text{Rp}1.000.000}$
+
+### c) Hitung total biaya 5 monitor dan 4 printer serta sisa anggaran
+
+$$
+\begin{aligned}
+\text{Total} &= 5x + 4y = 5(1.400.000) + 4(1.000.000)\\[4pt]
+&= 7.000.000 + 4.000.000\\[4pt]
+&= 11.000.000
+\end{aligned}
+$$
+
+$$
+\text{Sisa anggaran} = 12.000.000 - 11.000.000 = \text{Rp}1.000.000
+$$
+
+**Jadi, total biaya $\boxed{\text{Rp}11.000.000}$ dan sisa anggaran $\boxed{\text{Rp}1.000.000}$**.
+
+---
+
+## Soal 6. Sistem Persamaan Linear Tiga Variabel (SPLTV)
+
+Pengujian aplikasi dengan tiga jenis berkas: **gambar ($x$)**, **audio ($y$)**, dan **animasi ($z$)** dalam satuan MB.
+
+| Pengujian | Gambar | Audio | Animasi | Total Ukuran |
+| :--- | :--- | :--- | :--- | :--- |
+| **I** | 3 | 2 | 1 | 55 MB |
+| **II** | 2 | 3 | 2 | 65 MB |
+| **III** | 4 | 1 | 3 | 90 MB |
+
+### a) Susun sistem persamaan linear
+
+$$
+\begin{aligned}
+3x + 2y + z &= 55 \quad (1)\\[4pt]
+2x + 3y + 2z &= 65 \quad (2)\\[4pt]
+4x + y + 3z &= 90 \quad (3)
+\end{aligned}
+$$
+
+### b) Tentukan nilai $x,y,z$
+
+**Langkah 1: Ubah persamaan (1) menjadi bentuk $z$**
+
+$$
+z = 55 - 3x - 2y \quad (1a)
+$$
+
+**Langkah 2: Substitusikan $z$ ke persamaan (2)**
+
+$$
+\begin{aligned}
+2x + 3y + 2(55 - 3x - 2y) &= 65\\[4pt]
+2x + 3y + 110 - 6x - 4y &= 65\\[4pt]
+-4x - y + 110 &= 65\\[4pt]
+-4x - y &= 65 - 110\\[4pt]
+-4x - y &= -45\\[4pt]
+4x + y &= 45 \quad (4)
+\end{aligned}
+$$
+
+**Langkah 3: Substitusikan $z$ ke persamaan (3)**
+
+$$
+\begin{aligned}
+4x + y + 3(55 - 3x - 2y) &= 90\\[4pt]
+4x + y + 165 - 9x - 6y &= 90\\[4pt]
+-5x - 5y + 165 &= 90\\[4pt]
+-5x - 5y &= 90 - 165\\[4pt]
+-5x - 5y &= -75
+\end{aligned}
+$$
+
+Bagi kedua ruas dengan $-5$:
+
+$$
+x + y &= 15 \quad (5)
+$$
+
+**Langkah 4: Eliminasi $y$ dari (4) dan (5)**
+
+$$
+\begin{aligned}
+(4):\quad 4x + y &= 45\\[4pt]
+(5):\quad x + y &= 15
+\end{aligned}
+$$
+
+Kurangkan $(5)$ dari $(4)$:
+
+$$
+\begin{aligned}
+3x &= 30\\[4pt]
+x &= 10
+\end{aligned}
+$$
+
+**Langkah 5: Cari $y$ dari (5)**
+
+$$
+x + y = 15 \implies 10 + y = 15 \implies y = 5
+$$
+
+**Langkah 6: Cari $z$ dari (1a)**
+
+$$
+z = 55 - 3(10) - 2(5) = 55 - 30 - 10 = 15
+$$
+
+**Uji kebenaran:**
+
+- (1) $3(10)+2(5)+15 = 30+10+15 = 55$ ✓
+- (2) $2(10)+3(5)+2(15) = 20+15+30 = 65$ ✓
+- (3) $4(10)+5+3(15) = 40+5+45 = 90$ ✓
+
+**Hasil:** $\boxed{x = 10\,\text{MB},\quad y = 5\,\text{MB},\quad z = 15\,\text{MB}}$
+
+---
+
+## Soal 7. Sistem Persamaan Linear Tiga Variabel (SPLTV)
+
+Tiga paket layanan TI dengan tarif tetap: **instalasi perangkat lunak ($x$)**, **konfigurasi jaringan ($y$)**, dan **pemeliharaan komputer ($z$)** dalam **puluhan ribu rupiah**.
+
+| Paket | Instalasi Perangkat Lunak | Konfigurasi Jaringan | Pemeliharaan Komputer | Total Biaya |
+| :--- | :--- | :--- | :--- | :--- |
+| **I** | 2 | 3 | 1 | Rp390.000 |
+| **II** | 3 | 2 | 2 | Rp450.000 |
+| **III** | 4 | 1 | 2 | Rp430.000 |
+
+### a) Susun sistem persamaan linear
+
+Karena $x,y,z$ dalam **puluhan ribu rupiah**, kita tulis nilai dalam satuan puluhan ribu:
+
+$$
+\begin{aligned}
+2x + 3y + z &= 39 \quad (1)\\[4pt]
+3x + 2y + 2z &= 45 \quad (2)\\[4pt]
+4x + y + 2z &= 43 \quad (3)
+\end{aligned}
+$$
+
+### b) Tentukan nilai $x,y,z$
+
+**Langkah 1: Eliminasi $z$ dari persamaan (2) dan (3)**
+
+Perhatikan koefisien $z$ pada (2) dan (3) sama ($2$).
+
+$$
+\begin{aligned}
+(2):\quad 3x + 2y + 2z &= 45\\[4pt]
+(3):\quad 4x + y + 2z &= 43
+\end{aligned}
+$$
+
+Kurangkan $(3)$ dari $(2)$:
+
+$$
+\begin{aligned}
+(3x - 4x) + (2y - y) + (2z - 2z) &= 45 - 43\\[4pt]
+-x + y &= 2\\[4pt]
+y &= x + 2 \quad (4)
+\end{aligned}
+$$
+
+**Langkah 2: Eliminasi $z$ dari persamaan (1) dan (2)**
+
+Kalikan $(1)$ dengan $2$ agar koefisien $z$ sama dengan (2):
+
+$$
+\begin{aligned}
+(1)\times 2:\quad 4x + 6y + 2z &= 78\\[4pt]
+(2):\quad 3x + 2y + 2z &= 45
+\end{aligned}
+$$
+
+Kurangkan $(2)$ dari $(1)\times 2$:
+
+$$
+\begin{aligned}
+(4x - 3x) + (6y - 2y) + (2z - 2z) &= 78 - 45\\[4pt]
+x + 4y &= 33 \quad (5)
+\end{aligned}
+$$
+
+**Langkah 3: Substitusikan $y = x + 2$ ke (5)**
+
+$$
+\begin{aligned}
+x + 4(x + 2) &= 33\\[4pt]
+x + 4x + 8 &= 33\\[4pt]
+5x + 8 &= 33\\[4pt]
+5x &= 33 - 8\\[4pt]
+5x &= 25\\[4pt]
+x &= 5
+\end{aligned}
+$$
+
+**Langkah 4: Cari $y$ dan $z$**
+
+$$
+y = x + 2 = 5 + 2 = 7
+$$
+
+Substitusikan $x=5, y=7$ ke persamaan $(1)$:
+
+$$
+\begin{aligned}
+2(5) + 3(7) + z &= 39\\[4pt]
+10 + 21 + z &= 39\\[4pt]
+31 + z &= 39\\[4pt]
+z &= 39 - 31 = 8
+\end{aligned}
+$$
+
+**Uji kebenaran:**
+
+- (1) $2(5)+3(7)+8 = 10+21+8 = 39$ ✓
+- (2) $3(5)+2(7)+2(8) = 15+14+16 = 45$ ✓
+- (3) $4(5)+7+2(8) = 20+7+16 = 43$ ✓
+
+**Konversi ke rupiah:**
+
+| Layanan | Nilai ($x/y/z$) | Tarif |
+| :--- | :--- | :--- |
+| **Instalasi perangkat lunak ($x$)** | $5$ (puluhan ribu) | $\text{Rp}50.000$ |
+| **Konfigurasi jaringan ($y$)** | $7$ (puluhan ribu) | $\text{Rp}70.000$ |
+| **Pemeliharaan komputer ($z$)** | $8$ (puluhan ribu) | $\text{Rp}80.000$ |
+
+**Hasil:** $\boxed{x=5,\ y=7,\ z=8\quad \text{(dalam puluhan ribu rupiah)}}$
+
+---
+
+## Soal 8. Eksponen dan Bentuk Akar
+
+Diberikan:
+
+$$
+P = \frac{\left[(a^{-4}b^{3})^{3}(a^{5}b^{-2})^{2}(a^{-2}b^{4})\right]}{\left[(a^{-3}b^{2})^{2}\right]},\quad (a\neq 0,\ b\neq 0)
+$$
+
+$$
+Q = 6\sqrt{147} - 5\sqrt{108} + 4\sqrt{75} - 3\sqrt{192} + 2\sqrt{48}
+$$
+
+### a) Sederhanakan $P$ menggunakan sifat eksponen dan nyatakan dengan pangkat positif
+
+**Langkah 1: Sederhanakan tiap faktor di pembilang**
+
+$$
+\begin{aligned}
+(a^{-4}b^{3})^{3} &= a^{-12}b^{9}\\[4pt]
+(a^{5}b^{-2})^{2} &= a^{10}b^{-4}\\[4pt]
+(a^{-2}b^{4}) &= a^{-2}b^{4}
+\end{aligned}
+$$
+
+**Langkah 2: Kalikan faktor-faktor pembilang**
+
+$$
+\begin{aligned}
+a\text{-term:}\quad & (-12) + 10 + (-2) = -4 \implies a^{-4}\\[4pt]
+b\text{-term:}\quad & 9 + (-4) + 4 = 9 \implies b^{9}
+\end{aligned}
+$$
+
+Sehingga pembilang = $a^{-4}b^{9}$
+
+**Langkah 3: Sederhanakan penyebut**
+
+$$
+(a^{-3}b^{2})^{2} = a^{-6}b^{4}
+$$
+
+**Langkah 4: Bagi pembilang dengan penyebut ($a^p/a^q = a^{p-q}$)**
+
+$$
+\begin{aligned}
+a\text{-term:}\quad & a^{-4 - (-6)} = a^{-4 + 6} = a^{2}\\[4pt]
+b\text{-term:}\quad & b^{9 - 4} = b^{5}
+\end{aligned}
+$$
+
+**Hasil:** $\boxed{P = a^{2}b^{5}}$
+
+### b) Tentukan mahasiswa yang benar dan jelaskan kesalahannya
+
+Dari hasil di atas, diperoleh $P = a^{2}b^{5}$.
+
+- **Mahasiswa A:** $P = a^{2}b^{5}$ → **BENAR**
+- **Mahasiswa B:** $P = \frac{b^{5}}{a^{2}} = a^{-2}b^{5}$ → **SALAH**
+
+**Penjelasan kesalahan Mahasiswa B:** Kesalahan terletak pada operasi pembagian pangkat basis $a$. Seharusnya $a^{-4} \div a^{-6} = a^{-4 - (-6)} = a^{-4 + 6} = a^{2}$, bukan $a^{-2}$. Jika menuliskan $1/a^2$, itu artinya $a^{-2}$, padahal hasil yang benar adalah $a^{2}$.
+
+### c) Sederhanakan $Q = 6\sqrt{147} - 5\sqrt{108} + 4\sqrt{75} - 3\sqrt{192} + 2\sqrt{48}$
+
+**Langkah 1: Sederhanakan tiap bentuk akar**
+
+| Bentuk Akar | Faktorisasi | Penyederhanaan | Hasil Perkalian |
+| :--- | :--- | :--- | :--- |
+| $\sqrt{147}$ | $\sqrt{49\cdot 3}$ | $7\sqrt{3}$ | $6\sqrt{147} = 6\cdot 7\sqrt{3} = 42\sqrt{3}$ |
+| $\sqrt{108}$ | $\sqrt{36\cdot 3}$ | $6\sqrt{3}$ | $-5\sqrt{108} = -5\cdot 6\sqrt{3} = -30\sqrt{3}$ |
+| $\sqrt{75}$ | $\sqrt{25\cdot 3}$ | $5\sqrt{3}$ | $4\sqrt{75} = 4\cdot 5\sqrt{3} = 20\sqrt{3}$ |
+| $\sqrt{192}$ | $\sqrt{64\cdot 3}$ | $8\sqrt{3}$ | $-3\sqrt{192} = -3\cdot 8\sqrt{3} = -24\sqrt{3}$ |
+| $\sqrt{48}$ | $\sqrt{16\cdot 3}$ | $4\sqrt{3}$ | $2\sqrt{48} = 2\cdot 4\sqrt{3} = 8\sqrt{3}$ |
+
+**Langkah 2: Jumlahkan semua suku sejenis ($\sqrt{3}$)**
+
+$$
+\begin{aligned}
+Q &= 42\sqrt{3} - 30\sqrt{3} + 20\sqrt{3} - 24\sqrt{3} + 8\sqrt{3}\\[4pt]
+&= (42 - 30 + 20 - 24 + 8)\sqrt{3}\\[4pt]
+&= (16)\sqrt{3}\\[4pt]
+&= 16\sqrt{3}
+\end{aligned}
+$$
+
+**Hasil:** $\boxed{Q = 16\sqrt{3}}$
+
+---
+
+## Rangkuman Kunci Bab 9
+
+| Topik | Kunci yang Perlu Diingat |
+| :--- | :--- |
+| **Operasi Aljabar** | Terapkan distributif dengan cermat, perhatikan tanda minus, kelompokkan suku sejenis. Koefisien nol berarti variabel tidak berpengaruh. |
+| **Fungsi Linear (Terapan)** | Bentuk $f(x)=a+bx$. Titik impas saat $f_1(x)=f_2(x)$ menentukan pilihan yang lebih hemat tergantung $x < x_0$ atau $x > x_0$. |
+| **Pertidaksamaan Kuadrat** | Faktorkan → cari akar → uji tanda → ambil daerah sesuai tanda pertidaksamaan. Parabola terbuka ke atas ($a>0$): $>0$ di luar akar, $<0$ di antara akar. |
+| **SPLDV** | Cocok diselesaikan dengan **eliminasi + substitusi**. Pastikan satuan harga/kebutuhan konsisten sebelum menghitung total & sisa. |
+| **SPLTV** | Strategi efisien: eliminasi variabel yang sama dari dua pasang persamaan → jadi SPLDV → substitusi mundur. Selalu **uji hasil** ke ketiga persamaan awal. |
+| **Eksponen** | $(a^p)^q=a^{p q},\ a^p a^q=a^{p+q},\ a^p/a^q=a^{p-q}$. Hati-hati tanda minus saat mengurangkan pangkat. |
+| **Bentuk Akar** | $\sqrt{ab}=\sqrt{a}\sqrt{b}$, $c\sqrt{a}\pm d\sqrt{a}=(c\pm d)\sqrt{a}$. Sederhanakan ke bentuk $\sqrt{n\cdot k}$ dengan $n$ bilangan kuadrat sempurna. |
+`
   }
 ];
 
