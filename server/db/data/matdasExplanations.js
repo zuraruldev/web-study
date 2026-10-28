@@ -1011,675 +1011,691 @@ HP = {x | 2 < x < 3, x ∈ ℝ}
 Dalam notasi interval: (2, 3)
 \`\`\``
   },
-  {
+    {
     id: 'exp_matdas_latihan_uts',
     subject_slug: 'matdas',
     chapter_order: 9,
     topic_title: 'Bab 9: Latihan Soal UTS Matematika Dasar TI 2026 (Pembahasan Lengkap)',
     content_markdown: `# Bab 9: Latihan Soal UTS Matematika Dasar TI 2026 (Pembahasan Lengkap)
 
-![Latihan Soal UTS Matematika Dasar TI 2026 - Pembahasan Lengkap & Solusi Sistematis](../images/matdas/latihan-soal-uts.png)
+![Latihan Soal UTS Matematika Dasar TI 2026 - Pembahasan Lengkap & Solusi Sistematis](/images/matdas/latihan-soal-uts.png)
 
-> **Tujuan Pembelajaran:** Mahasiswa mampu menerapkan konsep operasi aljabar, fungsi linear, pertidaksamaan kuadrat, SPLDV, SPLTV, serta eksponen dan bentuk akar dalam menyelesaikan permasalahan terapan bidang Teknik Informatika secara sistematis dan tepat.
-
-## Soal 1. Operasi Bentuk Aljabar
-
-Sebuah perusahaan multimedia menggunakan model matematika untuk menentukan skor evaluasi kualitas hasil pengolahan video dengan variabel $x$ = jumlah efek visual dan $y$ = jumlah efek suara ($x,y$ bilangan bulat tidak negatif).
-
-$$
-S = 2\left[3x - 2(2y - x + 1)\right] - 3\left[x - (y - 4)\right] + 5(y - x)
-$$
-
-dengan $S$ dapat bernilai positif, nol, atau negatif.
-
-### a) Sederhanakan $S$ menggunakan sifat distributif dan pengelompokan suku sejenis
-
-**Langkah 1: Sederhanakan bagian dalam kurung pertama**  
-$$
-3x - 2(2y - x + 1) = 3x - 4y + 2x - 2 = 5x - 4y - 2
-$$
-
-Kemudian kalikan dengan $2$:
-$$
-2\left[5x - 4y - 2\right] = 10x - 8y - 4
-$$
-
-**Langkah 2: Sederhanakan bagian dalam kurung kedua**  
-$$
-x - (y - 4) = x - y + 4
-$$
-
-Kemudian kalikan dengan $-3$:
-$$
--3\left[x - y + 4\right] = -3x + 3y - 12
-$$
-
-**Langkah 3: Sederhanakan suku ketiga**  
-$$
-5(y - x) = 5y - 5x
-$$
-
-**Langkah 4: Jumlahkan seluruh hasil**
-
-$$
-\begin{aligned}
-S &= (10x - 8y - 4) + (-3x + 3y - 12) + (5y - 5x)\\[4pt]
-S &= (10x - 3x - 5x) + (-8y + 3y + 5y) + (-4 - 12)\\[4pt]
-S &= 2x + 0y - 16\\[4pt]
-S &= 2x - 16
-\end{aligned}
-$$
-
-**Hasil penyederhanaan:** $\boxed{S = 2x - 16}$
-
-### b) Hitung nilai $S$ untuk $x = 4$ dan $y = 3$
-
-Substitusikan $x = 4$ ke dalam bentuk sederhana $S = 2x - 16$:
-
-$$
-S = 2(4) - 16 = 8 - 16 = -8
-$$
-
-**Jadi, nilai $S = \boxed{-8}$**
-
-### c) Evaluasi pernyataan koefisien $y$ adalah nol
-
-Berdasarkan bentuk sederhana $S = 2x - 16 + 0y$, terlihat jelas bahwa **koefisien $y$ adalah $0$**. 
-
-Artinya, besar kecilnya jumlah efek suara ($y$) **tidak memengaruhi** skor evaluasi $S$. Perubahan nilai $y$ sama sekali tidak akan mengubah hasil $S$ selama $x$ tetap.
-
-**Kesimpulan:** Pernyataan tersebut **benar**, karena suku yang memuat $y$ telah hilang (koefisien $0$) setelah disederhanakan.
+> **Materi:** Latihan Soal Resmi Ujian Tengah Semester (UTS) Matematika Dasar Semester Ganjil TA 2026/2027 Program Studi Teknik Informatika.  
+> Dilengkapi gambar dokumen soal resmi, petunjuk pengerjaan, penurunan rumus terperinci langkah demi langkah, dan evaluasi konsep kritis.
 
 ---
 
-## Soal 2. Fungsi Linear (Biaya Pengiriman Ekspedisi)
+## Soal 1. Operasi Bentuk Aljabar (Model Evaluasi Pengolahan Video)
 
-Perusahaan A dan B menawarkan jasa pengiriman dengan sistem biaya linear.
+![Teks Resmi Soal 1: Operasi Bentuk Aljabar](/images/matdas/soal-1-aljabar.png)
 
-| Perusahaan | Biaya Administrasi Tetap | Biaya per kg |
+Sebuah perusahaan multimedia menggunakan model matematika untuk menentukan skor evaluasi kualitas hasil pengolahan video:
+- \`x\` = jumlah efek visual (\`x ≥ 0, x ∈ ℤ\`)
+- \`y\` = jumlah efek suara (\`y ≥ 0, y ∈ ℤ\`)
+- \`S\` = skor evaluasi (dapat bernilai positif, nol, atau negatif)
+
+Persamaan model matematika:
+\`\`\`text
+S = 2[3x - 2(2y - x + 1)] - 3[x - (y - 4)] + 5(y - x)
+\`\`\`
+
+### a. Penyederhanaan Menggunakan Sifat Distributif & Suku Sejenis
+
+Untuk menyederhanakan ekspresi majemuk ini, buka tanda kurung terdalam terlebih dahulu, lakukan perkalian distributif, lalu kelompokkan seluruh suku sejenis:
+
+\`\`\`text
+Langkah 1: Sederhanakan bagian dalam kurung pertama
+  3x - 2(2y - x + 1) = 3x - 4y + 2x - 2
+                     = (3x + 2x) - 4y - 2
+                     = 5x - 4y - 2
+
+  Kalikan hasil tersebut dengan pengali luar (2):
+  2[5x - 4y - 2] = 10x - 8y - 4
+
+Langkah 2: Sederhanakan bagian dalam kurung kedua
+  x - (y - 4) = x - y + 4
+
+  Kalikan hasil tersebut dengan pengali luar (-3):
+  -3[x - y + 4] = -3x + 3y - 12
+
+Langkah 3: Buka tanda kurung ketiga
+  5(y - x) = 5y - 5x
+
+Langkah 4: Gabungkan dan kelompokkan suku sejenis
+  S = (10x - 8y - 4) + (-3x + 3y - 12) + (5y - 5x)
+  S = (10x - 3x - 5x) + (-8y + 3y + 5y) + (-4 - 12)
+  S = 2x + 0y - 16
+  S = 2x - 16
+\`\`\`
+
+**Bentuk Paling Sederhana:**
+> **\`S = 2x - 16\`**
+
+---
+
+### b. Menghitung Nilai S untuk x = 4 dan y = 3
+
+Substitusikan nilai \`x = 4\` dan \`y = 3\` ke dalam bentuk sederhana yang telah diperoleh pada bagian (a):
+
+\`\`\`text
+S = 2x - 16
+S = 2(4) - 16
+S = 8 - 16
+S = -8
+\`\`\`
+
+> **Hasil:** Nilai skor evaluasi adalah **\`-8\`** (skor negatif).
+
+---
+
+### c. Evaluasi Kebenaran Pernyataan Koefisien y Adalah Nol
+
+**Pernyataan:** Anggota tim multimedia menyatakan bahwa koefisien \`y\` pada bentuk sederhana \`S\` adalah nol sehingga perubahan jumlah efek suara tidak memengaruhi skor evaluasi.
+
+**Evaluasi Matematis:**
+1. Pada hasil penyederhanaan aljabar: \`S = 2x + 0y - 16 = 2x - 16\`.
+2. Suku yang memuat variabel \`y\` memiliki koefisien \`0\` (\`0 × y = 0\`).
+3. Nilai turunan parsial terhadap \`y\` adalah \`∂S/∂y = 0\`, yang membuktikan bahwa nilai \`S\` independen (tidak bergantung) terhadap besaran variabel \`y\`.
+4. Berapapun nilai \`y\` yang dimasukkan (misalnya \`y = 0\`, \`y = 10\`, atau \`y = 100\`), nilai \`S\` hanya akan ditentukan secara eksklusif oleh nilai \`x\`.
+
+> **Kesimpulan:** Pernyataan anggota tim multimedia tersebut **BENAR**, karena koefisien variabel \`y\` terbukti bernilai \`0\` sehingga efek suara tidak memberikan kontribusi sama sekali terhadap skor akhir evaluasi.
+
+---
+
+## Soal 2. Fungsi Linear (Analisis Biaya Ekspedisi Logistik)
+
+![Teks Resmi Soal 2: Fungsi Linear Biaya Pengiriman Ekspedisi](/images/matdas/soal-2-fungsi-linear.png)
+
+Sebuah perusahaan teknologi akan memilih jasa pengiriman perangkat elektronik dari dua perusahaan ekspedisi berdasarkan berat barang \`x\` (dalam kg, dengan \`x ≥ 0\`).
+
+| Parameter Biaya | Perusahaan Ekspedisi A | Perusahaan Ekspedisi B |
 | :--- | :--- | :--- |
-| **A** | Rp47.500 | Rp6.500 |
-| **B** | Rp17.500 | Rp10.500 |
-
-Misalkan $x$ = berat barang (kg), $x \ge 0$.
-
-### a) Susun fungsi biaya pengiriman kedua perusahaan
-
-$$
-\begin{aligned}
-f_A(x) &= 47.500 + 6.500x\\[4pt]
-f_B(x) &= 17.500 + 10.500x
-\end{aligned}
-$$
-
-### b) Tentukan berat barang saat biaya sama dan hitung biayanya
-
-Kita cari $x$ dengan $f_A(x)=f_B(x)$:
-
-$$
-\begin{aligned}
-47.500 + 6.500x &= 17.500 + 10.500x\\[4pt]
-47.500 - 17.500 &= 10.500x - 6.500x\\[4pt]
-30.000 &= 4.000x\\[4pt]
-x &= \frac{30.000}{4.000} = 7,5
-\end{aligned}
-$$
-
-Hitung biaya pada $x=7,5$ kg (gunakan salah satu fungsi):
-
-$$
-f_A(7,5) = 47.500 + 6.500(7,5) = 47.500 + 48.750 = 96.250
-$$
-
-**Jadi, pada berat $\boxed{7,5\,\text{kg}}$ biaya kedua perusahaan sama yaitu $\boxed{\text{Rp}96.250}$**
-
-### c) Hitung biaya untuk 5 kg dan 16 kg serta tentukan yang lebih hemat
-
-**Untuk $x = 5$ kg:**
-
-$$
-\begin{aligned}
-f_A(5) &= 47.500 + 6.500(5) = 47.500 + 32.500 = 80.000\\[4pt]
-f_B(5) &= 17.500 + 10.500(5) = 17.500 + 52.500 = 70.000
-\end{aligned}
-$$
-
-Pada berat **5 kg**, biaya **Perusahaan B** lebih hemat ($\text{Rp}70.000 < \text{Rp}80.000$).
-
-**Untuk $x = 16$ kg:**
-
-$$
-\begin{aligned}
-f_A(16) &= 47.500 + 6.500(16) = 47.500 + 104.000 = 151.500\\[4pt]
-f_B(16) &= 17.500 + 10.500(16) = 17.500 + 168.000 = 185.500
-\end{aligned}
-$$
-
-Pada berat **16 kg**, biaya **Perusahaan A** lebih hemat ($\text{Rp}151.500 < \text{Rp}185.500$).
-
-**Kaitan dengan bagian (b):** Titik impas terjadi pada $x = 7,5$ kg. Karena **Perusahaan B** memiliki biaya tetap lebih rendah namun tarif per kg lebih tinggi, B lebih hemat untuk pengiriman **ringan** ($x < 7,5$). Sebaliknya, **Perusahaan A** memiliki tarif per kg lebih rendah, sehingga lebih hemat untuk pengiriman **berat** ($x > 7,5$).
+| **Biaya Administrasi Tetap** | Rp47.500 | Rp17.500 |
+| **Tarif Variabel per Kilogram** | Rp6.500 / kg | Rp10.500 / kg |
+| **Bentuk Karakteristik** | Biaya awal tinggi, tarif per kg rendah | Biaya awal rendah, tarif per kg tinggi |
 
 ---
 
-## Soal 3. Fungsi Linear (Biaya Percetakan Modul)
+### a. Menyusun Fungsi Biaya Pengiriman Kedua Perusahaan
 
-Dua jasa percetakan dengan biaya persiapan dibayar sekali.
+Berdasarkan struktur tarif linear \`f(x) = Biaya Tetap + (Tarif per kg × Berat)\`:
 
-| Percetakan | Biaya Persiapan Cetak | Biaya per Modul |
+\`\`\`text
+1. Fungsi Biaya Perusahaan A:
+   f_A(x) = 47.500 + 6.500x
+
+2. Fungsi Biaya Perusahaan B:
+   f_B(x) = 17.500 + 10.500x
+\`\`\`
+
+---
+
+### b. Menentukan Berat Barang Ketika Biaya Kedua Perusahaan Sama
+
+Biaya kedua perusahaan bernilai sama saat \`f_A(x) = f_B(x)\` (titik ekuilibrium / break-even point):
+
+\`\`\`text
+  f_A(x) = f_B(x)
+  47.500 + 6.500x = 17.500 + 10.500x
+  47.500 - 17.500 = 10.500x - 6.500x
+           30.000 = 4.000x
+                x = 30.000 / 4.000
+                x = 7,5 kg
+\`\`\`
+
+Menghitung biaya pengiriman pada berat impas (\`x = 7,5 kg\`):
+\`\`\`text
+f_A(7,5) = 47.500 + 6.500(7,5)
+         = 47.500 + 48.750
+         = Rp96.250
+
+Uji pada Perusahaan B:
+f_B(7,5) = 17.500 + 10.500(7,5)
+         = 17.500 + 78.750
+         = Rp96.250  (Sama / Konsisten)
+\`\`\`
+
+> **Jawaban:** Biaya kedua perusahaan tepat sama ketika berat barang mencapai **\`7,5 kg\`**, dengan total biaya pengiriman sebesar **\`Rp96.250\`**.
+
+---
+
+### c. Perhitungan Biaya untuk 5 kg dan 16 kg Serta Analisis Kehematan
+
+#### 1. Untuk Berat Barang x = 5 kg:
+\`\`\`text
+Perusahaan A: f_A(5) = 47.500 + 6.500(5)  = 47.500 + 32.500 = Rp80.000
+Perusahaan B: f_B(5) = 17.500 + 10.500(5) = 17.500 + 52.500 = Rp70.000
+\`\`\`
+- **Selisih Biaya:** \`Rp80.000 - Rp70.000 = Rp10.000\`
+- **Pilihan Paling Hemat:** **Perusahaan B** (lebih hemat Rp10.000).
+
+#### 2. Untuk Berat Barang x = 16 kg:
+\`\`\`text
+Perusahaan A: f_A(16) = 47.500 + 6.500(16)  = 47.500 + 104.000 = Rp151.500
+Perusahaan B: f_B(16) = 17.500 + 10.500(16) = 17.500 + 168.000 = Rp185.500
+\`\`\`
+- **Selisih Biaya:** \`Rp185.500 - Rp151.500 = Rp34.000\`
+- **Pilihan Paling Hemat:** **Perusahaan A** (lebih hemat Rp34.000).
+
+#### Kaitan dengan Hasil Titik Impas (b):
+Titik potong grafik kedua fungsi biaya terletak pada \`x = 7,5 kg\`.
+1. **Daerah Kiri Titik Impas (\`0 ≤ x < 7,5 kg\`):**
+   Fungsi \`f_B(x) < f_A(x)\`. Untuk paket-paket ringan (seperti 5 kg), beban biaya administrasi tetap Perusahaan B yang sangat kecil (Rp17.500) mendominasi, sehingga **Perusahaan B jauh lebih menguntungkan**.
+2. **Daerah Kanan Titik Impas (\`x > 7,5 kg\`):**
+   Fungsi \`f_A(x) < f_B(x)\`. Untuk paket-paket berat (seperti 16 kg), tarif variabel Perusahaan A yang jauh lebih murah (Rp6.500/kg vs Rp10.500/kg) mampu mengompensasi biaya awalnya, sehingga **Perusahaan A jauh lebih hemat**.
+
+---
+
+## Soal 3. Fungsi Linear (Pemodelan Biaya Percetakan Modul Seminar)
+
+![Teks Resmi Soal 3: Fungsi Linear Percetakan Modul](/images/matdas/soal-3-fungsi-linear.png)
+
+Panitia seminar mahasiswa Teknik Informatika akan mencetak modul pelatihan bagi peserta dengan \`x\` menyatakan banyaknya modul (\`x ∈ ℤ, x ≥ 0\`).
+
+| Ketentuan Biaya | Percetakan A | Percetakan B |
 | :--- | :--- | :--- |
-| **A** | Rp60.000 | Rp4.000 |
-| **B** | Rp24.000 | Rp7.000 |
-
-Misalkan $x$ = banyak modul ($x \in \mathbb{Z}, x \ge 0$).
-
-### a) Susun fungsi biaya total masing-masing
-
-$$
-\begin{aligned}
-B_A(x) &= 60.000 + 4.000x\\[4pt]
-B_B(x) &= 24.000 + 7.000x
-\end{aligned}
-$$
-
-### b) Tentukan banyak modul saat biaya sama dan hitung biayanya
-
-$$
-\begin{aligned}
-60.000 + 4.000x &= 24.000 + 7.000x\\[4pt]
-60.000 - 24.000 &= 7.000x - 4.000x\\[4pt]
-36.000 &= 3.000x\\[4pt]
-x &= \frac{36.000}{3.000} = 12
-\end{aligned}
-$$
-
-Biaya pada $x=12$:
-
-$$
-B_A(12) = 60.000 + 4.000(12) = 60.000 + 48.000 = 108.000
-$$
-
-**Jadi, biaya sama ketika dicetak $\boxed{12\,\text{modul}}$ dengan total biaya $\boxed{\text{Rp}108.000}$**
-
-### c) Hitung biaya untuk 8 modul dan 20 modul
-
-**Untuk $x = 8$ modul:**
-
-$$
-\begin{aligned}
-B_A(8) &= 60.000 + 4.000(8) = 60.000 + 32.000 = 92.000\\[4pt]
-B_B(8) &= 24.000 + 7.000(8) = 24.000 + 56.000 = 80.000
-\end{aligned}
-$$
-
-Untuk **8 modul**, **Percetakan B** lebih hemat ($\text{Rp}80.000 < \text{Rp}92.000$).
-
-**Untuk $x = 20$ modul:**
-
-$$
-\begin{aligned}
-B_A(20) &= 60.000 + 4.000(20) = 60.000 + 80.000 = 140.000\\[4pt]
-B_B(20) &= 24.000 + 7.000(20) = 24.000 + 140.000 = 164.000
-\end{aligned}
-$$
-
-Untuk **20 modul**, **Percetakan A** lebih hemat ($\text{Rp}140.000 < \text{Rp}164.000$).
-
-**Kaitan dengan bagian (b):** Titik impas pada **12 modul**. Karena **Percetakan B** berbiaya persiapan lebih rendah namun biaya per modul lebih tinggi, lebih menguntungkan untuk jumlah modul **kecil** ($x < 12$). **Percetakan A** berbiaya persiapan lebih tinggi tetapi biaya per modul lebih rendah, sehingga lebih hemat untuk jumlah modul **besar** ($x > 12$).
+| **Biaya Persiapan Cetak (1 kali)** | Rp60.000 | Rp24.000 |
+| **Biaya Cetak per Modul** | Rp4.000 / modul | Rp7.000 / modul |
 
 ---
 
-## Soal 4. Pertidaksamaan Kuadrat
+### a. Menyusun Fungsi Biaya Total Pencetakan (4 poin)
 
-Diberikan pertidaksamaan:
+\`\`\`text
+1. Fungsi Biaya Percetakan A:
+   B_A(x) = 60.000 + 4.000x
 
-$$
-6x^2 - 17x - 14 \ge 0,\quad x \in \mathbb{R}
-$$
+2. Fungsi Biaya Percetakan B:
+   B_B(x) = 24.000 + 7.000x
+\`\`\`
 
-Ada dua kesimpulan: **Mahasiswa A:** $x \le -\frac{2}{3}$ atau $x \ge \frac{7}{2}$; **Mahasiswa B:** $-\frac{2}{3} \le x \le \frac{7}{2}$
+---
 
-### a) Faktorkan dan tentukan interval penyelesaian dengan metode uji tanda
+### b. Menentukan Banyaknya Modul Saat Biaya Sama (6 poin)
 
-**Langkah 1: Faktorisasi**
+Samakan kedua persamaan biaya \`B_A(x) = B_B(x)\`:
 
-Cari dua bilangan dengan hasil kali $a\cdot c = 6\cdot(-14) = -84$ dan jumlah $-17$. Bilangan yang memenuhi: $-21$ dan $+4$.
+\`\`\`text
+  B_A(x) = B_B(x)
+  60.000 + 4.000x = 24.000 + 7.000x
+  60.000 - 24.000 = 7.000x - 4.000x
+           36.000 = 3.000x
+                x = 36.000 / 3.000
+                x = 12 modul
+\`\`\`
 
-$$
-\begin{aligned}
-6x^2 - 17x - 14 &= 6x^2 - 21x + 4x - 14\\[4pt]
-&= 3x(2x - 7) + 2(2x - 7)\\[4pt]
-&= (3x + 2)(2x - 7)
-\end{aligned}
-$$
+Menghitung total biaya pada saat jumlah pesanan 12 modul:
+\`\`\`text
+B_A(12) = 60.000 + 4.000(12)
+        = 60.000 + 48.000
+        = Rp108.000
 
-**Langkah 2: Cari titik batas**
+Uji pada Percetakan B:
+B_B(12) = 24.000 + 7.000(12)
+        = 24.000 + 84.000
+        = Rp108.000  (Sesuai)
+\`\`\`
 
-$$
-(3x + 2)(2x - 7) = 0 \implies x = -\frac{2}{3} \lor x = \frac{7}{2} = 3,5
-$$
+> **Jawaban:** Biaya kedua percetakan tepat bernilai sama saat mencetak **\`12 modul\`**, dengan total biaya sebesar **\`Rp108.000\`**.
 
-**Langkah 3: Uji tanda pada interval**
+---
 
-| Interval | Nilai uji $x$ | Perhitungan $(3x+2)(2x-7)$ | Tanda |
-| :--- | :--- | :--- | :--- |
-| $x < -\frac{2}{3}$ (mis. $x = -1$) | $x = -1$ | $(3(-1)+2)(2(-1)-7)=(-1)(-9)=9$ | $+$ |
-| $-\frac{2}{3} < x < \frac{7}{2}$ (mis. $x = 0$) | $x = 0$ | $(2)(-7) = -14$ | $-$ |
-| $x > \frac{7}{2}$ (mis. $x = 4$) | $x = 4$ | $(14)(1)=14$ | $+$ |
+### c. Menghitung Biaya untuk 8 Modul dan 20 Modul Serta Analisisnya (7 poin)
 
-Pertidaksamaan bertanda $\ge 0$, sehingga diambil daerah **positif (+)** termasuk titik batas.
+#### 1. Untuk Pesanan Sebanyak 8 Modul:
+\`\`\`text
+Percetakan A: B_A(8) = 60.000 + 4.000(8)  = 60.000 + 32.000 = Rp92.000
+Percetakan B: B_B(8) = 24.000 + 7.000(8)  = 24.000 + 56.000 = Rp80.000
+\`\`\`
+- **Pilihan Paling Hemat:** **Percetakan B** (lebih hemat Rp12.000).
 
-### b) Tentukan mahasiswa yang benar dan jelaskan kesalahannya
+#### 2. Untuk Pesanan Sebanyak 20 Modul:
+\`\`\`text
+Percetakan A: B_A(20) = 60.000 + 4.000(20) = 60.000 + 80.000  = Rp140.000
+Percetakan B: B_B(20) = 24.000 + 7.000(20) = 24.000 + 140.000 = Rp164.000
+\`\`\`
+- **Pilihan Paling Hemat:** **Percetakan A** (lebih hemat Rp24.000).
 
-**Jawaban:** **Mahasiswa A** yang benar dengan kesimpulan $x \le -\frac{2}{3}$ atau $x \ge \frac{7}{2}$.
+#### Kaitan dengan Titik Impas (b):
+- Jumlah pesanan **8 modul** berada pada domain \`x < 12\`. Pada domain ini, Percetakan B unggul karena panitia belum mencetak cukup banyak modul untuk menutupi biaya setup Percetakan A yang mahal (Rp60.000).
+- Jumlah pesanan **20 modul** berada pada domain \`x > 12\`. Pada skala pesanan yang lebih banyak, selisih tarif per modul yang lebih hemat Rp3.000 pada Percetakan A mampu melampaui biaya persiapan awal, sehingga **Percetakan A lebih ekonomis**.
 
-**Penjelasan kesalahan Mahasiswa B:** Mahasiswa B justru mengambil daerah **negatif** ($-\frac{2}{3} \le x \le \frac{7}{2}$), padahal pertidaksamaan meminta nilai $\ge 0$ (daerah **positif**) karena grafik parabola $y=6x^2-17x-14$ terbuka ke atas ($a=6>0$).
+---
 
-### c) Penyajian pada garis bilangan
+## Soal 4. Pertidaksamaan Kuadrat (Uji Tanda Parameter Algoritma)
 
-$$
-\text{HP} = \left\{x\mid x \le -\frac{2}{3}\ \text{atau}\ x \ge \frac{7}{2},\ x \in \mathbb{R}\right\}
-$$
+![Teks Resmi Soal 4: Pertidaksamaan Kuadrat](/images/matdas/soal-4-pertidaksamaan-kuadrat.png)
 
-Dalam notasi interval:
+Dalam pengujian kinerja suatu algoritma komputasi, parameter \`x\` harus memenuhi pertidaksamaan kuadrat:
+\`\`\`text
+6x² - 17x - 14 ≥ 0    (dengan x ∈ ℝ)
+\`\`\`
 
-$$
-\text{HP} = \left(-\infty,\ -\frac{2}{3}\right] \cup \left[\frac{7}{2}, +\infty\right)
-$$
+Dua mahasiswa memberikan kesimpulan berbeda:
+- **Mahasiswa A:** \`x ≤ -2/3  atau  x ≥ 7/2\`
+- **Mahasiswa B:** \`-2/3 ≤ x ≤ 7/2\`
 
-**Gambaran garis bilangan:** Lingkaran **penuh** pada $x = -\frac{2}{3}$ dan $x = \frac{7}{2}$ (karena tanda $\ge$), kemudian arsir ke **kiri** dari $-\frac{2}{3}$ dan ke **kanan** dari $\frac{7}{2}$.
+---
+
+### a. Faktorisasi & Penentuan Interval dengan Uji Tanda
+
+#### Langkah 1: Faktorisasi Bentuk Kuadrat (Metode a × c)
+Bentuk persamaan: \`a = 6\`, \`b = -17\`, \`c = -14\`.
+Nilai \`a × c = 6 × (-14) = -84\`.
+Cari dua bilangan yang hasil kalinya \`-84\` dan jumlahnya \`-17\`:
+- Bilangan tersebut adalah **\`-21\`** dan **\`+4\`** (\`-21 × 4 = -84\`, \`-21 + 4 = -17\`).
+
+Pecah suku tengah:
+\`\`\`text
+6x² - 17x - 14 = 6x² - 21x + 4x - 14
+               = 3x(2x - 7) + 2(2x - 7)
+               = (3x + 2)(2x - 7)
+\`\`\`
+
+#### Langkah 2: Menentukan Titik Pembuat Nol (Akar Batas)
+\`\`\`text
+(3x + 2)(2x - 7) = 0
+• 3x + 2 = 0  ➔  x₁ = -2/3
+• 2x - 7 = 0  ➔  x₂ = 7/2 = 3,5
+\`\`\`
+
+#### Langkah 3: Uji Tanda Interval pada Garis Bilangan
+Titik batas \`-2/3\` dan \`7/2\` membagi garis bilangan real menjadi 3 interval pengujian:
+
+| Interval | Titik Uji (x) | Perhitungan Nilai (3x + 2)(2x - 7) | Tanda | Keterangan |
+| :--- | :--- | :--- | :---: | :--- |
+| **Kiri (\`x < -2/3\`)** | \`x = -1\` | \`(3(-1) + 2)(2(-1) - 7) = (-1)(-9) = +9\` | **\`+\`** (Positif) | Memenuhi \`≥ 0\` |
+| **Tengah (\`-2/3 < x < 7/2\`)** | \`x = 0\` | \`(3(0) + 2)(2(0) - 7) = (2)(-7) = -14\` | **\`-\`** (Negatif) | Tidak memenuhi |
+| **Kanan (\`x > 7/2\`)** | \`x = 4\` | \`(3(4) + 2)(2(4) - 7) = (14)(1) = +14\` | **\`+\`** (Positif) | Memenuhi \`≥ 0\` |
+
+Karena pertidaksamaan bertanda **\`≥ 0\` (lebih dari atau sama dengan nol)**, maka interval yang dipilih adalah daerah bertanda **POSITIF (+)** beserta kedua titik batasnya.
+
+---
+
+### b. Evaluasi Kesimpulan Mahasiswa & Analisis Kesalahan
+
+- **Mahasiswa yang Memberikan Kesimpulan Benar:** **Mahasiswa A**
+  Kesimpulan Mahasiswa A adalah \`x ≤ -2/3  atau  x ≥ 7/2\`. Ini tepat sesuai dengan daerah uji bertanda positif pada pertidaksamaan \`≥ 0\`.
+  
+- **Penjelasan Kesalahan Matematis Mahasiswa B:**
+  Mahasiswa B menyimpulkan \`-2/3 ≤ x ≤ 7/2\`. Kesalahan mendasarnya adalah Mahasiswa B mengambil **interval daerah bernilai negatif (\`≤ 0\`)**, yaitu daerah di antara dua akar. 
+  Secara grafis, kurva fungsi kuadrat \`f(x) = 6x² - 17x - 14\` memiliki koefisien \`a = 6 > 0\`, yang artinya parabola **terbuka ke atas**. Oleh karena itu:
+  - Nilai fungsi bernilai negatif di antara akar-akarnya (\`-2/3 < x < 7/2\`).
+  - Nilai fungsi bernilai positif di luar akar-akarnya (\`x ≤ -2/3\` atau \`x ≥ 7/2\`).
+  Kesimpulan Mahasiswa B hanya valid apabila tanda pertidaksamaannya adalah \`6x² - 17x - 14 ≤ 0\`.
+
+---
+
+### c. Sajian Himpunan Penyelesaian pada Garis Bilangan
+
+![Garis Bilangan dan Interval Uji Tanda Soal 4](/images/matdas/soal-4-garis-bilangan.png)
+
+\`\`\`text
+Himpunan Penyelesaian (HP):
+HP = { x | x ≤ -2/3  atau  x ≥ 7/2,  x ∈ ℝ }
+
+Notasi Interval:
+HP = (-∞, -2/3] ∪ [7/2, +∞)
+\`\`\`
+
+**Karakteristik Garis Bilangan:**
+1. Titik batas \`x = -2/3\` dan \`x = 7/2\` ditandai dengan **bulatan penuh (solid circle)** karena tanda pertidaksamaan memuat relasi sama dengan (\`≥\`).
+2. Arsiran himpunan solusi mengarah ke **sebelah kiri** dari \`-2/3\` dan ke **sebelah kanan** dari \`7/2\`.
 
 ---
 
 ## Soal 5. Sistem Persamaan Linear Dua Variabel (SPLDV)
 
-Pembelian perangkat: **monitor** dan **printer** dengan harga tetap.
+![Teks Resmi Soal 5: SPLDV Pengadaan Perangkat Komputer](/images/matdas/soal-5-spldv.png)
 
-| Transaksi | Jumlah Monitor | Jumlah Printer | Total Biaya |
-| :--- | :--- | :--- | :--- |
-| **1** | 4 | 3 | Rp8.600.000 |
-| **2** | 3 | 5 | Rp9.200.000 |
+Sebuah perusahaan teknologi informasi melakukan pengadaan dua jenis perangkat:
+- \`x\` = harga satu unit monitor (dalam rupiah)
+- \`y\` = harga satu unit printer (dalam rupiah)
 
-Anggaran untuk membeli **5 monitor** dan **4 printer** sebesar **Rp12.000.000**.
+---
 
-### a) Susun persamaan linear
+### a. Menyusun Model Matematika Persamaan Linear
 
-Misalkan $x$ = harga 1 monitor (rupiah), $y$ = harga 1 printer (rupiah).
+Berdasarkan riwayat transaksi pembelian:
+1. Transaksi 1: Pembelian 4 monitor dan 3 printer seharga Rp8.600.000
+   \`\`\`text
+   4x + 3y = 8.600.000   ... Persamaan (1)
+   \`\`\`
+2. Transaksi 2: Pembelian 3 monitor dan 5 printer seharga Rp9.200.000
+   \`\`\`text
+   3x + 5y = 9.200.000   ... Persamaan (2)
+   \`\`\`
 
-$$
-\begin{aligned}
-4x + 3y &= 8.600.000 \quad (1)\\[4pt]
-3x + 5y &= 9.200.000 \quad (2)
-\end{aligned}
-$$
+---
 
-### b) Tentukan nilai $x$ dan $y$ dengan metode eliminasi dan substitusi
+### b. Menentukan Nilai x dan y Menggunakan Metode Eliminasi & Substitusi
 
-**Metode Eliminasi (mengeliminasi $x$)**
+#### Langkah 1: Eliminasi Variabel x
+Samakan koefisien \`x\` dengan mengalikan Persamaan (1) dengan 3 dan Persamaan (2) dengan 4:
 
-Samakan koefisien $x$:
+\`\`\`text
+(1) × 3 ➔ 12x +  9y = 25.800.000
+(2) × 4 ➔ 12x + 20y = 36.800.000
+--------------------------------- - (Kurangkan)
+             -11y = -11.000.000
+                y = -11.000.000 / -11
+                y = 1.000.000
+\`\`\`
+> Diperoleh harga 1 unit printer: **\`y = Rp1.000.000\`**
 
-$$
-\begin{aligned}
-(1)\times 3:\quad 12x + 9y &= 25.800.000\\[4pt]
-(2)\times 4:\quad 12x + 20y &= 36.800.000
-\end{aligned}
-$$
+#### Langkah 2: Substitusi Nilai y ke Persamaan (1)
+\`\`\`text
+  4x + 3y = 8.600.000
+  4x + 3(1.000.000) = 8.600.000
+  4x + 3.000.000    = 8.600.000
+  4x                = 8.600.000 - 3.000.000
+  4x                = 5.600.000
+   x                = 5.600.000 / 4
+   x                = 1.400.000
+\`\`\`
+> Diperoleh harga 1 unit monitor: **\`x = Rp1.400.000\`**
 
-Kurangkan $(1)\times 3$ dari $(2)\times 4$:
+#### Verifikasi pada Persamaan (2):
+\`3(1.400.000) + 5(1.000.000) = 4.200.000 + 5.000.000 = Rp9.200.000\` *(Tepat)*
 
-$$
-\begin{aligned}
-(12x - 12x) + (20y - 9y) &= 36.800.000 - 25.800.000\\[4pt]
-11y &= 11.000.000\\[4pt]
-y &= \frac{11.000.000}{11} = 1.000.000
-\end{aligned}
-$$
+---
 
-**Metode Substitusi (mencari $x$)**
+### c. Menghitung Total Biaya Pembelian Baru & Sisa Anggaran
 
-Substitusikan $y = 1.000.000$ ke persamaan $(1)$:
+Perusahaan berencana membeli **5 monitor** dan **4 printer** dengan pagu anggaran **Rp12.000.000**.
 
-$$
-\begin{aligned}
-4x + 3(1.000.000) &= 8.600.000\\[4pt]
-4x + 3.000.000 &= 8.600.000\\[4pt]
-4x &= 8.600.000 - 3.000.000\\[4pt]
-4x &= 5.600.000\\[4pt]
-x &= \frac{5.600.000}{4} = 1.400.000
-\end{aligned}
-$$
+\`\`\`text
+1. Total Biaya Pembelian:
+   Biaya = 5x + 4y
+   Biaya = 5(1.400.000) + 4(1.000.000)
+   Biaya = 7.000.000 + 4.000.000
+   Biaya = Rp11.000.000
 
-**Hasil:** $\boxed{x = \text{Rp}1.400.000,\quad y = \text{Rp}1.000.000}$
+2. Sisa Anggaran:
+   Sisa = Anggaran Tersedia - Total Biaya
+   Sisa = 12.000.000 - 11.000.000
+   Sisa = Rp1.000.000
+\`\`\`
 
-### c) Hitung total biaya 5 monitor dan 4 printer serta sisa anggaran
-
-$$
-\begin{aligned}
-\text{Total} &= 5x + 4y = 5(1.400.000) + 4(1.000.000)\\[4pt]
-&= 7.000.000 + 4.000.000\\[4pt]
-&= 11.000.000
-\end{aligned}
-$$
-
-$$
-\text{Sisa anggaran} = 12.000.000 - 11.000.000 = \text{Rp}1.000.000
-$$
-
-**Jadi, total biaya $\boxed{\text{Rp}11.000.000}$ dan sisa anggaran $\boxed{\text{Rp}1.000.000}$**.
+> **Hasil:** Total pengeluaran adalah **\`Rp11.000.000\`** dan sisa anggaran operasional perusahaan adalah **\`Rp1.000.000\`**.
 
 ---
 
 ## Soal 6. Sistem Persamaan Linear Tiga Variabel (SPLTV)
 
-Pengujian aplikasi dengan tiga jenis berkas: **gambar ($x$)**, **audio ($y$)**, dan **animasi ($z$)** dalam satuan MB.
+![Teks Resmi Soal 6: SPLTV Ukuran Berkas Konten Multimedia](/images/matdas/soal-6-spltv.png)
 
-| Pengujian | Gambar | Audio | Animasi | Total Ukuran |
-| :--- | :--- | :--- | :--- | :--- |
-| **I** | 3 | 2 | 1 | 55 MB |
-| **II** | 2 | 3 | 2 | 65 MB |
-| **III** | 4 | 1 | 3 | 90 MB |
+Aplikasi pengolah konten digital memadukan tiga komponen:
+- \`x\` = ukuran 1 berkas gambar (MB)
+- \`y\` = ukuran 1 berkas audio (MB)
+- \`z\` = ukuran 1 berkas animasi (MB)
 
-### a) Susun sistem persamaan linear
+---
 
-$$
-\begin{aligned}
-3x + 2y + z &= 55 \quad (1)\\[4pt]
-2x + 3y + 2z &= 65 \quad (2)\\[4pt]
-4x + y + 3z &= 90 \quad (3)
-\end{aligned}
-$$
+### a. Menyusun Tiga Persamaan Linear
 
-### b) Tentukan nilai $x,y,z$
+Berdasarkan hasil tiga kali pengujian integrasi berkas:
+\`\`\`text
+Pengujian I   ➔  3x + 2y +  z = 55   ... (Persamaan 1)
+Pengujian II  ➔  2x + 3y + 2z = 65   ... (Persamaan 2)
+Pengujian III ➔  4x +  y + 3z = 90   ... (Persamaan 3)
+\`\`\`
 
-**Langkah 1: Ubah persamaan (1) menjadi bentuk $z$**
+---
 
-$$
-z = 55 - 3x - 2y \quad (1a)
-$$
+### b. Menyelesaikan Nilai x, y, dan z
 
-**Langkah 2: Substitusikan $z$ ke persamaan (2)**
+Gunakan kombinasi metode substitusi dan eliminasi:
 
-$$
-\begin{aligned}
-2x + 3y + 2(55 - 3x - 2y) &= 65\\[4pt]
-2x + 3y + 110 - 6x - 4y &= 65\\[4pt]
--4x - y + 110 &= 65\\[4pt]
--4x - y &= 65 - 110\\[4pt]
--4x - y &= -45\\[4pt]
-4x + y &= 45 \quad (4)
-\end{aligned}
-$$
+#### Langkah 1: Nyatakan z dalam x dan y dari Persamaan (1)
+\`\`\`text
+z = 55 - 3x - 2y   ... (Persamaan 1a)
+\`\`\`
 
-**Langkah 3: Substitusikan $z$ ke persamaan (3)**
+#### Langkah 2: Substitusikan z ke Persamaan (2)
+\`\`\`text
+2x + 3y + 2(55 - 3x - 2y) = 65
+2x + 3y + 110 - 6x - 4y   = 65
+-4x - y + 110             = 65
+-4x - y                   = 65 - 110
+-4x - y                   = -45
+ 4x + y                   = 45        ... (Persamaan 4)
+\`\`\`
 
-$$
-\begin{aligned}
-4x + y + 3(55 - 3x - 2y) &= 90\\[4pt]
-4x + y + 165 - 9x - 6y &= 90\\[4pt]
--5x - 5y + 165 &= 90\\[4pt]
--5x - 5y &= 90 - 165\\[4pt]
--5x - 5y &= -75
-\end{aligned}
-$$
+#### Langkah 3: Substitusikan z ke Persamaan (3)
+\`\`\`text
+4x + y + 3(55 - 3x - 2y) = 90
+4x + y + 165 - 9x - 6y   = 90
+-5x - 5y + 165           = 90
+-5x - 5y                 = 90 - 165
+-5x - 5y                 = -75
+\`\`\`
+Bagi kedua ruas dengan \`-5\`:
+\`\`\`text
+x + y = 15   ... (Persamaan 5)
+\`\`\`
 
-Bagi kedua ruas dengan $-5$:
+#### Langkah 4: Eliminasi y dari Persamaan (4) dan Persamaan (5)
+\`\`\`text
+  4x + y = 45   (Persamaan 4)
+   x + y = 15   (Persamaan 5)
+  ----------- - (Kurangkan)
+      3x = 30
+       x = 10 MB
+\`\`\`
 
-$$
-x + y &= 15 \quad (5)
-$$
+#### Langkah 5: Cari Nilai y dan z
+Substitusi \`x = 10\` ke Persamaan (5):
+\`\`\`text
+x + y = 15  ➔  10 + y = 15  ➔  y = 5 MB
+\`\`\`
 
-**Langkah 4: Eliminasi $y$ dari (4) dan (5)**
+Substitusi \`x = 10\` dan \`y = 5\` ke Persamaan (1a):
+\`\`\`text
+z = 55 - 3(10) - 2(5)
+z = 55 - 30 - 10
+z = 15 MB
+\`\`\`
 
-$$
-\begin{aligned}
-(4):\quad 4x + y &= 45\\[4pt]
-(5):\quad x + y &= 15
-\end{aligned}
-$$
+#### Uji Validasi ke Ketiga Persamaan:
+- Persamaan 1: \`3(10) + 2(5) + 15 = 30 + 10 + 15 = 55\` *(Valid)*
+- Persamaan 2: \`2(10) + 3(5) + 2(15) = 20 + 15 + 30 = 65\` *(Valid)*
+- Persamaan 3: \`4(10) + 1(5) + 3(15) = 40 + 5 + 45 = 90\` *(Valid)*
 
-Kurangkan $(5)$ dari $(4)$:
-
-$$
-\begin{aligned}
-3x &= 30\\[4pt]
-x &= 10
-\end{aligned}
-$$
-
-**Langkah 5: Cari $y$ dari (5)**
-
-$$
-x + y = 15 \implies 10 + y = 15 \implies y = 5
-$$
-
-**Langkah 6: Cari $z$ dari (1a)**
-
-$$
-z = 55 - 3(10) - 2(5) = 55 - 30 - 10 = 15
-$$
-
-**Uji kebenaran:**
-
-- (1) $3(10)+2(5)+15 = 30+10+15 = 55$ ✓
-- (2) $2(10)+3(5)+2(15) = 20+15+30 = 65$ ✓
-- (3) $4(10)+5+3(15) = 40+5+45 = 90$ ✓
-
-**Hasil:** $\boxed{x = 10\,\text{MB},\quad y = 5\,\text{MB},\quad z = 15\,\text{MB}}$
+> **Hasil:**
+> - Ukuran 1 berkas gambar (\`x\`) = **\`10 MB\`**
+> - Ukuran 1 berkas audio (\`y\`) = **\`5 MB\`**
+> - Ukuran 1 berkas animasi (\`z\`) = **\`15 MB\`**
 
 ---
 
 ## Soal 7. Sistem Persamaan Linear Tiga Variabel (SPLTV)
 
-Tiga paket layanan TI dengan tarif tetap: **instalasi perangkat lunak ($x$)**, **konfigurasi jaringan ($y$)**, dan **pemeliharaan komputer ($z$)** dalam **puluhan ribu rupiah**.
+![Teks Resmi Soal 7: SPLTV Paket Layanan Jasa TI](/images/matdas/soal-7-spltv.png)
 
-| Paket | Instalasi Perangkat Lunak | Konfigurasi Jaringan | Pemeliharaan Komputer | Total Biaya |
-| :--- | :--- | :--- | :--- | :--- |
-| **I** | 2 | 3 | 1 | Rp390.000 |
-| **II** | 3 | 2 | 2 | Rp450.000 |
-| **III** | 4 | 1 | 2 | Rp430.000 |
+Sebuah penyedia jasa teknologi informasi menawarkan tiga layanan:
+- \`x\` = biaya 1 kali instalasi perangkat lunak (dalam **puluhan ribu rupiah**)
+- \`y\` = biaya 1 kali konfigurasi jaringan (dalam **puluhan ribu rupiah**)
+- \`z\` = biaya 1 kali pemeliharaan komputer (dalam **puluhan ribu rupiah**)
 
-### a) Susun sistem persamaan linear
+---
 
-Karena $x,y,z$ dalam **puluhan ribu rupiah**, kita tulis nilai dalam satuan puluhan ribu:
+### a. Menyusun Model Matematika SPLTV
 
-$$
-\begin{aligned}
-2x + 3y + z &= 39 \quad (1)\\[4pt]
-3x + 2y + 2z &= 45 \quad (2)\\[4pt]
-4x + y + 2z &= 43 \quad (3)
-\end{aligned}
-$$
+Berdasarkan tarif ketiga paket (satuan diubah ke puluhan ribu rupiah):
+- Rp390.000 = \`39\` puluhan ribu
+- Rp450.000 = \`45\` puluhan ribu
+- Rp430.000 = \`43\` puluhan ribu
 
-### b) Tentukan nilai $x,y,z$
+\`\`\`text
+Paket I   ➔  2x + 3y +  z = 39   ... (Persamaan 1)
+Paket II  ➔  3x + 2y + 2z = 45   ... (Persamaan 2)
+Paket III ➔  4x +  y + 2z = 43   ... (Persamaan 3)
+\`\`\`
 
-**Langkah 1: Eliminasi $z$ dari persamaan (2) dan (3)**
+---
 
-Perhatikan koefisien $z$ pada (2) dan (3) sama ($2$).
+### b. Menentukan Nilai x, y, dan z
 
-$$
-\begin{aligned}
-(2):\quad 3x + 2y + 2z &= 45\\[4pt]
-(3):\quad 4x + y + 2z &= 43
-\end{aligned}
-$$
+Perhatikan bahwa koefisien \`z\` pada Persamaan (2) dan Persamaan (3) sudah bernilai sama, yaitu \`2\`.
 
-Kurangkan $(3)$ dari $(2)$:
+#### Langkah 1: Eliminasi Variabel z dari Persamaan (2) dan Persamaan (3)
+\`\`\`text
+  3x + 2y + 2z = 45   (Persamaan 2)
+  4x +  y + 2z = 43   (Persamaan 3)
+  ----------------- - (Kurangkan)
+    -x + y     = 2
+             y = x + 2   ... (Persamaan 4)
+\`\`\`
 
-$$
-\begin{aligned}
-(3x - 4x) + (2y - y) + (2z - 2z) &= 45 - 43\\[4pt]
--x + y &= 2\\[4pt]
-y &= x + 2 \quad (4)
-\end{aligned}
-$$
+#### Langkah 2: Eliminasi Variabel z dari Persamaan (1) dan Persamaan (2)
+Kalikan Persamaan (1) dengan 2, lalu kurangkan dengan Persamaan (2):
+\`\`\`text
+  (1) × 2 ➔ 4x + 6y + 2z = 78
+  (2)     ➔ 3x + 2y + 2z = 45
+  ---------------------------- - (Kurangkan)
+             x + 4y      = 33   ... (Persamaan 5)
+\`\`\`
 
-**Langkah 2: Eliminasi $z$ dari persamaan (1) dan (2)**
+#### Langkah 3: Substitusi Persamaan (4) ke Persamaan (5)
+\`\`\`text
+  x + 4(x + 2) = 33
+  x + 4x + 8   = 33
+  5x + 8       = 33
+  5x           = 33 - 8
+  5x           = 25
+   x           = 5
+\`\`\`
 
-Kalikan $(1)$ dengan $2$ agar koefisien $z$ sama dengan (2):
+#### Langkah 4: Tentukan Nilai y dan z
+Substitusikan \`x = 5\` ke Persamaan (4):
+\`\`\`text
+y = x + 2  ➔  y = 5 + 2 = 7
+\`\`\`
 
-$$
-\begin{aligned}
-(1)\times 2:\quad 4x + 6y + 2z &= 78\\[4pt]
-(2):\quad 3x + 2y + 2z &= 45
-\end{aligned}
-$$
+Substitusikan \`x = 5\` dan \`y = 7\` ke Persamaan (1):
+\`\`\`text
+2x + 3y + z = 39
+2(5) + 3(7) + z = 39
+10 + 21 + z     = 39
+31 + z          = 39
+z               = 39 - 31
+z               = 8
+\`\`\`
 
-Kurangkan $(2)$ dari $(1)\times 2$:
+#### Konversi ke Nilai Nominal Rupiah:
+| Layanan Teknologi Informasi | Variabel | Nilai (Puluhan Ribu) | Tarif Nominal |
+| :--- | :---: | :---: | :--- |
+| **Instalasi Perangkat Lunak** | \`x\` | 5 | **Rp50.000** |
+| **Konfigurasi Jaringan** | \`y\` | 7 | **Rp70.000** |
+| **Pemeliharaan Komputer** | \`z\` | 8 | **Rp80.000** |
 
-$$
-\begin{aligned}
-(4x - 3x) + (6y - 2y) + (2z - 2z) &= 78 - 45\\[4pt]
-x + 4y &= 33 \quad (5)
-\end{aligned}
-$$
+---
 
-**Langkah 3: Substitusikan $y = x + 2$ ke (5)**
+## Soal 8. Eksponen dan Bentuk Akar (Aplikasi Grafika Komputer)
 
-$$
-\begin{aligned}
-x + 4(x + 2) &= 33\\[4pt]
-x + 4x + 8 &= 33\\[4pt]
-5x + 8 &= 33\\[4pt]
-5x &= 33 - 8\\[4pt]
-5x &= 25\\[4pt]
-x &= 5
-\end{aligned}
-$$
+![Teks Resmi Soal 8: Eksponen dan Operasi Bentuk Akar](/images/matdas/soal-8-eksponen-akar.png)
 
-**Langkah 4: Cari $y$ dan $z$**
+Dalam perancangan grafika komputer dan pengolahan citra digital (\`a ≠ 0, b ≠ 0\`):
 
-$$
-y = x + 2 = 5 + 2 = 7
-$$
+\`\`\`text
+Ekspresi P:
+     [(a⁻⁴ b³)³ (a⁵ b⁻²)² (a⁻² b⁴)]
+P = --------------------------------
+             [(a⁻³ b²)²]
 
-Substitusikan $x=5, y=7$ ke persamaan $(1)$:
+Ekspresi Q:
+Q = 6√147 - 5√108 + 4√75 - 3√192 + 2√48
+\`\`\`
 
-$$
-\begin{aligned}
-2(5) + 3(7) + z &= 39\\[4pt]
-10 + 21 + z &= 39\\[4pt]
-31 + z &= 39\\[4pt]
-z &= 39 - 31 = 8
-\end{aligned}
-$$
+---
 
-**Uji kebenaran:**
+### a. Menyederhanakan Ekspresi P dengan Pangkat Positif
 
-- (1) $2(5)+3(7)+8 = 10+21+8 = 39$ ✓
-- (2) $3(5)+2(7)+2(8) = 15+14+16 = 45$ ✓
-- (3) $4(5)+7+2(8) = 20+7+16 = 43$ ✓
+Gunakan sifat-sifat dasar eksponen:
+1. \`(x^m)^n = x^(m × n)\`
+2. \`x^m × x^n = x^(m + n)\`
+3. \`x^m / x^n = x^(m - n)\`
 
-**Konversi ke rupiah:**
+\`\`\`text
+Langkah 1: Sederhanakan pangkat di dalam pembilang
+• (a⁻⁴ b³)³ = a^(-4×3) b^(3×3) = a⁻¹² b⁹
+• (a⁵ b⁻²)² = a^(5×2) b^(-2×2) = a¹⁰ b⁻⁴
+• (a⁻² b⁴)¹ = a⁻² b⁴
 
-| Layanan | Nilai ($x/y/z$) | Tarif |
+Langkah 2: Kalikan seluruh suku pada pembilang
+Pembilang = (a⁻¹² b⁹) × (a¹⁰ b⁻⁴) × (a⁻² b⁴)
+• Basis a: a^(-12 + 10 - 2) = a⁻⁴
+• Basis b: b^(9 - 4 + 4)    = b⁹
+➔ Pembilang = a⁻⁴ b⁹
+
+Langkah 3: Sederhanakan pangkat pada penyebut
+Penyebut = (a⁻³ b²)² = a^(-3×2) b^(2×2) = a⁻⁶ b⁴
+
+Langkah 4: Bagi pembilang dengan penyebut
+P = (a⁻⁴ b⁹) / (a⁻⁶ b⁴)
+• Basis a: a^(-4 - (-6)) = a^(-4 + 6) = a²
+• Basis b: b^(9 - 4)                 = b⁵
+\`\`\`
+
+> **Bentuk Sederhana:**
+> **\`P = a²b⁵\`**
+
+---
+
+### b. Evaluasi Hasil Mahasiswa & Analisis Kesalahan
+
+Diberikan hasil kedua mahasiswa:
+- **Mahasiswa A:** \`P = a²b⁵\`
+- **Mahasiswa B:** \`P = b⁵ / a²\`
+
+**Evaluasi Kebenaran:**
+- **Mahasiswa A adalah BENAR**, karena perhitungannya sesuai dengan hukum operasi pembagian eksponen.
+- **Mahasiswa B adalah SALAH.**
+
+**Penjelasan Kesalahan Mahasiswa B:**
+Mahasiswa B menuliskan \`P = b⁵ / a² = a⁻²b⁵\`. Kesalahannya terletak pada operasi pembagian pangkat basis \`a\`:
+- Perhitungan yang benar: \`a⁻⁴ / a⁻⁶ = a^(-4 - (-6)) = a^(-4 + 6) = a²\`.
+- Mahasiswa B kemungkinan mengabaikan tanda negatif di penyebut sehingga menghitung \`-4 - 6 = -10\` atau keliru mengurangkan pangkat menjadi \`a⁻²\`. Jika pangkat \`a\` berada di penyebut sebagai \`1/a²\`, nilainya setara dengan \`a⁻²\`, yang jelas tidak sama dengan \`a²\`.
+
+---
+
+### c. Menyederhanakan Ekspresi Bentuk Akar Q
+
+Gunakan sifat penyederhanaan bentuk akar: \`√(m × n) = √m × √n\`, cari faktor kuadrat terbesar (\`3\`):
+
+\`\`\`text
+Langkah 1: Faktorkan masing-masing bilangan di bawah tanda akar
+• 6√147 = 6√(49 × 3) = 6 × 7√3  =  42√3
+• 5√108 = 5√(36 × 3) = 5 × 6√3  =  30√3
+• 4√75  = 4√(25 × 3) = 4 × 5√3  =  20√3
+• 3√192 = 3√(64 × 3) = 3 × 8√3  =  24√3
+• 2√48  = 2√(16 × 3) = 2 × 4√3  =   8√3
+
+Langkah 2: Gabungkan seluruh suku sejenis (akar 3)
+Q = 42√3 - 30√3 + 20√3 - 24√3 + 8√3
+Q = (42 - 30 + 20 - 24 + 8)√3
+Q = (12 + 20 - 24 + 8)√3
+Q = (32 - 24 + 8)√3
+Q = (8 + 8)√3
+Q = 16√3
+\`\`\`
+
+> **Bentuk Paling Sederhana:**
+> **\`Q = 16√3\`**
+
+---
+
+## Ringkasan Konsep Kunci Sukses Ujian
+
+| Materi Ujian | Kaidah & Rumus Kritis | Tips Pengerjaan Terbukti |
 | :--- | :--- | :--- |
-| **Instalasi perangkat lunak ($x$)** | $5$ (puluhan ribu) | $\text{Rp}50.000$ |
-| **Konfigurasi jaringan ($y$)** | $7$ (puluhan ribu) | $\text{Rp}70.000$ |
-| **Pemeliharaan komputer ($z$)** | $8$ (puluhan ribu) | $\text{Rp}80.000$ |
-
-**Hasil:** $\boxed{x=5,\ y=7,\ z=8\quad \text{(dalam puluhan ribu rupiah)}}$
-
----
-
-## Soal 8. Eksponen dan Bentuk Akar
-
-Diberikan:
-
-$$
-P = \frac{\left[(a^{-4}b^{3})^{3}(a^{5}b^{-2})^{2}(a^{-2}b^{4})\right]}{\left[(a^{-3}b^{2})^{2}\right]},\quad (a\neq 0,\ b\neq 0)
-$$
-
-$$
-Q = 6\sqrt{147} - 5\sqrt{108} + 4\sqrt{75} - 3\sqrt{192} + 2\sqrt{48}
-$$
-
-### a) Sederhanakan $P$ menggunakan sifat eksponen dan nyatakan dengan pangkat positif
-
-**Langkah 1: Sederhanakan tiap faktor di pembilang**
-
-$$
-\begin{aligned}
-(a^{-4}b^{3})^{3} &= a^{-12}b^{9}\\[4pt]
-(a^{5}b^{-2})^{2} &= a^{10}b^{-4}\\[4pt]
-(a^{-2}b^{4}) &= a^{-2}b^{4}
-\end{aligned}
-$$
-
-**Langkah 2: Kalikan faktor-faktor pembilang**
-
-$$
-\begin{aligned}
-a\text{-term:}\quad & (-12) + 10 + (-2) = -4 \implies a^{-4}\\[4pt]
-b\text{-term:}\quad & 9 + (-4) + 4 = 9 \implies b^{9}
-\end{aligned}
-$$
-
-Sehingga pembilang = $a^{-4}b^{9}$
-
-**Langkah 3: Sederhanakan penyebut**
-
-$$
-(a^{-3}b^{2})^{2} = a^{-6}b^{4}
-$$
-
-**Langkah 4: Bagi pembilang dengan penyebut ($a^p/a^q = a^{p-q}$)**
-
-$$
-\begin{aligned}
-a\text{-term:}\quad & a^{-4 - (-6)} = a^{-4 + 6} = a^{2}\\[4pt]
-b\text{-term:}\quad & b^{9 - 4} = b^{5}
-\end{aligned}
-$$
-
-**Hasil:** $\boxed{P = a^{2}b^{5}}$
-
-### b) Tentukan mahasiswa yang benar dan jelaskan kesalahannya
-
-Dari hasil di atas, diperoleh $P = a^{2}b^{5}$.
-
-- **Mahasiswa A:** $P = a^{2}b^{5}$ → **BENAR**
-- **Mahasiswa B:** $P = \frac{b^{5}}{a^{2}} = a^{-2}b^{5}$ → **SALAH**
-
-**Penjelasan kesalahan Mahasiswa B:** Kesalahan terletak pada operasi pembagian pangkat basis $a$. Seharusnya $a^{-4} \div a^{-6} = a^{-4 - (-6)} = a^{-4 + 6} = a^{2}$, bukan $a^{-2}$. Jika menuliskan $1/a^2$, itu artinya $a^{-2}$, padahal hasil yang benar adalah $a^{2}$.
-
-### c) Sederhanakan $Q = 6\sqrt{147} - 5\sqrt{108} + 4\sqrt{75} - 3\sqrt{192} + 2\sqrt{48}$
-
-**Langkah 1: Sederhanakan tiap bentuk akar**
-
-| Bentuk Akar | Faktorisasi | Penyederhanaan | Hasil Perkalian |
-| :--- | :--- | :--- | :--- |
-| $\sqrt{147}$ | $\sqrt{49\cdot 3}$ | $7\sqrt{3}$ | $6\sqrt{147} = 6\cdot 7\sqrt{3} = 42\sqrt{3}$ |
-| $\sqrt{108}$ | $\sqrt{36\cdot 3}$ | $6\sqrt{3}$ | $-5\sqrt{108} = -5\cdot 6\sqrt{3} = -30\sqrt{3}$ |
-| $\sqrt{75}$ | $\sqrt{25\cdot 3}$ | $5\sqrt{3}$ | $4\sqrt{75} = 4\cdot 5\sqrt{3} = 20\sqrt{3}$ |
-| $\sqrt{192}$ | $\sqrt{64\cdot 3}$ | $8\sqrt{3}$ | $-3\sqrt{192} = -3\cdot 8\sqrt{3} = -24\sqrt{3}$ |
-| $\sqrt{48}$ | $\sqrt{16\cdot 3}$ | $4\sqrt{3}$ | $2\sqrt{48} = 2\cdot 4\sqrt{3} = 8\sqrt{3}$ |
-
-**Langkah 2: Jumlahkan semua suku sejenis ($\sqrt{3}$)**
-
-$$
-\begin{aligned}
-Q &= 42\sqrt{3} - 30\sqrt{3} + 20\sqrt{3} - 24\sqrt{3} + 8\sqrt{3}\\[4pt]
-&= (42 - 30 + 20 - 24 + 8)\sqrt{3}\\[4pt]
-&= (16)\sqrt{3}\\[4pt]
-&= 16\sqrt{3}
-\end{aligned}
-$$
-
-**Hasil:** $\boxed{Q = 16\sqrt{3}}$
-
----
-
-## Rangkuman Kunci Bab 9
-
-| Topik | Kunci yang Perlu Diingat |
-| :--- | :--- |
-| **Operasi Aljabar** | Terapkan distributif dengan cermat, perhatikan tanda minus, kelompokkan suku sejenis. Koefisien nol berarti variabel tidak berpengaruh. |
-| **Fungsi Linear (Terapan)** | Bentuk $f(x)=a+bx$. Titik impas saat $f_1(x)=f_2(x)$ menentukan pilihan yang lebih hemat tergantung $x < x_0$ atau $x > x_0$. |
-| **Pertidaksamaan Kuadrat** | Faktorkan → cari akar → uji tanda → ambil daerah sesuai tanda pertidaksamaan. Parabola terbuka ke atas ($a>0$): $>0$ di luar akar, $<0$ di antara akar. |
-| **SPLDV** | Cocok diselesaikan dengan **eliminasi + substitusi**. Pastikan satuan harga/kebutuhan konsisten sebelum menghitung total & sisa. |
-| **SPLTV** | Strategi efisien: eliminasi variabel yang sama dari dua pasang persamaan → jadi SPLDV → substitusi mundur. Selalu **uji hasil** ke ketiga persamaan awal. |
-| **Eksponen** | $(a^p)^q=a^{p q},\ a^p a^q=a^{p+q},\ a^p/a^q=a^{p-q}$. Hati-hati tanda minus saat mengurangkan pangkat. |
-| **Bentuk Akar** | $\sqrt{ab}=\sqrt{a}\sqrt{b}$, $c\sqrt{a}\pm d\sqrt{a}=(c\pm d)\sqrt{a}$. Sederhanakan ke bentuk $\sqrt{n\cdot k}$ dengan $n$ bilangan kuadrat sempurna. |
+| **Operasi Aljabar** | \`k(ax + by) = kax + kby\` (Distributif) | Buka kurung terdalam terlebih dahulu, hati-hati tanda minus di depan kurung, kelompokkan suku sejenis \`x\`, \`y\`, dan konstanta. |
+| **Fungsi Linear** | \`f(x) = Biaya Tetap + (Tarif × x)\` | Cari titik impas \`f_A(x) = f_B(x)\` untuk mengetahui ambang batas efisiensi kuantitas pemesanan. |
+| **Pertidaksamaan Kuadrat** | \`ax² + bx + c ≥ 0\` | Cari pembuat nol via faktorisasi, buat 3 interval pada garis bilangan, uji satu titik uji per interval. Jika \`≥ 0\`, pilih daerah bertanda **positif (+)**. |
+| **SPLDV & SPLTV** | Eliminasi & Substitusi Sistematis | Pada SPLTV, pilih satu variabel termudah untuk dieliminasi dari dua pasangan persamaan sehingga tereduksi menjadi SPLDV 2 variabel. |
+| **Eksponen & Pangkat** | \`a^m / a^n = a^(m - n)\` | Hati-hati dengan pengurangan bilangan negatif: \`a^(-4) / a^(-6) = a^(-4 - (-6)) = a^2\`. |
+| **Bentuk Akar** | \`√(k² × p) = k√p\` | Keluarkan bilangan kuadrat sempurna (4, 9, 16, 25, 36, 49, 64, dst.) dari bawah tanda akar, lalu jumlahkan koefisien akar sejenis. |
 `
   }
 ];
