@@ -2233,6 +2233,400 @@ Idealnya pendahuluan tidak lebih dari **4 paragraf** atau **10–15 persen** dar
 - Pola umum: deduktif, induktif, sebab-akibat, perbandingan, contoh, definisi, proses, pemecahan masalah.
 - Pendahuluan akademik bergerak dari umum ke khusus, didukung sumber, dan tidak lebih dari 4 paragraf atau 10–15 persen naskah.
 - Paragraf yang baik membuat pembaca dapat mengikuti alur **tanpa harus menebak hubungan antargagasan**.`
+  },
+  {
+    id: 'exp_bindo_08',
+    subject_slug: 'bindo',
+    chapter_order: 8,
+    topic_title: 'Bab 8: Pembahasan Lengkap Kisi-Kisi UTS Bahasa Indonesia',
+    content_markdown: `# Bab 8: Pembahasan Lengkap Kisi-Kisi UTS Bahasa Indonesia
+
+![Kisi-Kisi Resmi UTS Bahasa Indonesia](/materials/bindo/kisi-kisi-uts.png)
+
+> **Panduan Belajar Ujian Tengah Semester (UTS):**
+> Bab ini menyajikan sintesis dan pembahasan mendalam atas **7 Poin Kisi-Kisi Resmi UTS Bahasa Indonesia**. Seluruh materi disusun secara sistematis berdasarkan rujukan materi perkuliahan dari **Bab 1 hingga Bab 7** untuk memberikan pemahaman konseptual, gramatikal, dan aplikatif yang utuh bagi mahasiswa.
+
+---
+
+## Peta Korelasi Kisi-Kisi UTS dengan Materi Bab 1–7
+
+| No | Poin Kisi-Kisi UTS Resmi | Bab Rujukan Utama | Fokus Penguasaan Konsep & Capaian Pembelajaran |
+| :---: | :--- | :---: | :--- |
+| **1** | **Kedudukan Bahasa Indonesia sebagai bahasa negara dan bahasa nasional** | **Bab 1** | Landasan politis (Sumpah Pemuda 1928) vs landasan yuridis (UUD 1945 Ps. 36), serta kebijakan Tri Gatra Bahasa. |
+| **2** | **Fungsi Bahasa Indonesia sebagai bahasa negara** | **Bab 1 & Bab 2** | 4 fungsi bahasa negara vs 4 fungsi bahasa nasional, implementasi birokrasi, serta urgensinya di perguruan tinggi. |
+| **3** | **Ragam bahasa lisan dan tulis** | **Bab 3** | Ciri distingtif media lisan vs tulis, kehadiran mitra tutur, paralinguistik vs ortografi tanda baca, serta teknik konversi kalimat. |
+| **4** | **Ragam bahasa ilmiah** | **Bab 4** | 6 ciri bahasa ilmiah (cendekia, lugas, gagasan sebagai pangkal/impersonal, baku, konsisten, kuantitatif) dan kesalahan yang harus dihindari. |
+| **5** | **Kriteria/syarat kalimat efektif** | **Bab 5** | 6 syarat utama (kesatuan, kepaduan, keparalelan, ketepatan, kehematan, kelogisan), 4 kriteria akademik, dan bedah kalimat salah vs benar. |
+| **6** | **Kaidah baku penulisan Daftar Pustaka** | **Bab 7** | Tata letak fisik (hanging indent, alfabetis, tanpa gelar), rumus NATAJUKOPEN, format sumber buku, jurnal/majalah, antologi, dan internet. |
+| **7** | **Konsep kohesi dan koherensi pada penyusunan paragraf akademik** | **Bab 6** | Keterpaduan bentuk (kohesi gramatikal & leksikal) vs keterpaduan makna (koherensi logika), matriks perbedaan, dan bedah paragraf ilmiah. |
+
+---
+
+## 1. Kisi-Kisi 1: Kedudukan Bahasa Indonesia sebagai Bahasa Negara dan Bahasa Nasional (Rujukan: Bab 1)
+
+Bahasa Indonesia memiliki **dua kedudukan agung** yang saling melengkapi dalam sistem ketatanegaraan dan kebangsaan Indonesia:
+
+### 1.1 Bahasa Indonesia sebagai Bahasa Nasional (Landasan Historis-Politis)
+- **Landasan Legal-Historis:** Ditetapkan melalui ikrar kebangsaan **Sumpah Pemuda pada tanggal 28 Oktober 1928**, khususnya butir ketiga:
+  > *"Kami poetra dan poetri Indonesia mendjoendjoeng bahasa persatoean, bahasa Indonesia."*
+- **Sifat Landasan:** Bersifat **politis, historis, dan sosiologis**. Pilihan ini lahir dari kesepakatan konsensus para pemuda pergerakan dari beragam suku bangsa di Nusantara untuk memiliki satu bahasa persatuan.
+- **Esensi Filosofis:** Berfungsi sebagai pemersatu bangsa yang majemuk tanpa menimbulkan sentimen hegemoni suku mayoritas, lambang kebanggaan nasional, serta jati diri identitas bangsa (*national identity*).
+- **Akar Bahasa:** Bahasa Indonesia berakar dari dialek **Bahasa Melayu Riau** yang telah berabad-abad menjadi *lingua franca* (bahasa perhubungan perdagangan di kawasan Nusantara), lalu mengalami pembakuan, modernisasi, dan pengayaan kosakata nasional.
+
+### 1.2 Bahasa Indonesia sebagai Bahasa Negara (Landasan Yuridis-Konstitusional)
+- **Landasan Legal-Yuridis:** Ditetapkan secara formal dalam hukum dasar tertinggi negara melalui **Undang-Undang Dasar Negara Republik Indonesia 1945, Bab XV, Pasal 36**:
+  > *"Bahasa Negara ialah Bahasa Indonesia."*
+  (Disahkan pada sidang PPKI tanggal **18 Agustus 1945**, sehari setelah Proklamasi Kemerdekaan RI).
+- **Penguatan Regulasi Nasional:** Diperkuat melalui **Undang-Undang Republik Indonesia Nomor 24 Tahun 2009** tentang Bendera, Bahasa, dan Lambang Negara, serta Lagu Kebangsaan.
+- **Sifat Landasan:** Bersifat **hukum positif konstitusional (*de jure*)**. Penggunaan bahasa Indonesia dalam tata kelola pemerintahan, peradilan, perundang-undangan, dan dokumen resmi negara merupakan kewajiban hukum yang imperatif.
+
+### 1.3 Matriks Komparasi Kedudukan: Bahasa Nasional vs Bahasa Negara
+
+| Dimensi Komparasi | Bahasa Indonesia sebagai BAHASA NASIONAL | Bahasa Indonesia sebagai BAHASA NEGARA |
+| :--- | :--- | :--- |
+| **Landasan Penetapan** | Sumpah Pemuda (28 Oktober 1928, Butir III) | UUD 1945 Bab XV Pasal 36 (18 Agustus 1945) |
+| **Sifat Legalitas** | Landasan politis, sosiologis, dan historis | Landasan yuridis, konstitusional, dan hukum positif |
+| **Lembaga / Pelaku** | Kongres Pemuda II (Kesepakatan pemuda antardaerah) | Panitia Persiapan Kemerdekaan Indonesia (PPKI) |
+| **Kekuatan Mengikat** | Ikatan moral emosional persatuan kebangsaan | Kewajiban hukum formal aparatur dan warga negara |
+| **Ranah Penggunaan** | Komunikasi antarsuku, budaya, dan masyarakat luas | Dokumen resmi negara, perundang-undangan, dan birokrasi |
+| **Status Historis** | Bahasa persatuan (*de facto*) sejak 1928 | Bahasa resmi negara (*de jure*) sejak 1945 |
+
+### 1.4 Kebijakan "Tri Gatra Bahasa" dalam Tata Bahasa Indonesia
+Dalam kehidupan bermasyarakat, bahasa Indonesia berinteraksi dengan bahasa daerah dan bahasa asing:
+1. **Utamakan Bahasa Indonesia:** Selaku bahasa nasional dan bahasa negara, wajib diutamakan pada ruang publik, administrasi pemerintahan, dan diskursus akademik.
+2. **Lestarikan Bahasa Daerah:** Selaku bahasa ibu kelompok etnis, dipelihara sebagai kekayaan kebudayaan nasional yang memperkaya kosakata bahasa Indonesia.
+3. **Kuasai Bahasa Asing:** Selaku bahasa pergaulan internasional, dikuasai demi kemajuan sains global, alih teknologi, dan diplomasi dunia.
+
+> **Kunci Sukses Ujian (Jebakan Sering Muncul):**
+> - **Tahun 1928** = Politis = Sumpah Pemuda = **Bahasa Nasional/Persatuan**.
+> - **Tahun 1945** = Konstitusional = UUD 1945 Ps. 36 = **Bahasa Negara**.
+> - *Ingat:* Jangan terbalik antara fungsi bahasa nasional dan fungsi bahasa negara!
+
+---
+
+## 2. Kisi-Kisi 2: Fungsi Bahasa Indonesia sebagai Bahasa Negara (Rujukan: Bab 1 & Bab 2)
+
+Dalam kapasitasnya sebagai bahasa negara (UUD 1945 Ps. 36), bahasa Indonesia mengemban **empat fungsi resmi kenegaraan**:
+
+### 2.1 Rincian Empat Fungsi Bahasa Indonesia sebagai Bahasa Negara
+1. **Bahasa Resmi Kenegaraan:**
+   - Wajib digunakan dalam seluruh upacara, peringatan, dan acara kenegaraan.
+   - Wajib digunakan dalam pidato kenegaraan Presiden, Wakil Presiden, dan pejabat publik di hadapan forum nasional maupun internasional.
+   - Wajib digunakan dalam penyusunan naskah undang-undang, keputusan pengadilan, naskah dinas, dan surat-menyurat instansi pemerintah.
+2. **Bahasa Pengantar Resmi di Dunia Pendidikan:**
+   - Digunakan sebagai bahasa instruksional resmi di seluruh jenjang pendidikan nasional: PAUD, SD, SMP, SMA/SMK, hingga Perguruan Tinggi.
+   - Seluruh buku teks, modul ajar, materi ujian, serta karya ilmiah (skripsi, tesis, disertasi) wajib ditulis dalam bahasa Indonesia (kecuali pada program studi bahasa asing/daerah tertentu).
+3. **Alat Perhubungan pada Tingkat Nasional untuk Pembangunan dan Pemerintahan:**
+   - Saluran komunikasi vertikal (pemerintah pusat ke pemerintah daerah) dan horizontal (antardaerah, antarkementerian/lembaga negara).
+   - Menjamin bahwa perencanaan, penganggaran, pelaksanaan, dan pengawasan proyek pembangunan nasional dipahami secara seragam tanpa distorsi bahasa lokal.
+4. **Alat Pengembangan Kebudayaan Nasional, Ilmu Pengetahuan, dan Teknologi (IPTEK):**
+   - Menjadi wadah pencatatan dan publikasi hasil penemuan ilmiah modern.
+   - Sarana kodifikasi dan standardisasi istilah keilmuan (*terminologi sains*).
+   - Sarana penerjemahan karya-karya referensi dunia ke dalam bahasa Indonesia agar dapat diakses oleh masyarakat luas.
+
+### 2.2 Tabel Pembeda Tegas: Fungsi Bahasa Negara vs Fungsi Bahasa Nasional
+
+| No | 4 Fungsi sebagai BAHASA NEGARA (Bab 2) | 4 Fungsi sebagai BAHASA NASIONAL (Bab 1) |
+| :---: | :--- | :--- |
+| **1** | **Bahasa resmi kenegaraan** (dokumen & upacara dinas) | **Lambang kebanggaan nasional** (nilai luhur bangsa) |
+| **2** | **Bahasa pengantar resmi di dunia pendidikan** | **Lambang identitas nasional** (pembeda dari bangsa lain) |
+| **3** | **Alat komunikasi pembangunan dan pemerintahan** | **Alat pemersatu berbagai suku bangsa** (antar-etnis) |
+| **4** | **Alat pengembangan kebudayaan & IPTEK** | **Alat perhubungan antardaerah dan antarbudaya** |
+
+### 2.3 Urgensi Penggunaan Bahasa Indonesia di Bidang Pendidikan Tinggi
+- **Standardisasi Pengetahuan:** Memastikan mahasiswa dari seluruh pelosok tanah air menerima materi kuliah berstandar mutu yang sama.
+- **Pembentukan Nalar Kritis:** Membiasakan sivitas akademika menyusun argumen dan analisis berbasis logika ilmiah berbahasa baku.
+- **Kemandirian Intelektual:** Membangun kemandirian bangsa agar pengembangan ilmu pengetahuan tidak sekadar menjiplak istilah asing, melainkan dinasionalkan sesuai konteks keindonesiaan.
+
+---
+
+## 3. Kisi-Kisi 3: Ragam Bahasa Lisan dan Tulis (Rujukan: Bab 3)
+
+Ragam bahasa adalah variasi pemakaian bahasa yang timbul karena keragaman media sarana penghasil, konteks situasi penutur, dan bidang kegiatan (Bab 3).
+
+### 3.1 Karakteristik Ragam Lisan
+- **Media Dasar:** Dihasilkan menggunakan organ bicara fisik (*fonetik*) dengan fonem/bunyi sebagai unsur terkecil.
+- **Kehadiran Mitra Tutur:** Mengharuskan lawan bicara hadir secara langsung di hadapan penutur (*face-to-face* atau panggilan suara/video interaktif).
+- **Keterikatan Konteks:** Sangat terikat pada situasi, ruang, dan waktu saat ujaran berlangsung. Makna ujaran sangat bergantung pada momen pembicaraan.
+- **Penunjang Makna (Paralinguistik):** Dibantu oleh intonasi, dinamika tinggi-rendah nada suara, jeda, tempo, ekspresi wajah, kontak mata, dan bahasa tubuh (*gestur*).
+- **Struktur Gramatikal:** Cenderung longgar, elastis, dan sering memuat elipsis (penghilangan subjek/predikat) karena kondisi fisik lingkungan telah menjelaskan makna kalimat.
+- **Mekanisme Koreksi:** Kesalahan berbahasa dapat langsung diralat pada saat itu juga (*instant direct feedback*).
+
+### 3.2 Karakteristik Ragam Tulis
+- **Media Dasar:** Dihasilkan memanfaatkan simbol ortografis aksara (huruf/grafem) pada media cetak atau layar digital.
+- **Kehadiran Pembaca:** Pembaca tidak berhadapan langsung dengan penulis saat teks dibaca.
+- **Keterikatan Konteks:** Bebas dari keterikatan ruang dan waktu; teks dapat dibaca kapan pun, berulang kali, dan di lokasi mana pun oleh siapa pun.
+- **Pengganti Intonasi:** Tidak memiliki intonasi vokal dan bahasa tubuh. Ketiadaan intonasi digantikan secara mutlak oleh **tanda baca, sistem ejaan (EYD/PUEBI), huruf kapital, dan format paragraf**.
+- **Struktur Gramatikal:** Wajib taat asas, lengkap, dan eksplisit. Hubungan fungsi Subjek (S), Predikat (P), Objek (O), dan Keterangan (K) harus tertata rapi agar tidak menimbulkan ketaksaan (*ambiguity*).
+- **Mekanisme Koreksi:** Menuntut kecermatan tinggi dalam penyuntingan (*editing*) sebelum diterbitkan karena kesalahan cetak tidak dapat diralat seketika saat pembaca membaca naskah.
+
+### 3.3 Matriks Komparasi Sistematis: Ragam Lisan vs Ragam Tulis
+
+| Aspek Komparasi | Ragam Bahasa Lisan | Ragam Bahasa Tulis |
+| :--- | :--- | :--- |
+| **Unsur Dasar** | Gelombang bunyi ujaran (fonem) | Lambang ortografis aksara (grafem/huruf) |
+| **Kehadiran Komunikan** | Wajib hadir secara langsung | Tidak berhadapan langsung |
+| **Keterikatan Situasi** | Terikat ketat pada ruang dan waktu | Terbebas dari ruang dan waktu |
+| **Faktor Pengjelas Makna** | Intonasi, jeda, mimik, dan gestur | Tanda baca, ejaan (EYD), tata letak |
+| **Kelengkapan Struktur** | Sering tidak lengkap / terpenggal (elipsis) | Wajib lengkap dan utuh (S-P-O-K eksplisit) |
+| **Karakter Kalimat** | Pendek, spontan, dan fleksibel | Padat, sistematis, dan terencana |
+| **Proses Perbaikan** | Ralat langsung di tempat | Melalui proses revisi dan penyuntingan |
+
+### 3.4 Bedah Kasus: Konversi Ragam Lisan Nonbaku ke Ragam Tulis Baku Akademik
+
+\`\`\`text
+┌────────────────────────────────────────────────────────┬────────────────────────────────────────────────────────┐
+│ RAGAM LISAN NONBAKU (PERCAKAPAN)                       │ RAGAM TULIS BAKU AKADEMIK                              │
+├────────────────────────────────────────────────────────┼────────────────────────────────────────────────────────┤
+│ "Kita udah ngumpulin semua data yang dibutuhin pas     │ "Kami telah mengumpulkan seluruh data yang diperlukan  │
+│ survei kemarin di lapangan."                           │ dalam survei lapangan kemarin."                        │
+├────────────────────────────────────────────────────────┼────────────────────────────────────────────────────────┤
+│ "Dosen bilang kalo makalah mesti dikumpul besok siang  │ "Dosen pengampu menyatakan bahwa makalah wajib         │
+│ di ruang tata usaha."                                  │ diserahkan besok siang di ruang tata usaha."           │
+├────────────────────────────────────────────────────────┼────────────────────────────────────────────────────────┤
+│ "Itu alat rusak gara-gara salah colok kabel powernya." │ "Peralatan tersebut mengalami kerusakan akibat         │
+│                                                        │ kesalahan penyambungan kabel daya."                    │
+└────────────────────────────────────────────────────────┴────────────────────────────────────────────────────────┘
+\`\`\`
+
+---
+
+## 4. Kisi-Kisi 4: Ragam Bahasa Ilmiah (Rujukan: Bab 4)
+
+Ragam bahasa ilmiah adalah variasi bahasa tulis fungsional baku yang digunakan dalam dunia akademik (skripsi, makalah, artikel jurnal, tesis) untuk menyampaikan fakta empiris, metodologi, dan penalaran ilmiah secara objektif dan akuntabel (Bab 4).
+
+### 4.1 Enam Karakteristik Pokok Ragam Bahasa Ilmiah
+1. **Cendekia:**
+   - Mampu membentuk proposisi atau pernyataan yang tepat dan cermat sehingga alur pemikiran penulis dapat diikuti pembaca secara logis dan utuh.
+2. **Lugas dan Jelas:**
+   - Informasi disajikan secara langsung pada sasaran pikiran tanpa ungkapan basa-basi, menghindari majas perbandingan, metafora sastra, atau gaya hiperbolis.
+3. **Gagasan sebagai Pangkal (Objektif / Impersonal):**
+   - Menitikberatkan uraian pada fenomena, data, atau topik yang diteliti, bukan pada pribadi peneliti.
+   - Kata ganti orang pertama tunggal (*saya, aku*) maupun jamak (*kami, kita*) diminimalkan atau dihilangkan. Bentuk yang digunakan adalah konstruksi kalimat pasif ilmiah (misal: *"Data dianalisis dengan metode regresi..."* bukan *"Saya menganalisis data dengan metode regresi..."*).
+4. **Formal dan Baku:**
+   - Seluruh unsur kebahasaan tunduk pada kaidah tata bahasa baku bahasa Indonesia, kosakata resmi menurut KBBI, dan Pedoman Umum Ejaan Bahasa Indonesia (EYD/PUEBI).
+5. **Konsisten (Ajeg):**
+   - Konsisten dalam pemakaian peristilahan keilmuan, notasi matematis, simbol, tanda baca, dan format penulisan dari halaman pendahuluan hingga penutup.
+6. **Kuantitatif / Terukur:**
+   - Keterangan data disajikan dengan ukuran yang pasti, parameter angka, atau derajat yang dapat diuji ulang, bukan dengan taksiran perasaan subjektif (misal: *"kandungan nitrogen sebesar 12,4 ppm"*, bukan *"kandungan nitrogennya sangat pekat"*).
+
+### 4.2 Penanda Kebahasaan Utama Ragam Ilmiah
+- **Diksi Denotatif:** Memilih kata yang bermakna harfiah/sebenarnya tanpa tafsir konotasi emosional.
+- **Nominalisasi Proses:** Mengubah kata kerja menjadi nomina untuk memadatkan informasi (contoh: *"air menguap karena dipanaskan"* -> *"penguapan air akibat pemanasan"*).
+- **Kosakata Peristilahan Khusus:** Menggunakan istilah baku sesuai domain keilmuan (contoh: *normalisasi, algoritma, variabel dependen, kohesi leksikal*).
+
+### 4.3 Empat Kesalahan Fatal dalam Ragam Ilmiah
+1. **Subjektivisme Penulis:** Memasukkan emosi pribadi atau kata ganti orang pertama (*"Menurut perasaan saya..."*).
+2. **Ketaksaan / Ambiguitas Kalimat:** Kalimat memiliki lebih dari satu penafsiran akibat kesalahan struktur sintaksis.
+3. **Campur Kode (*Code-Mixing*):** Menyisipkan bahasa gaul, kata percakapan lisan, atau serapan asing yang belum dibakukan.
+4. **Pleonasme dan Redundansi:** Memakai kata-kata mubazir yang memperpanjang kalimat tanpa menambah substansi makna.
+
+---
+
+## 5. Kisi-Kisi 5: Kriteria/Syarat Kalimat Efektif (Rujukan: Bab 5)
+
+**Kalimat efektif** adalah kalimat yang memiliki kemampuan untuk menyampaikan gagasan penulis kepada pembaca secara tepat, ringkas, dan jelas sehingga maksud yang diterima pembaca sama persis dengan yang dikehendaki penulis tanpa distorsi (Bab 5).
+
+### 5.1 Enam Syarat Utama Kalimat Efektif
+
+#### 1. Kesatuan (Keutuhan Ide Pokok)
+Kalimat harus mengandung satu ide pokok yang utuh dengan kejelasan fungsi Subjek (S) dan Predikat (P).
+- **Salah:** *"Dalam penelitian ini membuktikan bahwa faktor ekonomi memengaruhi prestasi belajar."*
+  - *Bedah Kesalahan:* Kata depan *"Dalam"* di awal kalimat mengaburkan fungsi Subjek sehingga kalimat tidak memiliki subjek gramatikal.
+- **Benar:** *"Penelitian ini membuktikan bahwa faktor ekonomi memengaruhi prestasi belajar."*
+  - *(Alternatif benar):* *"Dalam penelitian ini, terbukti bahwa faktor ekonomi memengaruhi prestasi belajar."*
+
+#### 2. Kepaduan (Koherensi Hubungan Antarunsur)
+Hubungan antarelemen kalimat (S-P-O-Pel-Ket) harus padu dan rapat, tidak tersisip kata depan yang merusak relasi verba transitif dengan objeknya.
+- **Salah:** *"Gubernur membicarakan tentang perbaikan jalan provinsi."*
+  - *Bedah Kesalahan:* Kata kerja transitif *"membicarakan"* wajib langsung bertemu objek penderita tanpa kata depan *"tentang"*.
+- **Benar:** *"Gubernur membicarakan perbaikan jalan provinsi."*
+  - *(Alternatif benar):* *"Gubernur berbicara tentang perbaikan jalan provinsi."*
+
+#### 3. Keparalelan / Kesejajaran Bentuk
+Unsur-unsur rincian yang setara harus menggunakan pola gramatikal dan kelas kata yang seragam (verba dengan verba, nomina dengan nomina).
+- **Salah:** *"Tahapan riset meliputi pengumpulan data, menganalisis sampel, dan penarikan kesimpulan."*
+  - *Bedah Kesalahan:* Bentuk tidak paralel: *pengumpulan* (pe-an), *menganalisis* (me-kan), *penarikan* (pe-an).
+- **Benar:** *"Tahapan riset meliputi pengumpulan data, penganalisisan sampel, dan penarikan kesimpulan."*
+
+#### 4. Ketepatan (Ketepatan Diksi & Pasangan Konjungsi)
+Kecermatan memilih kata yang sesuai serta menerapkan pasangan konjungsi korelatif baku secara tepat.
+- **Pasangan Korelatif Baku:**
+  - *bukan ... melainkan ...* (pertentangan kategori atau benda)
+  - *tidak ... tetapi ...* (pertentangan sifat atau keadaan)
+  - *antara ... dan ...* (bukan *antara ... dengan ...*)
+  - *baik ... maupun ...*
+- **Salah:** *"Masalah ini bukan disebabkan oleh kemalasan, tetapi oleh ketiadaan sarana."*
+- **Benar:** *"Masalah ini bukan disebabkan oleh kemalasan, melainkan oleh ketiadaan sarana."*
+- **Salah:** *"Ada perbedaan antara teori dengan praktik di lapangan."*
+- **Benar:** *"Ada perbedaan antara teori dan praktik di lapangan."*
+
+#### 5. Kehematan
+Menghindari penggunaan kata, frasa, atau bentuk gramatikal yang mubazir tanpa mereduksi makna (*padat isi, bukan padat kata*).
+- **Hindari Pleonasme:** *"turun ke bawah"*, *"naik ke atas"*, *"maju ke depan"*.
+- **Hindari Penumpukan Kata Sinonim:** *"adalah merupakan"*, *"agar supaya"*, *"demi untuk"*.
+- **Hindari Penjamakan Ganda:** *"para hadirin sekalian"*, *"banyak faktor-faktor"*.
+- **Salah:** *"Agar supaya mahasiswa dapat lulus tepat waktu, mahasiswa harus disiplin."*
+- **Benar:** *"Agar lulus tepat waktu, mahasiswa harus disiplin."*
+
+#### 6. Kelogisan Nalar
+Makna kalimat harus masuk akal, logis, dan dapat diterima oleh penalaran ilmiah yang sehat.
+- **Salah:** *"Kepada Bapak Dekan, waktu dan tempat kami persilakan."*
+  - *Bedah Kesalahan:* Waktu dan tempat adalah entitas abstrak yang tidak dapat dipersilakan berjalan atau berbicara.
+- **Benar:** *"Kepada Bapak Dekan, kami persilakan."*
+- **Salah:** *"Untuk mempersingkat waktu, kita langsung memulai seminar ini."*
+  - *Bedah Kesalahan:* Waktu tidak dapat dipersingkat atau dimampatkan; yang dapat dihemat adalah alokasi pemakaiannya.
+- **Benar:** *"Untuk mengefisienkan waktu, kita langsung memulai seminar ini."*
+
+### 5.2 Empat Kriteria Kalimat Efektif Akademik
+1. **Gramatikal:** Struktur sintaksis memenuhi kaidah tata bahasa baku.
+2. **Rasional:** Makna kalimat dapat dinalar secara ilmiah dan objektif.
+3. **Lugas:** Tidak mengandung ungkapan kiasan atau bunga bahasa.
+4. **Baku:** Kosakata berpedoman pada KBBI dan ejaan EYD/PUEBI.
+
+---
+
+## 6. Kisi-Kisi 6: Kaidah Baku Penulisan Daftar Pustaka (Rujukan: Bab 7)
+
+Daftar pustaka (bibliografi) adalah kumpulan catatan identitas buku, jurnal, naskah dinas, atau sumber digital yang dirujuk oleh penulis dan ditempatkan pada lembar paling akhir karya tulis akademik (Bab 7).
+
+### 6.1 Fungsi Akademik Daftar Pustaka
+1. **Bukti Kejujuran Ilmiah (*Academic Honesty*):** Menegaskan keaslian karya serta menunjukkan sumber asal teori atau data yang dipinjam.
+2. **Penghormatan Hak Cipta:** Memberikan penghargaan moral dan hukum atas hak cipta penulis terdahulu.
+3. **Mencegah Tindakan Plagiarisme:** Menjauhkan penulis dari delik penjiplakan karya intelektual orang lain.
+4. **Kemudahan Penelusuran Sumber:** Memudahkan pembaca atau penguji memverifikasi data dan memperdalam kajian pustaka.
+
+### 6.2 Kaidah Tipografi dan Tata Letak Baku (*Layout*)
+1. **Format Indentasi Gantung (*Hanging Indent*):**
+   - Baris pertama setiap sumber diketik rapat batas tepi kiri (margin kiri).
+   - Baris kedua dan baris seterusnya masuk ke dalam (menjorok) sejauh **3–5 ketukan spasi** (atau 0,5 inci / 1,27 cm).
+2. **Urutan Alfabetis (A–Z):**
+   - Entri disusun berurutan berdasarkan huruf pertama nama belakang (nama keluarga) penulis pertama.
+   - **Sama sekali tidak boleh menggunakan penomoran angka** (1, 2, 3...) atau lambang *bullet*.
+3. **Penghapusan Gelar Kehormatan & Akademik:**
+   - Semua jenis gelar akademik (Prof., Dr., Ph.D., S.Kom., M.T.), gelar keagamaan (Kiai, Pastor), maupun gelar kebangsawanan (Raden, Tengku) **mutlak dihilangkan**.
+4. **Aturan Penulis Lebih dari Satu:**
+   - **Satu Penulis:** Nama belakang ditulis di depan, dipisah koma, diikuti nama depan (dibalik).
+   - **Dua Penulis:** Penulis pertama dibalik namanya, penulis kedua ditulis normal (tidak dibalik), dihubungkan kata "dan".
+   - **Tiga Penulis atau Lebih:** Hanya nama penulis pertama yang ditulis (dibalik), lalu diikuti singkatan *"dkk."* (dan kawan-kawan) atau *"et al."*.
+5. **Karya Ganda dari Penulis Sama:**
+   - Diurutkan berdasarkan tahun terbit yang paling awal. Nama penulis dapat ditulis ulang atau diganti garis bawah sepanjang 5–7 ketukan ketik.
+
+### 6.3 Rumus Mnemonic Standar Penulisan Buku: NATAJUKOPEN
+
+\`\`\`text
+╔═════════════════════════════════════════════════════════════════════════════════╗
+║                   RUMUS BAKU PENULISAN BUKU: NATAJUKOPEN                        ║
+╠════════╦════════════════════════════════════════════════════════════════════════╣
+║   NA   ║ Nama Pengarang (Dibalik: Nama Belakang, Nama Depan). Titik.            ║
+║   TA   ║ Tahun Terbit Buku. Titik.                                              ║
+║   JU   ║ Judul Buku (Dicetak MIRING/ITALIC, Huruf Kapital Tiap Awal Kata). Titik║
+║   KO   ║ Kota Tempat Penerbit Berada. Titik Dua (:).                            ║
+║  PEN   ║ Nama Lembaga/Perusahaan Penerbit. Titik.                               ║
+╚════════╩═════════════════════════════════════════════════════════════════════════╝
+\`\`\`
+
+### 6.4 Format dan Contoh Penulisan Berdasarkan Jenis Sumber
+
+#### 1. Sumber Berupa Buku Teks
+- **Satu Penulis:**
+  > Suryadi, Kirana. 2008. *Manusia dan Kebutuhannya*. Bandung: CV Pancakarya.
+- **Dua Penulis (Nama penulis ke-2 tidak dibalik):**
+  > Widyamartaya, Al. dan Veronica Sudiati. 1997. *Dasar-dasar Menulis Karya Ilmiah*. Jakarta: PT Gramedia Widiasarana Indonesia.
+- **Tiga Penulis atau Lebih (Menggunakan dkk.):**
+  > Akhadiah, Sabarti, Maidar G. Arsjad, dan Sakura H. Ridawan. 1989. *Pembinaan Kemampuan Menulis Bahasa Indonesia*. Jakarta: Penerbit Airlangga.
+
+#### 2. Sumber Berupa Artikel Jurnal Ilmiah
+- **Kaidah:** Judul artikel diapit tanda petik dua \`"..."\`, nama jurnal dicetak *miring*, diikuti volume, nomor penerbitan, dan rentang halaman.
+  > Rahmawati, Siti. 2021. "Analisis Kesalahan Berbahasa pada Makalah Mahasiswa". *Jurnal Pendidikan Bahasa dan Sastra*, 19(2): 112–125.
+
+#### 3. Sumber Berupa Majalah atau Surat Kabar (Koran)
+- **Sumber Majalah:**
+  > Supriyadi, Cecep. 2007. "Manusia dan Kepribadiannya". Dalam *Gatra* (Juni, Nomor 120, Tahun XI). Jakarta.
+- **Sumber Surat Kabar (Koran):**
+  > Baihaki, Eki. 2008. "Menjadi Polisi yang Dipercaya". Dalam *Pikiran Rakyat*. 2 Juli. Bandung.
+
+#### 4. Sumber Berupa Buku Antologi / Bunga Rampai (dengan Editor)
+  > Suryani, Dadan. 1989. "Perilaku Anak-anak ABG". Dalam Nanang Irawan (Editor), *Manusia dan Perilakunya* (hlm. 45–60). Bandung: PT Pancakarsa.
+
+#### 5. Sumber Rujukan Daring / Internet
+- **Kaidah:** Memuat nama penulis, tahun rilis, judul tulisan (tanda petik), nama dokumen web (*miring*), URL alamat situs lengkap, dan tanggal akses dalam tanda kurung.
+  > Walker, Janice R. 1996. "MLA-Style Citations of Electronic Sources". *Style Sheet*. http://www.cas.usf.edu/english/walker/mla.html (diakses 10 Februari 2026).
+
+---
+
+## 7. Kisi-Kisi 7: Konsep Kohesi dan Koherensi pada Penyusunan Paragraf Akademik (Rujukan: Bab 6)
+
+Paragraf akademik adalah kesatuan bentuk wacana yang mengemban **satu pokok pikiran/ide pokok** yang dikembangkan oleh kalimat-kalimat penjelas (Bab 6). Paragraf yang bermutu akademik wajib memiliki dua keterpaduan mutlak: **kohesi** dan **koherensi**.
+
+### 7.1 Konsep Kohesi (Keterpaduan Bentuk Lahiriah / Gramatikal-Leksikal)
+**Kohesi** adalah kepaduan antarkalimat yang ditautkan oleh piranti kebahasaan formal lahiriah sehingga rangkaian kalimat saling mengikat secara rapi dan sintaksis.
+
+#### Enam Piranti Kohesi Utama:
+1. **Konjungsi Antarkalimat:**
+   - *Penambahan:* selain itu, di samping itu, lebih lanjut.
+   - *Pertentangan:* namun, sebaliknya, kendati demikian.
+   - *Kausalitas / Sebab-Akibat:* oleh karena itu, akibatnya, dengan demikian.
+   - *Urutan Waktu:* selanjutnya, kemudian, setelah itu.
+2. **Pronomina (Kata Ganti Referensial):**
+   - *Kata ganti persona:* ia, dia, mereka, beliau.
+   - *Kata ganti penunjuk:* ini, itu, hal ini, persoalan tersebut.
+3. **Repetisi (Pengulangan Kata Kunci):**
+   - Mengulang kata kunci sentral secara terukur guna menjaga konsistensi fokus pembaca pada topik inti.
+4. **Substitusi (Penggantian):**
+   - Mengganti unsur kata tertentu dengan padanan fungsional lain yang memiliki acuan referensi setara.
+5. **Elipsis (Pelesapan Unsur):**
+   - Melesapkan kata atau klausa yang sudah sangat jelas dipahami dari kalimat sebelumnya untuk efisiensi kalimat tanpa mengorbankan ketepatan gramatikal.
+6. **Kohesi Leksikal (Relasi Makna Kata):**
+   - *Sinonim (persamaan):* mahasiswa dan peserta didik.
+   - *Antonim (perlawanan):* kenaikan dan penurunan.
+   - *Hiponim (hierarki umum ke khusus):* perangkat keras dan prosesor.
+   - *Kolokasi (asosiasi kata bersanding):* penelitian, instrumen, observasi, dan analisis data.
+
+### 7.2 Konsep Koherensi (Keterpaduan Makna Batiniah / Alur Logika)
+**Koherensi** adalah keutuhan pertalian makna dan alur penalaran logis antarkalimat di dalam paragraf. Seluruh kalimat penjelas wajib secara fungsional menopang kalimat utama (*prinsip unity / kesatuan gagasan*).
+- **Syarat Paragraf Koheren:**
+  - Alur penalaran mengalir lancar dari satu gagasan ke gagasan berikutnya tanpa lompatan pemikiran (*smooth transitions*).
+  - Hubungan sebab-akibat atau komparasi tersusun secara rasional.
+  - Bebas dari kalimat sumbang (*alien sentence*), yaitu kalimat yang menyimpang dari topik pembicaraan.
+
+### 7.3 Matriks Komparasi Fundamental: Kohesi vs Koherensi
+
+| Parameter Pembeda | KOHESI (Keterpaduan Bentuk) | KOHERENSI (Keterpaduan Makna) |
+| :--- | :--- | :--- |
+| **Dimensi Kajian** | Bentuk lahiriah kalimat (aspek sintaksis) | Kandungan batiniah makna (aspek semantik & logika) |
+| **Pertanyaan Kunci** | *Apakah kalimat-kalimat terhubung oleh kata hubung yang tepat?* | *Apakah alur penalaran antarkalimat nyambung dan logis?* |
+| **Instrumen Penentu** | Konjungsi, kata ganti, repetisi, substitusi | Hubungan sebab-akibat, relevansi ide, ketiadaan kalimat sumbang |
+| **Dampak Jika Gagal** | Kalimat terasa patah-patah dan kaku | Pembaca bingung karena gagasan meloncat tidak jelas |
+
+> **Kaidah Emas Hubungan Keduanya:**
+> Paragraf yang memuat banyak kata penghubung (kohesif) **belum tentu koheren** apabila isi antarkalimat tidak memiliki hubungan logis. Sebaliknya, paragraf yang ideal wajib **memadukan kohesi (kehalusan bentuk) dan koherensi (kekuatan nalar)**.
+
+### 7.4 Analisis Perbandingan Kasus Paragraf
+
+#### Kasus Paragraf Cacat (Tidak Koheren):
+> *"Literasi digital sangat penting bagi mahasiswa di era modern. Kampus kami memiliki area kantin yang sangat luas dan asri. Mahasiswa gemar memesan kopi sebelum masuk jam kuliah pagi. Kopi banyak mengandung zat kafein yang dapat memicu detak jantung lebih cepat."*
+- **Analisis Masalah:** Paragraf di atas diawali kalimat topik tentang *literasi digital*, namun kalimat ke-2 sampai ke-4 tiba-tiba meloncat membahas kantin dan kandungan kafein kopi. Paragraf ini rusak secara **koherensi** karena memuat kalimat sumbang yang tidak relevan dengan ide pokok.
+
+#### Kasus Paragraf Ideal (Kohesif & Koheren):
+> *"Literasi digital sangat penting bagi mahasiswa di era modern. **Melalui penguasaan kompetensi ini**, mahasiswa dapat menelusuri literatur ilmiah secara kritis dan mandiri. **Selain itu**, mereka menjadi lebih terampil dalam memilah rujukan kredibel serta mengoperasikan aplikasi manajemen referensi. **Oleh karena itu**, penguatan literasi digital terbukti mampu mendongkrak mutu karya tulis ilmiah mahasiswa."*
+- **Analisis Kualitas:**
+  - **Koherensi Terpenuhi:** Seluruh kalimat penjelas secara runtut menguraikan manfaat konkrit *literasi digital* bagi kemahiran akademik mahasiswa.
+  - **Kohesi Terpenuhi:** Menggunakan piranti kohesi pronomina penunjuk (*"kompetensi ini"*), pronomina persona (*"mereka"*), konjungsi penambahan (*"selain itu"*), dan konjungsi simpulan (*"oleh karena itu"*).
+
+---
+
+## 8. Ringkasan Eksekutif Kisi-Kisi UTS (Pocket Cheat-Sheet)
+
+| Poin Kisi-Kisi | Intisari Jawaban Cepat untuk Menghadapi Ujian UTS |
+| :---: | :--- |
+| **Kisi 1** | **Bahasa Nasional:** Sumpah Pemuda 1928, landasan politis, bahasa persatuan, lambang identitas bersama.<br>**Bahasa Negara:** UUD 1945 Ps. 36, landasan yuridis-konstitusional, bahasa resmi penyelenggaraan negara.<br>**Tri Gatra:** Utamakan bahasa Indonesia, lestarikan bahasa daerah, kuasai bahasa asing. |
+| **Kisi 2** | **4 Fungsi Negara:** Bahasa resmi kenegaraan, bahasa pengantar resmi pendidikan, alat komunikasi pembangunan & pemerintahan, alat pengembangan kebudayaan & IPTEK. |
+| **Kisi 3** | **Lisan:** Terikat situasi ruang/waktu, butuh lawan bicara, paralinguistik (intonasi/mimik), gramatikal fleksibel/elipsis.<br>**Tulis:** Bebas situasi ruang/waktu, tanpa tatap muka langsung, ortografi tanda baca & ejaan ketat, struktur S-P-O-K lengkap. |
+| **Kisi 4** | **6 Karakteristik Ilmiah:** Cendekia, lugas/jelas, gagasan sebagai pangkal (objektif/pasif), formal/baku, konsisten/ajeg, dan kuantitatif/terukur. Dilarang subjektif (*saya/kami*). |
+| **Kisi 5** | **6 Syarat Efektif:** Kesatuan (S-P jelas), Kepaduan (hubungan unsur padu), Keparalelan (bentuk sejajar), Ketepatan (diksi & pasangan baku), Kehematan (anti-pleonasme), Kelogisan (nalar masuk akal). |
+| **Kisi 6** | **Daftar Pustaka:** Format hanging indent, urut alfabetis A-Z, tanpa nomor/bullet, tanpa gelar akademis.<br>**Rumus Buku (NATAJUKOPEN):** Nama (dibalik). Tahun. *Judul (Italic)*. Kota: Penerbit. |
+| **Kisi 7** | **Kohesi:** Keterpaduan BENTUK (gramatikal, konjungsi, pronomina, repetisi, substitusi).<br>**Koherensi:** Keterpaduan MAKNA & NALAR LOGIS (kesatuan tema, alur lancar tanpa kalimat sumbang). |`
   }
 ];
 
